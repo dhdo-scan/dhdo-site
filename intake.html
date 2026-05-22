@@ -475,22 +475,18 @@
     btn.disabled = true;
 
     const data = new FormData(form);
+    data.append('form_type', 'intake');
 
     try {
-      // REPLACE 'YOUR_INTAKE_FORMSPREE_URL' with a separate Formspree endpoint for intake forms
-      const res = await fetch('YOUR_INTAKE_FORMSPREE_URL', {
+      await fetch('YOUR_APPS_SCRIPT_URL', {
         method: 'POST',
         body: data,
-        headers: { 'Accept': 'application/json' }
+        mode: 'no-cors'
       });
 
-      if (res.ok) {
-        form.style.display = 'none';
-        document.getElementById('intakeSuccess').classList.add('show');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        throw new Error();
-      }
+      form.style.display = 'none';
+      document.getElementById('intakeSuccess').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch {
       btn.textContent = 'Submit Intake Form';
       btn.disabled = false;
