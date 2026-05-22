@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHDO — Digital Home Documentation & Organization</title>
+  <meta name="description" content="White-glove 3D home documentation and asset management. Protect what matters most before you ever need it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple:      #2E1A47;
+      --purple-deep: #1A0E2E;
+      --purple-mid:  #3d2660;
+      --gold:        #C9A24E;
+      --gold-hover:  #D9B56A;
+      --white:       #FFFFFF;
+      --cream:       #F8F4EE;
+      --cream-dark:  #EDE7DD;
+      --border-gold: rgba(201,162,78,0.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--white);
+      color: var(--purple);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ──────────── NAV ──────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 72px;
+      background: rgba(46,26,71,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: baseline; gap: 0.6rem; }
+    .nav-logo-dhdo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem; font-weight: 600;
+      color: var(--white); letter-spacing: 0.12em;
+    }
+    .nav-logo-sep { width: 1px; height: 16px; background: rgba(201,162,78,0.35); margin: 0 0.1rem; }
+    .nav-logo-sub {
+      font-size: 0.6rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); opacity: 0.8;
+    }
+    .nav-right { display: flex; align-items: center; gap: 2.25rem; list-style: none; }
+    .nav-right a {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-right a:hover { color: var(--gold); }
+    .nav-cta {
+      color: var(--purple) !important; background: var(--gold) !important;
+      padding: 0.55rem 1.5rem; border-radius: 1px;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-hover) !important; transform: translateY(-1px); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--white); display: block; }
+    .mobile-menu {
+      display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
+      background: var(--purple); border-top: 1px solid var(--border-gold);
+      padding: 1.75rem 6%; flex-direction: column; gap: 1.4rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); text-decoration: none;
+    }
+
+    /* ──────────── HERO ──────────── */
+    #hero {
+      min-height: 100vh; background: var(--purple);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 10rem 6% 7rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-orb {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,162,78,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(201,162,78,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(201,162,78,0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 2.25rem; position: relative;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; width: 36px; height: 1px; background: var(--gold); opacity: 0.35;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6.5vw, 5.8rem);
+      font-weight: 300; line-height: 1.08; color: var(--white);
+      max-width: 880px; margin-bottom: 1.75rem; position: relative;
+    }
+    h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(0.88rem, 1.3vw, 1rem);
+      font-weight: 300; line-height: 1.9;
+      color: rgba(255,255,255,0.48); max-width: 520px;
+      margin-bottom: 3rem; position: relative;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-gold {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--purple); background: var(--gold);
+      padding: 1.05rem 2.75rem; border-radius: 1px; text-decoration: none;
+      border: 1.5px solid var(--gold); transition: all 0.25s;
+    }
+    .btn-gold:hover { background: var(--gold-hover); border-color: var(--gold-hover); transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-block; font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); padding: 1.05rem 2.75rem;
+      border-radius: 1px; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.18); transition: all 0.25s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    }
+    .scroll-line {
+      width: 1px; height: 52px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      opacity: 0.4; animation: pulse-line 2.2s ease-in-out infinite;
+    }
+    .scroll-label { font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    @keyframes pulse-line { 0%,100% { opacity: 0.4; } 50% { opacity: 0.9; } }
+
+    /* ──────────── SECTION COMMONS ──────────── */
+    section { padding: 7rem 6%; }
+    .inner { max-width: 1140px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;
+    }
+    .eyebrow::after { content: ''; width: 48px; height: 1px; background: var(--gold); opacity: 0.35; }
+    .eyebrow.center { justify-content: center; }
+    .eyebrow.center::before { content: ''; width: 48px; height: 1px; background: var(--gold); opacity: 0.35; }
+    .eyebrow.center::after { display: block; }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      font-weight: 300; line-height: 1.15; color: var(--purple);
+    }
+    h2.light { color: var(--white); }
+
+    /* ──────────── ABOUT ──────────── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.1fr;
+      gap: 5.5rem; align-items: center;
+    }
+    .about-left p {
+      font-size: 0.97rem; font-weight: 300; line-height: 1.95;
+      color: rgba(46,26,71,0.62); margin-top: 1.5rem;
+    }
+    .about-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+    .acard {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+      background: var(--white); border-left: 2px solid var(--gold);
+      border-top: 0.5px solid var(--cream-dark);
+      border-right: 0.5px solid var(--cream-dark);
+      border-bottom: 0.5px solid var(--cream-dark);
+    }
+    .acard-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(201,162,78,0.08);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .acard-icon svg { width: 17px; height: 17px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .acard h4 { font-size: 0.88rem; font-weight: 600; color: var(--purple); margin-bottom: 0.3rem; }
+    .acard p { font-size: 0.8rem; font-weight: 300; line-height: 1.75; color: rgba(46,26,71,0.56); }
+
+    /* ──────────── WHY ──────────── */
+    #why { background: var(--white); text-align: center; }
+    .why-lead {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.95;
+      color: rgba(46,26,71,0.55); max-width: 580px;
+      margin: 1.5rem auto 4rem;
+    }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px; background: var(--cream-dark);
+    }
+    .why-card {
+      background: var(--white); padding: 3.5rem 2.25rem;
+      text-align: left; transition: background 0.2s;
+    }
+    .why-card:hover { background: #FDFAF6; }
+    .why-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem; font-weight: 300;
+      color: rgba(201,162,78,0.18); line-height: 1; margin-bottom: 1rem;
+    }
+    .why-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem; font-weight: 600; color: var(--purple); margin-bottom: 0.75rem;
+    }
+    .why-card p { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: rgba(46,26,71,0.58); }
+
+    /* ──────────── PROCESS ──────────── */
+    #process { background: var(--purple); }
+    .process-hd { margin-bottom: 4.5rem; }
+    .process-hd .eyebrow::after { background: rgba(201,162,78,0.35); }
+    .steps { display: flex; flex-direction: column; max-width: 760px; }
+    .step { display: grid; grid-template-columns: 72px 1fr; position: relative; }
+    .step:not(:last-child)::before {
+      content: ''; position: absolute;
+      left: 35px; top: 52px; bottom: 0; width: 1px;
+      background: rgba(201,162,78,0.12);
+    }
+    .step-num {
+      display: flex; flex-direction: column; align-items: center; padding-top: 2px;
+    }
+    .step-circle {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(201,162,78,0.5);
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(201,162,78,0.05); flex-shrink: 0;
+    }
+    .step-circle span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 400; color: var(--gold);
+    }
+    .step-body { padding: 2px 0 3.5rem 0; }
+    .step-tag {
+      font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); opacity: 0.7;
+      margin-bottom: 0.4rem;
+    }
+    .step-body h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.97rem; font-weight: 500; color: var(--white); margin-bottom: 0.5rem;
+    }
+    .step-body p {
+      font-size: 0.82rem; font-weight: 300; line-height: 1.85;
+      color: rgba(255,255,255,0.42); max-width: 560px;
+    }
+
+    /* ──────────── PRICING ──────────── */
+    #pricing { background: var(--cream); }
+    .pricing-lead {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.9;
+      color: rgba(46,26,71,0.58); max-width: 620px; margin: 1.5rem 0 3.5rem;
+    }
+    .pkg-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--cream-dark); margin-bottom: 1rem;
+    }
+    .pkg-card {
+      background: var(--white); padding: 2.25rem 1.75rem;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .pkg-card.popular { background: var(--purple); }
+    .pkg-badge {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple);
+      background: var(--gold); padding: 0.3rem 0.75rem;
+      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .pkg-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 400; color: var(--purple); margin-bottom: 0.25rem;
+    }
+    .pkg-card.popular .pkg-name { color: var(--white); }
+    .pkg-price {
+      font-size: 2.4rem; font-weight: 600; color: var(--gold);
+      line-height: 1; margin: 0.75rem 0 0.25rem;
+    }
+    .pkg-price-note { font-size: 0.72rem; font-weight: 300; color: rgba(46,26,71,0.45); margin-bottom: 1.5rem; }
+    .pkg-card.popular .pkg-price-note { color: rgba(255,255,255,0.4); }
+    .pkg-divider { height: 1px; background: var(--cream-dark); margin-bottom: 1.5rem; }
+    .pkg-card.popular .pkg-divider { background: rgba(255,255,255,0.1); }
+    .pkg-features { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; flex: 1; }
+    .pkg-features li {
+      font-size: 0.8rem; font-weight: 300; line-height: 1.55;
+      color: rgba(46,26,71,0.65); display: flex; gap: 0.6rem; align-items: flex-start;
+    }
+    .pkg-card.popular .pkg-features li { color: rgba(255,255,255,0.6); }
+    .pkg-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; font-weight: 400; }
+    .pkg-cta {
+      display: inline-block; margin-top: 1.75rem; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+      padding: 0.8rem 1.5rem; border-radius: 1px; text-align: center;
+      border: 1.5px solid var(--purple); color: var(--purple); transition: all 0.2s;
+    }
+    .pkg-cta:hover { background: var(--purple); color: var(--white); }
+    .pkg-card.popular .pkg-cta { border-color: var(--gold); color: var(--gold); }
+    .pkg-card.popular .pkg-cta:hover { background: var(--gold); color: var(--purple); }
+    .pkg-note {
+      font-size: 0.77rem; font-weight: 300; color: rgba(46,26,71,0.5);
+      margin: 1rem 0 3.5rem; line-height: 1.7;
+    }
+    .pricing-sub-label {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold);
+      padding-bottom: 0.75rem; margin: 0 0 1.75rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .addon-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--cream-dark); margin-bottom: 3.5rem;
+    }
+    .addon-row {
+      background: var(--white); padding: 1rem 1.25rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .addon-row span { font-size: 0.84rem; font-weight: 400; color: var(--purple); }
+    .addon-row .addon-price { font-size: 0.84rem; font-weight: 600; color: var(--gold); white-space: nowrap; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(46,26,71,0.38);
+      text-align: left; padding: 0 1.25rem 0.9rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    tbody tr { border-bottom: 1px solid var(--cream-dark); transition: background 0.15s; }
+    tbody tr:hover { background: rgba(201,162,78,0.035); }
+    tbody td { padding: 1.15rem 1.25rem; font-size: 0.84rem; font-weight: 400; color: var(--purple); vertical-align: top; }
+    tbody td:first-child { font-weight: 500; }
+    tbody td small { display: block; font-size: 0.76rem; font-weight: 300; color: rgba(46,26,71,0.52); margin-top: 0.25rem; line-height: 1.6; }
+    .fee-amt { font-weight: 600 !important; color: var(--gold) !important; white-space: nowrap; }
+    .pricing-footer { margin-top: 2.75rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .pricing-footer p { font-size: 0.8rem; font-weight: 300; color: rgba(46,26,71,0.5); }
+    .btn-outline-purple {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--purple); padding: 0.9rem 2rem;
+      border: 1.5px solid var(--purple); border-radius: 1px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-outline-purple:hover { background: var(--purple); color: var(--white); }
+    @media (max-width: 860px) { .pkg-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .pkg-grid { grid-template-columns: 1fr; } .addon-grid { grid-template-columns: 1fr; } }
+
+    .optional-toggle {
+      display: flex; align-items: center; gap: 0.6rem; margin-top: 2rem;
+      font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); background: none; border: none;
+      border-top: 1px solid rgba(201,162,78,0.15); padding-top: 1.5rem;
+      cursor: pointer; width: 100%; text-align: left; transition: color 0.2s;
+    }
+    .optional-toggle:hover { color: var(--gold); }
+    .optional-toggle svg { width: 14px; height: 14px; stroke: currentColor; transition: transform 0.25s; }
+    .optional-toggle.open svg { transform: rotate(180deg); }
+    .next-steps { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.75rem; text-align: left; }
+    .next-step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .ns-num {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      border: 1px solid rgba(201,162,78,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--gold);
+    }
+    .next-step strong { font-size: 0.88rem; font-weight: 500; color: var(--white); display: block; margin-bottom: 0.25rem; }
+    .next-step p { font-size: 0.78rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.4); margin: 0; }
+
+    /* ──────────── CONTACT CARDS ──────────── */
+    .team-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: rgba(201,162,78,0.15); margin-top: 4rem;
+    }
+    .team-card {
+      background: rgba(255,255,255,0.04); padding: 2.25rem 2rem;
+      display: flex; flex-direction: column; gap: 0.3rem;
+      border-top: 2px solid rgba(201,162,78,0); transition: border-color 0.2s, background 0.2s;
+    }
+    .team-card:hover { border-top-color: var(--gold); background: rgba(201,162,78,0.04); }
+    .team-initials {
+      width: 48px; height: 48px; border-radius: 50%;
+      border: 1px solid rgba(201,162,78,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-weight: 400; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .team-name { font-size: 0.97rem; font-weight: 500; color: var(--white); }
+    .team-role {
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold); opacity: 0.75; margin-bottom: 0.75rem;
+    }
+    .team-contact { display: flex; flex-direction: column; gap: 0.35rem; }
+    .team-contact a {
+      font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.45);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .team-contact a:hover { color: var(--gold); }
+    @media (max-width: 640px) { .team-grid { grid-template-columns: 1fr; } }
+
+    /* ──────────── FORM ──────────── */
+    #schedule { background: var(--purple); }
+    .form-lead {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.95;
+      color: rgba(255,255,255,0.45); max-width: 580px; margin: 1.5rem 0 3.5rem;
+    }
+    .form-section {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold);
+      padding-bottom: 0.75rem; margin: 3rem 0 1.5rem;
+      border-bottom: 1px solid rgba(201,162,78,0.18);
+    }
+    .form-section:first-of-type { margin-top: 0; }
+    .fg { display: flex; flex-direction: column; gap: 0.4rem; }
+    .fg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .fg3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .span2 { grid-column: 1 / -1; }
+    label {
+      font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+    }
+    label .opt { text-transform: none; letter-spacing: 0; font-weight: 300; color: rgba(255,255,255,0.22); font-size: 0.62rem; }
+    input, select, textarea {
+      font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 300;
+      color: var(--white); background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 1px;
+      padding: 0.85rem 1rem; width: 100%; outline: none;
+      transition: border-color 0.2s, background 0.2s; -webkit-appearance: none; appearance: none;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.18); }
+    input:focus, select:focus, textarea:focus { border-color: rgba(201,162,78,0.55); background: rgba(201,162,78,0.04); }
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(201,162,78,0.45)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 0.85rem center;
+      background-size: 15px; padding-right: 2.5rem; cursor: pointer;
+    }
+    select option { background: var(--purple); color: var(--white); }
+    textarea { resize: vertical; min-height: 95px; }
+    .submit-row { margin-top: 2.75rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .submit-note { font-size: 0.78rem; font-weight: 300; color: rgba(255,255,255,0.28); line-height: 1.7; }
+    .submit-note a { color: var(--gold); text-decoration: none; }
+    button[type="submit"] {
+      font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--purple); background: var(--gold);
+      padding: 1.05rem 2.75rem; border: none; border-radius: 1px;
+      cursor: pointer; white-space: nowrap; transition: background 0.2s, transform 0.2s;
+    }
+    button[type="submit"]:hover { background: var(--gold-hover); transform: translateY(-1px); }
+    button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-success {
+      display: none; text-align: center;
+      padding: 5rem 2rem; max-width: 480px; margin: 0 auto;
+    }
+    .form-success.show { display: block; }
+    .success-ring {
+      width: 68px; height: 68px; border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;
+    }
+    .success-ring svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .form-success h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 300; color: var(--white); margin-bottom: 1rem;
+    }
+    .form-success p { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .form-success a { color: var(--gold); text-decoration: none; }
+
+    /* ──────────── FOOTER ──────────── */
+    footer {
+      background: var(--purple-deep);
+      border-top: 1px solid rgba(201,162,78,0.1);
+      padding: 4rem 6% 2.25rem;
+    }
+    .footer-top {
+      display: flex; justify-content: space-between; gap: 3rem;
+      flex-wrap: wrap; padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-brand .f-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600; color: var(--white); letter-spacing: 0.12em;
+    }
+    .footer-brand p { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.32); margin-top: 0.75rem; line-height: 1.8; max-width: 240px; }
+    .f-col h5 {
+      font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem;
+    }
+    .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .f-col ul li a { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; }
+    .f-col ul li a:hover { color: var(--gold); }
+    .f-col p { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.42); line-height: 1.9; }
+    .f-col a { color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; }
+    .f-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      padding-top: 2rem; display: flex;
+      justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.75rem;
+    }
+    .footer-bottom p { font-size: 0.7rem; font-weight: 300; color: rgba(255,255,255,0.2); }
+
+    /* ──────────── SCAN DEMOS ──────────── */
+    #scans { background: var(--purple-deep); padding: 7rem 6%; }
+    .scans-intro { font-size: 0.95rem; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); max-width: 560px; margin: 1.5rem 0 3.5rem; }
+    .scan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(201,162,78,0.12); }
+    .scan-card { background: var(--purple); display: flex; flex-direction: column; overflow: hidden; text-decoration: none; transition: transform 0.25s; position: relative; }
+    .scan-card:hover { transform: translateY(-4px); }
+    .scan-card:hover .scan-overlay { opacity: 1; }
+    .scan-thumb { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+    .scan-overlay {
+      position: absolute; top: 0; left: 0; right: 0;
+      aspect-ratio: 16/10;
+      background: rgba(46,26,71,0.55);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.25s;
+    }
+    .scan-play {
+      width: 52px; height: 52px; border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .scan-play svg { width: 18px; height: 18px; fill: var(--gold); margin-left: 3px; }
+    .scan-info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.35rem; border-top: 1px solid rgba(201,162,78,0.1); }
+    .scan-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .scan-name { font-family: 'Outfit', sans-serif; font-size: 0.92rem; font-weight: 500; color: var(--white); }
+    .scan-desc { font-size: 0.78rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.4); margin-top: 0.15rem; }
+    .scan-cta { margin-top: auto; padding-top: 1rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; }
+    .scan-cta svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 2; transition: transform 0.2s; }
+    .scan-card:hover .scan-cta svg { transform: translateX(3px); }
+    @media (max-width: 720px) { .scan-grid { grid-template-columns: 1fr; } }
+
+    /* ──────────── KITCHEN BANNER ──────────── */
+    .kitchen-banner { width: 100%; height: 420px; object-fit: cover; object-position: center 40%; display: block; }
+
+    /* ──────────── SCROLL ANIMATIONS ──────────── */
+    .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .fade.in { opacity: 1; transform: translateY(0); }
+
+    /* ──────────── RESPONSIVE ──────────── */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      nav { padding: 0 5%; }
+      .nav-right { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 5rem 5%; }
+      h1 { font-size: 2.7rem; }
+      .fg2, .fg3 { grid-template-columns: 1fr; }
+      .submit-row { flex-direction: column; align-items: flex-start; }
+      .footer-top { flex-direction: column; gap: 2.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      thead th:nth-child(2), tbody td:nth-child(2) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="logo-primary.png" alt="DHDO — Digital Home Documentation & Organization" style="height:40px;width:auto;display:block;" />
+  </a>
+  <ul class="nav-right">
+    <li><a href="#about">What We Do</a></li>
+    <li><a href="#scans">Live Scans</a></li>
+    <li><a href="#process">Our Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#schedule" class="nav-cta">Schedule a Scan</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mob">
+  <a href="#about"    onclick="closeMob()">What We Do</a>
+  <a href="#scans"    onclick="closeMob()">Live Scans</a>
+  <a href="#process"  onclick="closeMob()">Our Process</a>
+  <a href="#pricing"  onclick="closeMob()">Pricing</a>
+  <a href="#schedule" onclick="closeMob()" style="color:var(--gold);">Schedule a Scan</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-eyebrow">A Division of Bradberry Construction &amp; Design</div>
+  <h1>Your Home, Documented.<br><em>Protected. Ready.</em></h1>
+  <p class="hero-sub">A white-glove 3D documentation service that creates an irrefutable record of everything you own — before a storm, a fire, or a disputed claim forces you to wish you had it.</p>
+  <div class="hero-actions">
+    <a href="#schedule" class="btn-gold">Schedule a Scan</a>
+    <a href="#process"  class="btn-ghost">See How It Works</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="eyebrow">What We Do</div>
+        <h2>Complete Digital Documentation, Done Right</h2>
+        <p>DHDO uses Matterport 3D scanning technology to create an interactive, navigable record of your entire home — every room, every corner, every item.</p>
+        <p style="margin-top:1rem;">Each scan is enriched with tagged assets, serial numbers, purchase dates, and replacement values. The result is a living document your insurance adjuster can navigate, your attorney can reference, and your family can rely on.</p>
+        <img src="img-dollhouse.png" alt="Matterport 3D dollhouse view showing full home layout" style="width:100%;margin-top:2rem;display:block;border-radius:2px;" />
+      </div>
+      <div class="about-cards fade" style="transition-delay:0.15s">
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4>Full-Home 3D Scanning</h4>
+            <p>Immersive scans of every room, closet, garage, and outbuilding — capturing your home in stunning, navigable detail.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4>Tagged Asset Documentation</h4>
+            <p>Every item catalogued with make, model, serial number, purchase date, and replacement value — embedded in the scan.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Secure Delivery &amp; Access</h4>
+            <p>Your completed documentation delivered via a secure, shareable link — available anywhere, anytime, on any device.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LIVE SCANS ═══ -->
+<section id="scans">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">See It For Yourself</div>
+      <h2 class="light">Explore Real Scans.<br><em style="font-style:italic;color:var(--gold)">Walk Through Before You Book.</em></h2>
+      <p class="scans-intro">These are actual Matterport scans we've delivered to clients. Click any card to explore the full interactive 3D model — this is exactly what you receive.</p>
+    </div>
+    <div class="scan-grid fade">
+
+      <a href="https://my.matterport.com/models/SsQeM3UaRWL" target="_blank" rel="noopener" class="scan-card">
+        <img src="img-scan-poolhouse.png" class="scan-thumb" alt="Asset Documentation Scan — Pool House Example" />
+        <div class="scan-overlay">
+          <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
+        <div class="scan-info">
+          <div class="scan-label">Asset Documentation</div>
+          <div class="scan-name">Pool House Example</div>
+          <div class="scan-desc">See how belongings and valuables are tagged with receipts and values inside a full home scan.</div>
+          <div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </a>
+
+      <a href="https://my.matterport.com/models/Wu6Tk7btz99" target="_blank" rel="noopener" class="scan-card">
+        <img src="img-scan-newbuild.png" class="scan-thumb" alt="New Build Construction Scan Example" />
+        <div class="scan-overlay">
+          <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
+        <div class="scan-info">
+          <div class="scan-label">New Construction</div>
+          <div class="scan-name">New Build Example</div>
+          <div class="scan-desc">Walk through a newly built property captured in complete 3D detail from the ground up.</div>
+          <div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </a>
+
+      <a href="https://my.matterport.com/models/bd8XcU4UYR3" target="_blank" rel="noopener" class="scan-card">
+        <img src="img-scan-construction.png" class="scan-thumb" alt="Post Construction Scan Example" />
+        <div class="scan-overlay">
+          <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
+        <div class="scan-info">
+          <div class="scan-label">Post Construction</div>
+          <div class="scan-name">Construction Example</div>
+          <div class="scan-desc">Review a finished renovation with every room and detail documented in navigable 3D.</div>
+          <div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </a>
+
+    </div>
+    <div style="margin-top:2.5rem;text-align:center">
+      <a href="#schedule" class="btn-gold">Ready to Book Your Scan?</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KITCHEN BANNER ═══ -->
+<img src="img-kitchen.png" class="kitchen-banner" alt="Example home interior documented by DHDO" />
+
+<!-- ═══ WHY ═══ -->
+<section id="why">
+  <div class="inner">
+    <div class="fade" style="text-align:center">
+      <div class="eyebrow center">Why It Matters</div>
+      <h2>Prepared Before You Ever Need It</h2>
+      <p class="why-lead">Most homeowners only realize they needed documentation after the worst has already happened. We exist to make sure that moment never catches you unprepared.</p>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>Insurance Claims</h3>
+        <p>Insurers require proof of ownership and value. A complete DHDO file turns a disputed claim into a settled one — receipts, photos, and a 3D walkthrough backing every item.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Natural Disasters</h3>
+        <p>Louisiana homeowners know the risk. When a storm, flood, or fire hits, memory fails. Your DHDO record doesn't — stored securely off-site and accessible the moment you need it.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Estate &amp; Legal</h3>
+        <p>A complete, timestamped inventory of your home's contents is invaluable for estate planning, divorce proceedings, or any situation where an accurate asset record is required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process">
+  <div class="inner">
+    <div class="process-hd fade">
+      <div class="eyebrow">Our Process</div>
+      <h2 class="light">Six Steps.<br>Two to Three Weeks.<br><em style="font-style:italic;color:var(--gold)">A Lifetime of Protection.</em></h2>
+    </div>
+    <div class="steps">
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>1</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Today</div>
+          <h3>Welcome &amp; Sign-Up</h3>
+          <p>You complete your client information form and submit your onboarding packet. We confirm your scan date within one business day — the clock starts from there.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>2</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">3–4 Business Days</div>
+          <h3>Preparation Window</h3>
+          <p>Gather receipts for major purchases — furniture, electronics, appliances, jewelry, tools. Make a list of every item you want tagged and tidy each room so we can move through cleanly on scan day.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>3</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Scan Day</div>
+          <h3>We Come to You</h3>
+          <p>Our team arrives on your scheduled date. The scan takes one to three hours depending on home size. You don't need to follow us room to room — relax, work from home, do whatever is easiest. We handle the rest.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>4</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">5–7 Business Days</div>
+          <h3>Processing &amp; Labeling</h3>
+          <p>We process the 3D scan and attach asset tags using your receipts and item information. Every tagged item gets its make, model, serial number, purchase date, and replacement value embedded directly into the scan.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>5</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Day 7 Post-Scan</div>
+          <h3>Receipt Cutoff</h3>
+          <p>Any receipts or item information received after the 7th business day following your scan cannot be added without an additional labeling fee. Get everything to us before the deadline for the cleanest result.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>6</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Delivery</div>
+          <h3>Your Documentation, Delivered</h3>
+          <p>You receive your secure 3D scan link and complete asset documentation. Payment is due upon delivery. We accept all major credit cards, ACH, and check.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="pricing">
+  <div class="inner fade">
+    <div class="eyebrow">Pricing</div>
+    <h2>Find the Right Package<br>for Your Home.</h2>
+    <p class="pricing-lead">Every scan includes permanent cloud hosting and digital delivery. Homes over 3,000 sq ft add $50 per additional 1,000 sq ft. Your exact price is confirmed at sign-up.</p>
+
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-name">Basic</div>
+        <div class="pkg-price">$350</div>
+        <div class="pkg-price-note">Up to 3,000 sq ft</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Full interior 3D scan</li>
+          <li>Hosted digital model</li>
+          <li>Shareable access link</li>
+          <li>Permanent cloud storage</li>
+        </ul>
+        <a href="#schedule" class="pkg-cta">Get Started</a>
+      </div>
+      <div class="pkg-card popular">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-name">Pro</div>
+        <div class="pkg-price">$450</div>
+        <div class="pkg-price-note">Up to 3,000 sq ft</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Everything in Basic</li>
+          <li>2 hrs of asset tagging</li>
+          <li>Notes, photos &amp; receipts linked</li>
+          <li>Clickable item inventory</li>
+        </ul>
+        <a href="#schedule" class="pkg-cta">Get Started</a>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Commercial</div>
+        <div class="pkg-price">$800</div>
+        <div class="pkg-price-note">Full property scan</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>Full commercial scan</li>
+          <li>4 hrs of asset tagging</li>
+          <li>Offices, retail, restaurants</li>
+          <li>Hosted digital model</li>
+        </ul>
+        <a href="#schedule" class="pkg-cta">Get Started</a>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Custom</div>
+        <div class="pkg-price" style="font-size:1.6rem;padding-top:0.25rem">Call Us</div>
+        <div class="pkg-price-note">Scope confirmed first</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li>High-value asset portfolios</li>
+          <li>Large or multi-property estates</li>
+          <li>Specialized documentation needs</li>
+          <li>Custom turnaround &amp; delivery</li>
+        </ul>
+        <a href="tel:3378425404" class="pkg-cta">Call to Discuss</a>
+      </div>
+    </div>
+    <p class="pkg-note">Homes over 3,000 sq ft: +$50 per additional 1,000 sq ft &nbsp;·&nbsp; All scans include permanent cloud hosting and digital delivery.</p>
+
+    <div class="pricing-sub-label">Available Add-Ons</div>
+    <div class="addon-grid">
+      <div class="addon-row"><span>Schematic Floor Plan</span><span class="addon-price">$50</span></div>
+      <div class="addon-row"><span>Xactimate Report <em style="font-style:normal;font-size:0.75rem;color:rgba(46,26,71,0.45)">(insurance)</em></span><span class="addon-price">$150</span></div>
+      <div class="addon-row"><span>Matterpak <em style="font-style:normal;font-size:0.75rem;color:rgba(46,26,71,0.45)">(AutoCAD / Revit)</em></span><span class="addon-price">$100</span></div>
+      <div class="addon-row"><span>Additional Thumb Drive</span><span class="addon-price">$25</span></div>
+      <div class="addon-row"><span>E57 Files <em style="font-style:normal;font-size:0.75rem;color:rgba(46,26,71,0.45)">(BIM / xyz)</em></span><span class="addon-price">Call for pricing</span></div>
+      <div class="addon-row"><span>Additional Asset Labeling</span><span class="addon-price">$75 / hr</span></div>
+      <div class="addon-row"><span>Exterior Drone Scan</span><span class="addon-price">$65</span></div>
+    </div>
+
+    <div class="pricing-sub-label">Additional Fees &amp; Policies</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Fee</th>
+          <th>When It Applies</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Home Not Scan-Ready <small>When clutter prevents the team from walking through and capturing cleanly on scan day.</small></td>
+          <td>Per occurrence</td>
+          <td class="fee-amt">$100</td>
+        </tr>
+        <tr>
+          <td>Late Payment <small>Applied to balances unpaid 14 days after delivery, plus a flat administrative fee.</small></td>
+          <td>Balance unpaid after 14 days</td>
+          <td class="fee-amt">1.5% / mo + $25</td>
+        </tr>
+        <tr>
+          <td>No-Show / Day-Of Cancellation <small>When the team arrives and cannot perform the scan, or cancellation occurs within 24 hours of scan time.</small></td>
+          <td>Per occurrence</td>
+          <td class="fee-amt">Quoted</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pricing-footer">
+      <a href="#schedule" class="btn-outline-purple">Schedule a Scan</a>
+      <p>Package price confirmed within one business day of your consultation request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORM ═══ -->
+<section id="schedule">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">Schedule a Scan</div>
+      <h2 class="light">Let's Get Started</h2>
+      <p class="form-lead">Fill out the short form below and we'll call you within 24–48 hours to confirm your date and walk you through the process. No commitment required.</p>
+    </div>
+
+    <form id="consultForm" class="fade" onsubmit="handleSubmit(event)" novalidate>
+
+      <div class="form-section">Your Information</div>
+      <div class="fg2">
+        <div class="fg">
+          <label for="f-name">Full Name <span style="color:var(--gold);font-size:0.7rem">*</span></label>
+          <input type="text" id="f-name" name="name" placeholder="First Last" required />
+        </div>
+        <div class="fg">
+          <label for="f-email">Email Address <span style="color:var(--gold);font-size:0.7rem">*</span></label>
+          <input type="email" id="f-email" name="email" placeholder="you@email.com" required />
+        </div>
+        <div class="fg">
+          <label for="f-phone">Phone Number <span style="color:var(--gold);font-size:0.7rem">*</span></label>
+          <input type="tel" id="f-phone" name="phone" placeholder="(337) 000-0000" required />
+        </div>
+        <div class="fg">
+          <label for="f-time">Best Time to Reach You</label>
+          <select id="f-time" name="best_time">
+            <option value="" disabled selected>Select one</option>
+            <option>Morning (8am – 12pm)</option>
+            <option>Afternoon (12pm – 5pm)</option>
+            <option>Evening (5pm – 8pm)</option>
+            <option>Anytime</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section" style="margin-top:2.5rem">Scan Scheduling</div>
+      <div class="fg2">
+        <div class="fg">
+          <label for="f-date1">Preferred Scan Date <span style="color:var(--gold);font-size:0.7rem">*</span></label>
+          <input type="date" id="f-date1" name="preferred_date" required />
+        </div>
+        <div class="fg">
+          <label for="f-date2">Backup Date <span class="opt">optional</span></label>
+          <input type="date" id="f-date2" name="backup_date" />
+        </div>
+      </div>
+
+      <!-- Optional extras toggle -->
+      <button type="button" class="optional-toggle" onclick="toggleOptional()" id="optToggle">
+        <span>Add optional details</span>
+        <svg id="optArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+
+      <div id="optionalFields" style="display:none">
+        <div class="form-section" style="margin-top:2rem">Optional Details</div>
+        <div class="fg2">
+          <div class="fg">
+            <label for="f-type">Property Type</label>
+            <select id="f-type" name="property_type">
+              <option value="" disabled selected>Select one</option>
+              <option>Single Family</option>
+              <option>Townhome</option>
+              <option>Condo</option>
+              <option>Estate</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="f-avoid">Days / Times to Avoid</label>
+            <input type="text" id="f-avoid" name="avoid" placeholder="e.g. No Fridays" />
+          </div>
+          <div class="fg">
+            <label for="f-name2">Secondary Contact Name</label>
+            <input type="text" id="f-name2" name="secondary_name" placeholder="First Last" />
+          </div>
+          <div class="fg">
+            <label for="f-phone2">Secondary Contact Phone</label>
+            <input type="tel" id="f-phone2" name="secondary_phone" placeholder="(337) 000-0000" />
+          </div>
+          <div class="fg span2">
+            <label for="f-notes">Anything We Should Know <span class="opt">(pets, gate codes, areas to focus on)</span></label>
+            <textarea id="f-notes" name="notes" placeholder="Leave blank if none"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" id="submitBtn">Request My Scan</button>
+        <p class="submit-note">
+          We'll call you within 24–48 hours to confirm.<br />
+          Questions? Call <a href="tel:3378425404">(337) 842-5404</a>
+        </p>
+      </div>
+
+    </form>
+
+    <!-- Success state -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-ring">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You're On the List</h3>
+      <p style="margin-bottom:1.5rem">A member of the DHDO team will call you within <strong style="color:var(--gold);font-weight:500">24–48 hours</strong> to confirm your scan date and walk you through what to expect.</p>
+      <div class="next-steps">
+        <div class="next-step">
+          <div class="ns-num">1</div>
+          <div>
+            <strong>Confirmation Call</strong>
+            <p>We'll confirm your date, answer questions, and set expectations for scan day.</p>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="ns-num">2</div>
+          <div>
+            <strong>Full Intake Form</strong>
+            <p>We'll send you a link to complete your property details, receipts, and preferences — takes about 10 minutes.</p>
+          </div>
+        </div>
+        <div class="next-step">
+          <div class="ns-num">3</div>
+          <div>
+            <strong>Scan Day</strong>
+            <p>Our team arrives, captures everything, and delivers your complete digital record within 5–7 business days.</p>
+          </div>
+        </div>
+      </div>
+      <a href="intake.html" class="btn-gold" style="margin-top:2rem;display:inline-block">Complete Your Intake Form Now →</a>
+      <p style="margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.3)">Optional — we'll also send this link via text and email after your confirmation call.</p>
+    </div>
+
+    <div class="team-grid fade">
+      <div class="team-card">
+        <div class="team-initials">JJ</div>
+        <div class="team-name">Jay Joseph</div>
+        <div class="team-role">Sales Manager</div>
+        <div class="team-contact">
+          <a href="tel:3373911867">(337) 391-1867</a>
+          <a href="mailto:support@bradberryconstruct.com">support@bradberryconstruct.com</a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-initials">ND</div>
+        <div class="team-name">Noah Dressler</div>
+        <div class="team-role">Sales Representative</div>
+        <div class="team-contact">
+          <a href="tel:3378425404">(337) 842-5404</a>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-initials">GG</div>
+        <div class="team-name">Gabe Gillet</div>
+        <div class="team-role">Sales Representative</div>
+        <div class="team-contact">
+          <a href="tel:3374990879">(337) 499-0879</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo-primary.png" alt="DHDO" style="height:44px;width:auto;display:block;margin-bottom:0.75rem;" />
+        <p>Digital Home Documentation &amp; Organization.<br />A Division of Bradberry Construction &amp; Design.</p>
+      </div>
+      <div class="f-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">What We Do</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#schedule">Schedule a Scan</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Contact</h5>
+        <p><a href="tel:3378425404">(337) 842-5404</a></p>
+        <p style="margin-top:0.4rem">Lake Charles, Louisiana</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 DHDO — Digital Home Documentation &amp; Organization. All rights reserved.</p>
+      <p>A Division of Bradberry Construction &amp; Design</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
+  function closeMob()   { document.getElementById('mob').classList.remove('open'); }
+
+  function toggleOptional() {
+    const fields = document.getElementById('optionalFields');
+    const btn = document.getElementById('optToggle');
+    const open = fields.style.display === 'block';
+    fields.style.display = open ? 'none' : 'block';
+    btn.classList.toggle('open', !open);
+  }
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const data = new FormData(document.getElementById('consultForm'));
+
+    try {
+      // ── REPLACE 'YOUR_FORMSPREE_URL' below ──
+      // 1. Go to formspree.io and create a free form (takes 2 minutes)
+      // 2. Paste your endpoint here, e.g. https://formspree.io/f/xyzabcde
+      const res = await fetch('YOUR_FORMSPREE_URL', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        document.getElementById('consultForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+        document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      btn.textContent = 'Submit Request';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us directly at (337) 842-5404.');
+    }
+  }
+</script>
+</body>
+</html>

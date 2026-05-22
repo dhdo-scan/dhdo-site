@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>DHDO Client Intake Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple:      #2E1A47;
+      --purple-deep: #1A0E2E;
+      --gold:        #C9A24E;
+      --gold-hover:  #D9B56A;
+      --white:       #FFFFFF;
+      --cream:       #F8F4EE;
+      --cream-dark:  #EDE7DD;
+      --border-gold: rgba(201,162,78,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--purple);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--purple-deep);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 1.25rem 6%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .hdr-logo { text-decoration: none; }
+    .hdr-logo img { height: 36px; width: auto; display: block; }
+    .hdr-badge {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      background: rgba(201,162,78,0.1);
+      border: 1px solid rgba(201,162,78,0.25);
+      padding: 0.4rem 1rem; border-radius: 1px;
+    }
+
+    /* ── HERO BANNER ── */
+    .intake-hero {
+      background: var(--purple-deep);
+      border-bottom: 1px solid rgba(201,162,78,0.1);
+      padding: 3.5rem 6% 3rem;
+      text-align: center;
+    }
+    .intake-hero .eyebrow {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .intake-hero .eyebrow::before,
+    .intake-hero .eyebrow::after { content: ''; width: 36px; height: 1px; background: var(--gold); opacity: 0.3; }
+    .intake-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300; line-height: 1.2; color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .intake-hero h1 em { font-style: italic; color: var(--gold); }
+    .intake-hero p {
+      font-size: 0.9rem; font-weight: 300; line-height: 1.85;
+      color: rgba(255,255,255,0.45); max-width: 560px; margin: 0 auto;
+    }
+    .progress-bar {
+      display: flex; gap: 0; margin: 2.5rem auto 0; max-width: 420px;
+    }
+    .progress-step {
+      flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; position: relative;
+    }
+    .progress-step:not(:last-child)::after {
+      content: ''; position: absolute; top: 11px; left: 50%; right: -50%;
+      height: 1px; background: rgba(201,162,78,0.2);
+    }
+    .ps-dot {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 1px solid rgba(201,162,78,0.3);
+      background: rgba(201,162,78,0.05);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6rem; color: var(--gold); position: relative; z-index: 1;
+    }
+    .ps-label { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .ps-done .ps-dot { background: rgba(201,162,78,0.15); border-color: var(--gold); }
+    .ps-done .ps-label { color: var(--gold); }
+
+    /* ── FORM BODY ── */
+    main { max-width: 860px; margin: 0 auto; padding: 4rem 6% 6rem; }
+
+    .form-block { margin-bottom: 3rem; }
+    .form-block-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.75rem; padding-bottom: 0.9rem;
+      border-bottom: 1px solid rgba(201,162,78,0.15);
+    }
+    .fb-num {
+      width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+      border: 1px solid rgba(201,162,78,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--gold);
+    }
+    .fb-title {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .fb-sub { font-size: 0.72rem; font-weight: 300; color: rgba(255,255,255,0.35); margin-top: 0.1rem; }
+
+    .fg { display: flex; flex-direction: column; gap: 0.4rem; }
+    .fg2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .fg3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .span2 { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+    }
+    label .req { color: var(--gold); font-size: 0.7rem; }
+    label .opt { text-transform: none; letter-spacing: 0; font-weight: 300; color: rgba(255,255,255,0.22); font-size: 0.62rem; }
+
+    input, select, textarea {
+      font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 300;
+      color: var(--white); background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 1px;
+      padding: 0.85rem 1rem; width: 100%; outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none; appearance: none;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.18); }
+    input:focus, select:focus, textarea:focus { border-color: rgba(201,162,78,0.55); background: rgba(201,162,78,0.04); }
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(201,162,78,0.45)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 0.85rem center;
+      background-size: 15px; padding-right: 2.5rem; cursor: pointer;
+    }
+    select option { background: var(--purple); color: var(--white); }
+    textarea { resize: vertical; min-height: 95px; }
+
+    /* Policy acknowledgment checkboxes */
+    .policy-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,162,78,0.12);
+      border-radius: 1px; padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .policy-item { display: flex; gap: 1rem; align-items: flex-start; cursor: pointer; }
+    .policy-item input[type="checkbox"] {
+      width: 18px; height: 18px; min-width: 18px; padding: 0;
+      border: 1px solid rgba(201,162,78,0.4);
+      background: rgba(201,162,78,0.04);
+      border-radius: 1px; cursor: pointer; margin-top: 2px;
+      accent-color: var(--gold);
+    }
+    .policy-item input[type="checkbox"]:focus { border-color: var(--gold); }
+    .policy-text { font-size: 0.82rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.55); }
+    .policy-text strong { color: var(--white); font-weight: 500; }
+    .policy-text em { color: var(--gold); font-style: normal; }
+
+    /* Submit */
+    .intake-submit {
+      margin-top: 3rem; padding-top: 2.5rem;
+      border-top: 1px solid rgba(201,162,78,0.15);
+      display: flex; flex-direction: column; align-items: center; gap: 1.25rem; text-align: center;
+    }
+    .intake-submit p { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1.7; }
+    button[type="submit"] {
+      font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--purple); background: var(--gold);
+      padding: 1.1rem 3rem; border: none; border-radius: 1px;
+      cursor: pointer; transition: background 0.2s, transform 0.2s;
+    }
+    button[type="submit"]:hover { background: var(--gold-hover); transform: translateY(-1px); }
+    button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    /* Success */
+    .intake-success {
+      display: none; text-align: center; padding: 4rem 2rem; max-width: 480px; margin: 0 auto;
+    }
+    .intake-success.show { display: block; }
+    .success-ring {
+      width: 68px; height: 68px; border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;
+    }
+    .success-ring svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .intake-success h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 300; color: var(--white); margin-bottom: 1rem;
+    }
+    .intake-success p { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .intake-success a { color: var(--gold); text-decoration: none; }
+
+    /* Footer */
+    .intake-footer {
+      background: var(--purple-deep);
+      border-top: 1px solid rgba(201,162,78,0.1);
+      padding: 2rem 6%; text-align: center;
+    }
+    .intake-footer p { font-size: 0.72rem; font-weight: 300; color: rgba(255,255,255,0.2); }
+    .intake-footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .intake-footer a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      main { padding: 3rem 5% 4rem; }
+      .fg2, .fg3 { grid-template-columns: 1fr; }
+      header { padding: 1rem 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="hdr-logo">
+    <img src="logo-primary.png" alt="DHDO" />
+  </a>
+  <span class="hdr-badge">Client Intake Form</span>
+</header>
+
+<div class="intake-hero">
+  <div class="eyebrow">Step 2 of 3</div>
+  <h1>Your Intake Form.<br><em>Almost Ready to Scan.</em></h1>
+  <p>This takes about 10 minutes. The more detail you provide, the smoother your scan day will be — and the cleaner your final documentation.</p>
+  <div class="progress-bar">
+    <div class="progress-step ps-done">
+      <div class="ps-dot">✓</div>
+      <div class="ps-label">Scheduled</div>
+    </div>
+    <div class="progress-step ps-done">
+      <div class="ps-dot">2</div>
+      <div class="ps-label">Intake</div>
+    </div>
+    <div class="progress-step">
+      <div class="ps-dot">3</div>
+      <div class="ps-label">Scan Day</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!--
+    FORM SETUP: replace 'YOUR_FORMSPREE_URL' in handleIntakeSubmit() with your Formspree endpoint.
+    Create a separate Formspree form for intake vs. the landing page form.
+  -->
+  <form id="intakeForm" onsubmit="handleIntakeSubmit(event)" novalidate>
+
+    <!-- 1. Property Details -->
+    <div class="form-block">
+      <div class="form-block-header">
+        <div class="fb-num">1</div>
+        <div>
+          <div class="fb-title">Property Details</div>
+          <div class="fb-sub">Tell us about the home we'll be documenting.</div>
+        </div>
+      </div>
+      <div class="fg2">
+        <div class="fg span2">
+          <label for="i-address">Property Address <span class="req">*</span></label>
+          <input type="text" id="i-address" name="address" placeholder="123 Main Street" required />
+        </div>
+        <div class="fg">
+          <label for="i-city">City, State, ZIP <span class="req">*</span></label>
+          <input type="text" id="i-city" name="city_state_zip" placeholder="Lake Charles, LA 70601" required />
+        </div>
+        <div class="fg">
+          <label for="i-type">Property Type <span class="req">*</span></label>
+          <select id="i-type" name="property_type" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Single Family</option>
+            <option>Townhome</option>
+            <option>Condo</option>
+            <option>Estate</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="i-sqft">Approx. Square Footage</label>
+          <input type="text" id="i-sqft" name="sqft" placeholder="e.g. 2,400 sq ft" />
+        </div>
+        <div class="fg">
+          <label for="i-stories">Number of Stories</label>
+          <input type="text" id="i-stories" name="stories" placeholder="e.g. 2" />
+        </div>
+        <div class="fg">
+          <label for="i-year">Year Built <span class="opt">if known</span></label>
+          <input type="text" id="i-year" name="year_built" placeholder="e.g. 1998" />
+        </div>
+        <div class="fg span2">
+          <label for="i-access">Special Access Notes <span class="opt">gate codes, alarm info, lockboxes, parking</span></label>
+          <textarea id="i-access" name="access_notes" placeholder="Leave blank if none"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Item & Receipt Estimates -->
+    <div class="form-block">
+      <div class="form-block-header">
+        <div class="fb-num">2</div>
+        <div>
+          <div class="fb-title">Item &amp; Receipt Estimates</div>
+          <div class="fb-sub">Helps us estimate tagging time and quote accurately.</div>
+        </div>
+      </div>
+      <div class="fg2">
+        <div class="fg">
+          <label for="i-with">Items WITH Receipts <span class="opt">approx. count</span></label>
+          <input type="number" id="i-with" name="items_with_receipts" placeholder="e.g. 40" min="0" />
+        </div>
+        <div class="fg">
+          <label for="i-without">Items WITHOUT Receipts <span class="opt">approx. count</span></label>
+          <input type="number" id="i-without" name="items_no_receipts" placeholder="e.g. 15" min="0" />
+        </div>
+        <div class="fg span2">
+          <label for="i-highval">High-Value Items <span class="opt">jewelry, firearms, fine art, wine, collections</span></label>
+          <textarea id="i-highval" name="high_value_items" placeholder="Describe any items requiring special handling or documentation..."></textarea>
+        </div>
+        <div class="fg span2">
+          <label for="i-serial">Known Serial Numbers / VINs <span class="opt">list any you have handy — we'll capture the rest on scan day</span></label>
+          <textarea id="i-serial" name="serial_numbers" placeholder="e.g. TV - SN: ABC12345, Vehicle - VIN: 1HGBH41JXMN109186"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Secondary Contact -->
+    <div class="form-block">
+      <div class="form-block-header">
+        <div class="fb-num">3</div>
+        <div>
+          <div class="fb-title">Secondary Contact <span style="font-weight:300;text-transform:none;letter-spacing:0;font-size:0.6rem;color:rgba(255,255,255,0.3)">— Optional</span></div>
+          <div class="fb-sub">Spouse, partner, or property manager we can coordinate with.</div>
+        </div>
+      </div>
+      <div class="fg2">
+        <div class="fg">
+          <label for="i-name2">Full Name</label>
+          <input type="text" id="i-name2" name="secondary_name" placeholder="First Last" />
+        </div>
+        <div class="fg">
+          <label for="i-rel">Relationship to Property</label>
+          <select id="i-rel" name="secondary_relationship">
+            <option value="" disabled selected>Select one</option>
+            <option>Spouse / Partner</option>
+            <option>Property Manager</option>
+            <option>Family Member</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="i-email2">Email Address</label>
+          <input type="email" id="i-email2" name="secondary_email" placeholder="you@email.com" />
+        </div>
+        <div class="fg">
+          <label for="i-phone2">Phone Number</label>
+          <input type="tel" id="i-phone2" name="secondary_phone" placeholder="(337) 000-0000" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. General Notes -->
+    <div class="form-block">
+      <div class="form-block-header">
+        <div class="fb-num">4</div>
+        <div>
+          <div class="fb-title">General Notes</div>
+          <div class="fb-sub">Pets, rooms to skip, anything we should know before we arrive.</div>
+        </div>
+      </div>
+      <div class="fg">
+        <label for="i-notes">Notes for the Scan Team</label>
+        <textarea id="i-notes" name="general_notes" style="min-height:120px" placeholder="e.g. Dog will be crated, skip the home office, focus on the master closet first..."></textarea>
+      </div>
+    </div>
+
+    <!-- 5. Permissions & Policies -->
+    <div class="form-block">
+      <div class="form-block-header">
+        <div class="fb-num">5</div>
+        <div>
+          <div class="fb-title">Permissions &amp; Acknowledgments</div>
+          <div class="fb-sub">Please read and check each item before submitting.</div>
+        </div>
+      </div>
+      <div class="policy-block">
+
+        <label class="policy-item">
+          <input type="checkbox" name="ack_items" required />
+          <span class="policy-text">
+            <strong>Item Repositioning</strong> — I understand that if a serial number or VIN can only be accessed by moving furniture or stored items, a repositioning fee of <em>$100 per occurrence</em> will apply. I authorize the scan team to make reasonable repositioning requests on scan day.
+          </span>
+        </label>
+
+        <label class="policy-item">
+          <input type="checkbox" name="ack_scanready" required />
+          <span class="policy-text">
+            <strong>Scan-Ready Home</strong> — I understand my home should be tidy and accessible on scan day. If the team cannot walk through and capture rooms cleanly, a <em>$100 scan-ready fee</em> may apply. I will complete the prep checklist sent with my confirmation.
+          </span>
+        </label>
+
+        <label class="policy-item">
+          <input type="checkbox" name="ack_receipts" required />
+          <span class="policy-text">
+            <strong>Receipt Cutoff</strong> — I understand that receipts and item information must be submitted within <em>7 business days</em> of my scan date. Items submitted after that window will incur an additional labeling fee.
+          </span>
+        </label>
+
+        <label class="policy-item">
+          <input type="checkbox" name="ack_payment" required />
+          <span class="policy-text">
+            <strong>Payment Terms</strong> — I understand that payment is due upon delivery of my completed scan and documentation. Balances unpaid after 14 days are subject to a <em>1.5% monthly finance charge plus a $25 administrative fee</em>.
+          </span>
+        </label>
+
+        <label class="policy-item">
+          <input type="checkbox" name="ack_privacy" required />
+          <span class="policy-text">
+            <strong>Data &amp; Privacy</strong> — I understand that my property information, receipts, and asset data are collected solely for the purpose of creating my DHDO documentation package. This information is kept confidential and is not shared with third parties outside of the scope of my documentation service.
+          </span>
+        </label>
+
+      </div>
+    </div>
+
+    <div class="intake-submit">
+      <p>By submitting, you confirm all information is accurate to the best of your knowledge.<br />Questions before submitting? Call <a href="tel:3378425404" style="color:var(--gold)">(337) 842-5404</a>.</p>
+      <button type="submit" id="intakeBtn">Submit Intake Form</button>
+    </div>
+
+  </form>
+
+  <div class="intake-success" id="intakeSuccess">
+    <div class="success-ring">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h2>Intake Complete</h2>
+    <p>
+      We have everything we need. Your DHDO team will review your intake before scan day and reach out if we have any questions.<br /><br />
+      See you on scan day — we'll take it from here.<br /><br />
+      Questions? Call <a href="tel:3378425404">(337) 842-5404</a>.
+    </p>
+  </div>
+
+</main>
+
+<footer class="intake-footer">
+  <p>DHDO — Digital Home Documentation &amp; Organization &nbsp;·&nbsp; A Division of <a href="https://bradberryconstruction.com">Bradberry Construction &amp; Design</a> &nbsp;·&nbsp; <a href="index.html">Back to main site</a></p>
+</footer>
+
+<script>
+  async function handleIntakeSubmit(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('intakeForm');
+    const btn  = document.getElementById('intakeBtn');
+
+    // Validate all required checkboxes
+    const boxes = form.querySelectorAll('input[type="checkbox"][required]');
+    let allChecked = true;
+    boxes.forEach(b => { if (!b.checked) allChecked = false; });
+    if (!allChecked) {
+      alert('Please read and acknowledge all policies before submitting.');
+      return;
+    }
+
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+
+    try {
+      // REPLACE 'YOUR_INTAKE_FORMSPREE_URL' with a separate Formspree endpoint for intake forms
+      const res = await fetch('YOUR_INTAKE_FORMSPREE_URL', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('intakeSuccess').classList.add('show');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Submit Intake Form';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us at (337) 842-5404.');
+    }
+  }
+</script>
+</body>
+</html>
