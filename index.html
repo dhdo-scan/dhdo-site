@@ -549,7 +549,8 @@
     @media (max-width: 720px) { .scan-grid { grid-template-columns: 1fr; } }
 
     /* ──────────── KITCHEN BANNER ──────────── */
-    .kitchen-banner { width: 100%; height: 420px; object-fit: cover; object-position: center 40%; display: block; }
+    .kitchen-banner { width: 100%; height: 480px; object-fit: contain; object-position: center center; display: block; background: #1A0E2E; }
+    @media (max-width: 720px) { .kitchen-banner { height: auto; aspect-ratio: 16/9; object-fit: contain; object-position: center center; } }
 
     /* ──────────── SCROLL ANIMATIONS ──────────── */
     .fade { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s ease; }
