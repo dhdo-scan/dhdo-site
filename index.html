@@ -578,7 +578,7 @@
 <!-- ═══ NAV ═══ -->
 <nav>
   <a href="#hero" class="nav-logo">
-    <img src="logo-primary.png" alt="DHDO — Digital Home Documentation & Organization" style="height:40px;width:auto;display:block;" />
+    <img src="logo-primary.png" alt="DHDO — Digital Home Documentation & Organization" style="height:52px;width:auto;display:block;" />
   </a>
   <ul class="nav-right">
     <li><a href="#about">What We Do</a></li>
@@ -1091,7 +1091,7 @@
   <div class="inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="logo-primary.png" alt="DHDO" style="height:44px;width:auto;display:block;margin-bottom:0.75rem;" />
+        <img src="logo-primary.png" alt="DHDO" style="height:56px;width:auto;display:block;margin-bottom:0.75rem;" />
         <p>Digital Home Documentation &amp; Organization.<br />A Division of Bradberry Construction &amp; Design.</p>
       </div>
       <div class="f-col">
@@ -1140,19 +1140,24 @@
     btn.disabled = true;
 
     const data = new FormData(document.getElementById('consultForm'));
-    data.append('form_type', 'landing');
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbwMQ-XtnmNGniSPX0TTglKXAToOxy6_uN0GL5vBwgDRFCvV-3qGZC8cl9XYkZ7dKF8_Bw/exec', {
+      // ── REPLACE 'YOUR_FORMSPREE_URL' below ──
+      // 1. Go to formspree.io and create a free form (takes 2 minutes)
+      // 2. Paste your endpoint here, e.g. https://formspree.io/f/xyzabcde
+      const res = await fetch('YOUR_FORMSPREE_URL', {
         method: 'POST',
         body: data,
-        mode: 'no-cors'
+        headers: { 'Accept': 'application/json' }
       });
 
-      // no-cors means we can't read the response — assume success
-      document.getElementById('consultForm').style.display = 'none';
-      document.getElementById('formSuccess').classList.add('show');
-      document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (res.ok) {
+        document.getElementById('consultForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+        document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error('Server error');
+      }
     } catch {
       btn.textContent = 'Submit Request';
       btn.disabled = false;
@@ -1162,4 +1167,3 @@
 </script>
 </body>
 </html>
-<!-- dhdo-site -->
