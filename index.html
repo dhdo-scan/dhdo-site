@@ -1143,18 +1143,20 @@
     btn.disabled = true;
 
     const data = new FormData(document.getElementById('consultForm'));
+    data.append('form_type', 'landing');
 
     try {
-      // ── REPLACE 'YOUR_FORMSPREE_URL' below ──
+      // ── REPLACE 'https://script.google.com/macros/s/AKfycbwMQ-XtnmNGniSPX0TTglKXAToOxy6_uN0GL5vBwgDRFCvV-3qGZC8cl9XYkZ7dKF8_Bw/exec' below ──
       // 1. Go to formspree.io and create a free form (takes 2 minutes)
       // 2. Paste your endpoint here, e.g. https://formspree.io/f/xyzabcde
-      const res = await fetch('YOUR_FORMSPREE_URL', {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbwMQ-XtnmNGniSPX0TTglKXAToOxy6_uN0GL5vBwgDRFCvV-3qGZC8cl9XYkZ7dKF8_Bw/exec', {
         method: 'POST',
         body: data,
-        headers: { 'Accept': 'application/json' }
+        mode: 'no-cors'
       });
 
-      if (res.ok) {
+      // no-cors returns opaque response — treat as success
+      if (true) {
         document.getElementById('consultForm').style.display = 'none';
         document.getElementById('formSuccess').classList.add('show');
         document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
