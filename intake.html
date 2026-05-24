@@ -476,16 +476,18 @@
     btn.disabled = true;
 
     const data = new FormData(form);
+    data.append('form_type', 'intake');
 
     try {
-      // REPLACE 'YOUR_INTAKE_FORMSPREE_URL' with a separate Formspree endpoint for intake forms
-      const res = await fetch('YOUR_INTAKE_FORMSPREE_URL', {
+      // REPLACE 'https://script.google.com/macros/s/AKfycbwMQ-XtnmNGniSPX0TTglKXAToOxy6_uN0GL5vBwgDRFCvV-3qGZC8cl9XYkZ7dKF8_Bw/exec' with a separate Formspree endpoint for intake forms
+      const res = await fetch('https://script.google.com/macros/s/AKfycbwMQ-XtnmNGniSPX0TTglKXAToOxy6_uN0GL5vBwgDRFCvV-3qGZC8cl9XYkZ7dKF8_Bw/exec', {
         method: 'POST',
         body: data,
-        headers: { 'Accept': 'application/json' }
+        mode: 'no-cors'
       });
 
-      if (res.ok) {
+      // no-cors returns opaque response — treat as success
+      if (true) {
         form.style.display = 'none';
         document.getElementById('intakeSuccess').classList.add('show');
         window.scrollTo({ top: 0, behavior: 'smooth' });
