@@ -35,13 +35,12 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 6%; height: 84px;
-      background: rgba(248,244,238,0.98);
+      padding: 0 6%; height: 72px;
+      background: rgba(46,26,71,0.97);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(201,162,78,0.25);
-      box-shadow: 0 2px 24px rgba(46,26,71,0.07);
+      border-bottom: 1px solid var(--border-gold);
     }
-    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
+    .nav-logo { text-decoration: none; display: flex; align-items: baseline; gap: 0.6rem; }
     .nav-logo-dhdo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.55rem; font-weight: 600;
@@ -56,21 +55,21 @@
     .nav-right { display: flex; align-items: center; gap: 2.25rem; list-style: none; }
     .nav-right a {
       font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(46,26,71,0.55);
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
       text-decoration: none; transition: color 0.2s;
     }
     .nav-right a:hover { color: var(--gold); }
     .nav-cta {
-      color: var(--white) !important; background: var(--purple) !important;
+      color: var(--purple) !important; background: var(--gold) !important;
       padding: 0.55rem 1.5rem; border-radius: 1px;
       transition: background 0.2s, transform 0.2s !important;
     }
-    .nav-cta:hover { background: var(--gold) !important; color: var(--purple) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--gold-hover) !important; transform: translateY(-1px); }
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 4px;
     }
-    .hamburger span { width: 22px; height: 1.5px; background: var(--purple); display: block; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--white); display: block; }
     .mobile-menu {
       display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
       background: var(--purple); border-top: 1px solid var(--border-gold);
@@ -579,7 +578,7 @@
 <!-- ═══ NAV ═══ -->
 <nav>
   <a href="#hero" class="nav-logo">
-    <img src="logo-primary.png" alt="DHDO — Digital Home Documentation & Organization" style="height:68px;width:auto;display:block;" />
+    <img src="logo-primary.png" alt="DHDO — Digital Home Documentation & Organization" style="width:280px;height:auto;display:block;" />
   </a>
   <ul class="nav-right">
     <li><a href="#about">What We Do</a></li>
@@ -604,6 +603,7 @@
 <section id="hero">
   <div class="hero-grid-lines"></div>
   <div class="hero-orb"></div>
+  <img src="logo-primary.png" alt="DHDO" style="width:300px;height:auto;display:block;margin:0 auto 2.5rem;position:relative;" />
   <div class="hero-eyebrow">A Division of Bradberry Construction &amp; Design</div>
   <h1>Your Home, Documented.<br><em>Protected. Ready.</em></h1>
   <p class="hero-sub">A white-glove 3D documentation service that creates an irrefutable record of everything you own — before a storm, a fire, or a disputed claim forces you to wish you had it.</p>
@@ -1024,6 +1024,7 @@
 
     <!-- Success state -->
     <div class="form-success" id="formSuccess">
+      <img src="logo-primary.png" alt="DHDO" style="width:200px;height:auto;display:block;margin:0 auto 2rem;opacity:0.9;" />
       <div class="success-ring">
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
