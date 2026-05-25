@@ -474,7 +474,23 @@
     const form = document.getElementById('intakeForm');
     const btn  = document.getElementById('intakeBtn');
 
-    // Validate all required checkboxes
+    // ── Field validation ──
+    const email   = form.querySelector('[name="client_email"]').value.trim();
+    const phone   = form.querySelector('[name="client_phone"]').value.trim();
+    const address = form.querySelector('[name="address"]').value.trim();
+    const city    = form.querySelector('[name="city_state_zip"]').value.trim();
+    const type    = form.querySelector('[name="property_type"]').value;
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const phoneOk = /^[\d\s\(\)\-\+]{7,15}$/.test(phone);
+
+    if (!email || !emailOk)  { alert('Please enter a valid email address.'); form.querySelector('[name="client_email"]').focus(); return; }
+    if (!phone || !phoneOk)  { alert('Please enter a valid phone number.'); form.querySelector('[name="client_phone"]').focus(); return; }
+    if (!address)            { alert('Please enter the property address.'); form.querySelector('[name="address"]').focus(); return; }
+    if (!city)               { alert('Please enter the city, state, and ZIP.'); form.querySelector('[name="city_state_zip"]').focus(); return; }
+    if (!type)               { alert('Please select a property type.'); form.querySelector('[name="property_type"]').focus(); return; }
+
+    // ── Checkbox validation ──
     const boxes = form.querySelectorAll('input[type="checkbox"][required]');
     let allChecked = true;
     boxes.forEach(b => { if (!b.checked) allChecked = false; });
