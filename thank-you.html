@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>You're On the List — DHDO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple:      #2E1A47;
+      --purple-deep: #1A0E2E;
+      --gold:        #C9A24E;
+      --gold-hover:  #D9B56A;
+      --white:       #FFFFFF;
+      --cream:       #F8F4EE;
+      --cream-dark:  #EDE7DD;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Outfit', sans-serif; background: var(--purple); color: var(--white); min-height: 100vh; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; }
+    header {
+      background: rgba(248,244,238,0.98);
+      border-bottom: 1px solid rgba(201,162,78,0.25);
+      box-shadow: 0 2px 24px rgba(46,26,71,0.07);
+      padding: 1rem 6%; display: flex; align-items: center; justify-content: space-between;
+    }
+    header a { text-decoration: none; }
+    header img { height: 52px; width: auto; display: block; }
+    header span {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple);
+      background: rgba(46,26,71,0.07); border: 1px solid rgba(46,26,71,0.15);
+      padding: 0.4rem 1rem; border-radius: 1px;
+    }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 5rem 6%; }
+    .card { max-width: 520px; width: 100%; text-align: center; }
+    .ring {
+      width: 72px; height: 72px; border-radius: 50%;
+      border: 1px solid var(--gold);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;
+    }
+    .ring svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--white); margin-bottom: 1rem; }
+    .sub { font-size: 0.95rem; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); margin-bottom: 3rem; }
+    .sub strong { color: var(--gold); font-weight: 500; }
+    .steps { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem; text-align: left; }
+    .step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      border: 1px solid rgba(201,162,78,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--gold);
+    }
+    .step strong { font-size: 0.88rem; font-weight: 500; color: var(--white); display: block; margin-bottom: 0.25rem; }
+    .step p { font-size: 0.78rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.4); margin: 0; }
+    .divider { height: 1px; background: rgba(201,162,78,0.15); margin: 2rem 0; }
+    .intake-btn {
+      display: inline-block; font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold);
+      background: var(--purple-deep); padding: 1.05rem 2.75rem;
+      border-radius: 1px; text-decoration: none;
+      border: 1.5px solid var(--gold); transition: all 0.2s;
+    }
+    .intake-btn:hover { background: var(--gold); color: var(--purple); }
+    .note { margin-top: 0.75rem; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .note a { color: var(--gold); text-decoration: none; }
+    footer {
+      background: var(--purple-deep);
+      border-top: 1px solid rgba(201,162,78,0.1);
+      padding: 1.5rem 6%; text-align: center;
+    }
+    footer p { font-size: 0.72rem; font-weight: 300; color: rgba(255,255,255,0.2); }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html"><img src="logo-primary.png" alt="DHDO" /></a>
+  <span>Scan Requested</span>
+</header>
+<main>
+  <div class="card">
+    <div class="ring">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1>You're On the List</h1>
+    <p class="sub">A member of the DHDO team will call you within <strong>24–48 hours</strong> to confirm your scan date and walk you through what to expect.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <strong>Confirmation Call</strong>
+          <p>We confirm your date, answer questions, and set expectations for scan day.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <strong>Complete Your Intake Form</strong>
+          <p>Property details, asset info, and scan day preferences — takes about 10 minutes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <strong>Scan Day</strong>
+          <p>Our team arrives, captures everything, and delivers your complete digital record within 5–7 business days.</p>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <a href="intake.html" class="intake-btn">Complete Your Intake Form Now →</a>
+    <p class="note">Optional — we'll also send this link via text and email after your confirmation call.<br />Questions? Call <a href="tel:3378425404">(337) 842-5404</a></p>
+  </div>
+</main>
+<footer>
+  <p>DHDO — Digital Home Documentation &amp; Organization &nbsp;·&nbsp; A Division of <a href="https://bradberryconstruction.com">Bradberry Construction &amp; Design</a> &nbsp;·&nbsp; <a href="index.html">Back to main site</a></p>
+</footer>
+</body>
+</html>
