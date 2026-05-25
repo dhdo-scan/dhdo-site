@@ -1341,15 +1341,16 @@
     btn.disabled = true;
 
     const data = new FormData(document.getElementById('consultForm'));
+    data.append('form_type', 'landing');
 
     try {
-      // ── REPLACE 'YOUR_FORMSPREE_URL' below ──
+      // ── REPLACE 'https://script.google.com/macros/s/AKfycbx3Hhi7ev0t3WuyiWdie0D8mFcGVhv0o0YIlL8RHkTVP6bl8g5cyNaU6dxwsqemz5VeZw/exec' below ──
       // 1. Go to formspree.io and create a free form (takes 2 minutes)
       // 2. Paste your endpoint here, e.g. https://formspree.io/f/xyzabcde
-      const res = await fetch('YOUR_FORMSPREE_URL', {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbx3Hhi7ev0t3WuyiWdie0D8mFcGVhv0o0YIlL8RHkTVP6bl8g5cyNaU6dxwsqemz5VeZw/exec', {
         method: 'POST',
         body: data,
-        headers: { 'Accept': 'application/json' }
+        mode: 'no-cors'
       });
 
       if (true) {
