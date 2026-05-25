@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>DHDO — Schedule Your Home Scan</title>
+  <meta name="description" content="Schedule your 3D home documentation scan with DHDO. Serving Lake Charles, Lafayette, and South Louisiana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple:      #2E1A47;
+      --purple-deep: #1A0E2E;
+      --gold:        #C9A24E;
+      --gold-hover:  #D9B56A;
+      --white:       #FFFFFF;
+      --cream:       #F8F4EE;
+      --cream-dark:  #EDE7DD;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--purple); color: var(--white); min-height: 100vh; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; }
+
+    header {
+      background: rgba(248,244,238,0.98);
+      border-bottom: 1px solid rgba(201,162,78,0.25);
+      box-shadow: 0 2px 24px rgba(46,26,71,0.07);
+      padding: 1rem 6%; display: flex; align-items: center; justify-content: space-between;
+    }
+    header a { text-decoration: none; }
+    header img { height: 52px; width: auto; display: block; }
+    header span {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple);
+      background: rgba(46,26,71,0.07); border: 1px solid rgba(46,26,71,0.15);
+      padding: 0.4rem 1rem; border-radius: 1px;
+    }
+
+    .hero {
+      background: var(--purple);
+      padding: 5rem 6% 4rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(201,162,78,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(201,162,78,0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    .hero-orb {
+      position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,162,78,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      margin-bottom: 1.5rem; position: relative;
+    }
+    .eyebrow::before, .eyebrow::after { content: ''; width: 36px; height: 1px; background: var(--gold); opacity: 0.35; }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 300; line-height: 1.1; color: var(--white);
+      margin-bottom: 1rem; position: relative;
+    }
+    h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.9;
+      color: rgba(255,255,255,0.48); max-width: 480px;
+      margin: 0 auto 2.5rem; position: relative;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-gold {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--purple); background: var(--gold);
+      padding: 1.05rem 2.75rem; border-radius: 1px; text-decoration: none;
+      border: 1.5px solid var(--gold); transition: all 0.25s;
+    }
+    .btn-gold:hover { background: var(--gold-hover); transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-block; font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); padding: 1.05rem 2.75rem;
+      border-radius: 1px; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.18); transition: all 0.25s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Value props */
+    .props { background: var(--cream); padding: 4rem 6%; }
+    .props-inner { max-width: 900px; margin: 0 auto; }
+    .props-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--cream-dark); }
+    .prop {
+      background: var(--white); padding: 2rem 1.75rem;
+      border-top: 2px solid transparent; transition: border-color 0.2s;
+    }
+    .prop:hover { border-top-color: var(--gold); }
+    .prop-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(201,162,78,0.08);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+    }
+    .prop-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .prop h3 { font-size: 0.92rem; font-weight: 600; color: var(--purple); margin-bottom: 0.5rem; }
+    .prop p { font-size: 0.8rem; font-weight: 300; line-height: 1.75; color: rgba(46,26,71,0.58); }
+
+    /* Source tracker — hidden, used for analytics */
+    .source-note { text-align: center; padding: 2rem; font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+    footer {
+      background: var(--purple-deep);
+      border-top: 1px solid rgba(201,162,78,0.1);
+      padding: 1.5rem 6%; text-align: center; margin-top: auto;
+    }
+    footer p { font-size: 0.72rem; font-weight: 300; color: rgba(255,255,255,0.2); }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .props-grid { grid-template-columns: 1fr; }
+      .hero { padding: 4rem 5% 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html"><img src="logo-primary.png" alt="DHDO" /></a>
+  <span>Schedule a Scan</span>
+</header>
+
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="eyebrow">Digital Home Documentation & Organization</div>
+  <h1>Your Home,<br>Documented.<br><em>Protected. Ready.</em></h1>
+  <p class="hero-sub">One scan. Every room. Every item tagged with photos, serial numbers, and receipts — stored securely and accessible the moment you need it.</p>
+  <div class="hero-actions">
+    <a href="index.html#schedule" class="btn-gold">Schedule Your Scan</a>
+    <a href="tel:3378425404" class="btn-ghost">Call (337) 842-5404</a>
+  </div>
+</div>
+
+<div class="props">
+  <div class="props-inner">
+    <div class="props-grid">
+      <div class="prop">
+        <div class="prop-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Insurance Claims</h3>
+        <p>An irrefutable 3D record with every item tagged. Turns a disputed claim into a settled one — no receipts to dig up.</p>
+      </div>
+      <div class="prop">
+        <div class="prop-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Disaster Preparedness</h3>
+        <p>Stored securely off-site. If a storm, flood, or fire hits, your complete inventory is available immediately from any device.</p>
+      </div>
+      <div class="prop">
+        <div class="prop-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Estate & Legal</h3>
+        <p>A timestamped asset inventory for estate planning, divorce proceedings, or any situation requiring an accurate record.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Source tracking — update UTM or ref param per QR campaign -->
+<p class="source-note">Scanned from print material &nbsp;·&nbsp; <a href="index.html" style="color:rgba(255,255,255,0.3)">View full site</a></p>
+
+<footer>
+  <p>DHDO — Digital Home Documentation &amp; Organization &nbsp;·&nbsp; A Division of <a href="https://bradberryconstruction.com">Bradberry Construction &amp; Design</a></p>
+</footer>
+
+<script>
+  // Auto-capture UTM source from URL for analytics
+  const params = new URLSearchParams(window.location.search);
+  const src = params.get('src') || params.get('utm_source') || 'qr-unknown';
+  document.querySelector('.source-note').dataset.source = src;
+  // When GA4 is live, push: gtag('event', 'qr_scan', { source: src });
+</script>
+
+</body>
+</html>
