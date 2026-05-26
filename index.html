@@ -1427,6 +1427,11 @@
   function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
   function closeMob()   { document.getElementById('mob').classList.remove('open'); }
 
+  (function() {
+    const minD = new Date(); minD.setDate(minD.getDate() + 7);
+    document.getElementById('f-date1').min = minD.toISOString().split('T')[0];
+  })();
+
   document.getElementById('f-date1').addEventListener('change', function() {
     const backup = document.getElementById('f-date2');
     if (this.value) {
@@ -1464,7 +1469,9 @@
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const phoneOk = /^[\d\s\(\)\-\+]{7,15}$/.test(phone);
     const today   = new Date().toISOString().split('T')[0];
-    const dateOk  = date1 && date1 >= today;
+    const minDate = new Date(); minDate.setDate(minDate.getDate() + 7);
+    const minDateStr = minDate.toISOString().split('T')[0];
+    const dateOk  = date1 && date1 >= minDateStr;
     // Backup must be after preferred date if preferred is set, otherwise just after today
     const backupMin = date1 || today;
     const backupOk  = !date2 || date2 > backupMin;
@@ -1472,7 +1479,7 @@
     if (!name)     { alert('Please enter your full name.'); document.getElementById('f-name').focus(); return; }
     if (!emailOk)  { alert('Please enter a valid email address.'); document.getElementById('f-email').focus(); return; }
     if (!phoneOk)  { alert('Please enter a valid phone number.'); document.getElementById('f-phone').focus(); return; }
-    if (!dateOk)   { alert('Please select a preferred scan date in the future.'); document.getElementById('f-date1').focus(); return; }
+    if (!dateOk)   { alert('Please select a preferred scan date at least one week from today.'); document.getElementById('f-date1').focus(); return; }
     if (!backupOk) { alert('Backup date must be after your preferred scan date.'); document.getElementById('f-date2').focus(); return; }
 
     btn.textContent = 'Sending...';
