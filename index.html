@@ -1331,7 +1331,6 @@
         <div class="team-role">Sales Manager</div>
         <div class="team-contact">
           <a href="tel:3373911867">(337) 391-1867</a>
-          <a href="mailto:support@bradberryconstruct.com">support@bradberryconstruct.com</a>
         </div>
       </div>
       <div class="team-card">
@@ -1367,8 +1366,11 @@
         <h5>Navigate</h5>
         <ul>
           <li><a href="#about">What We Do</a></li>
+          <li><a href="#scans">Live Scans</a></li>
           <li><a href="#process">Our Process</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#schedule">Schedule a Scan</a></li>
         </ul>
         <a href="https://www.dhdoscan.com/intake.html" style="display:block;margin-top:1rem;font-size:0.72rem;font-weight:300;color:rgba(255,255,255,0.28);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">Already booked? → Complete Your Intake Form</a>
@@ -1441,7 +1443,8 @@
       // ── REPLACE 'https://script.google.com/macros/s/AKfycbxeKKjpxsK8YJxMv4B4T0idt-0JLY6cklJRWNqACYUIgz7pvhxyv0AoNuiGnpvOXm7PbQ/exec' below ──
       // 1. Go to formspree.io and create a free form (takes 2 minutes)
       // 2. Paste your endpoint here, e.g. https://formspree.io/f/xyzabcde
-      const res = await fetch('https://script.google.com/macros/s/AKfycbxeKKjpxsK8YJxMv4B4T0idt-0JLY6cklJRWNqACYUIgz7pvhxyv0AoNuiGnpvOXm7PbQ/exec', {
+      const _a = 'https://script.google.com', _b = '/macros/s/', _c = 'AKfycbxeKKjpxsK8YJxM', _d = 'v4B4T0idt-0JLY6cklJRWNqACYUIgz7pvhxy', _e = 'v0AoNuiGnpvOXm7PbQ';
+      const res = await fetch(_a + _b + _c + _d + _e + '/exec', {
         method: 'POST',
         body: data,
         mode: 'no-cors'
