@@ -632,6 +632,10 @@
     .t-placeholder .t-quote { color: rgba(255,255,255,0.4); font-style: normal; font-size: 0.88rem; font-family: 'Outfit', sans-serif; }
     @media (max-width: 860px) { .testimonial-grid { grid-template-columns: 1fr; } }
 
+
+    /* Email obfuscation */
+    .obf-email { unicode-bidi: bidi-override; direction: rtl; }
+
   </style>
 
   <!-- Schema Markup -->
@@ -1331,6 +1335,7 @@
         <div class="team-role">Sales Manager</div>
         <div class="team-contact">
           <a href="tel:3373911867">(337) 391-1867</a>
+          <a href="#" class="team-email" data-em="moc.nacsodhd@yaj" onclick="return openEmail(this)">&nbsp;</a>
         </div>
       </div>
       <div class="team-card">
@@ -1339,14 +1344,16 @@
         <div class="team-role">Sales Representative</div>
         <div class="team-contact">
           <a href="tel:3378425404">(337) 842-5404</a>
+          <a href="#" class="team-email" data-em="moc.nacsodhd@haon" onclick="return openEmail(this)">&nbsp;</a>
         </div>
       </div>
       <div class="team-card">
-        <div class="team-initials">GG</div>
-        <div class="team-name">Gabe Gillet</div>
-        <div class="team-role">Sales Representative</div>
+        <div class="team-initials">JB</div>
+        <div class="team-name">Jonathan Bradberry</div>
+        <div class="team-role">CEO</div>
         <div class="team-contact">
-          <a href="tel:3374990879">(337) 499-0879</a>
+          <a href="tel:3374998600">(337) 499-8600</a>
+          <a href="#" class="team-email" data-em="moc.nacsodhd@nahtanoj" onclick="return openEmail(this)">&nbsp;</a>
         </div>
       </div>
     </div>
@@ -1396,6 +1403,26 @@
     document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   }
+
+
+  // Email obfuscation — decode reversed email addresses
+  function openEmail(el) {
+    const rev = el.dataset.em.split('').reverse().join('');
+    el.href = 'mailto:' + rev;
+    el.textContent = rev;
+    el.onclick = null;
+    return false;
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.team-email').forEach(function(el) {
+      const rev = el.dataset.em.split('').reverse().join('');
+      el.textContent = rev;
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'mailto:' + rev;
+      });
+    });
+  });
 
   function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
   function closeMob()   { document.getElementById('mob').classList.remove('open'); }
