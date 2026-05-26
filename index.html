@@ -1200,6 +1200,8 @@
     </div>
 
     <form id="consultForm" class="fade" onsubmit="handleSubmit(event)" novalidate>
+      <!-- Honeypot — hidden from real users, bots fill it -->
+      <input type="text" name="website" style="display:none;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
       <div class="form-section">Your Information</div>
       <div class="fg2">
