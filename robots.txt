@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /intake.html
+Disallow: /thank-you.html
+Disallow: /privacy.html
+Disallow: /qr.html
+
+Sitemap: https://www.dhdoscan.com/sitemap.xml
