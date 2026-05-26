@@ -254,6 +254,8 @@
   <!--
 -->
   <form id="intakeForm" onsubmit="handleIntakeSubmit(event)" novalidate>
+      <!-- Honeypot — hidden from real users, bots fill it -->
+      <input type="text" name="website" style="display:none;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
     <!-- 1. Property Details -->
     <div class="form-block">
