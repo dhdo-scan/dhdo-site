@@ -1245,49 +1245,6 @@
           <label for="f-date1">Preferred Scan Date <span style="color:var(--gold);font-size:0.7rem">*</span></label>
           <input type="date" id="f-date1" name="preferred_date" required />
         </div>
-        <div class="fg">
-          <label for="f-date2">Backup Date <span class="opt">optional</span></label>
-          <input type="date" id="f-date2" name="backup_date" />
-        </div>
-      </div>
-
-      <!-- Optional extras toggle -->
-      <button type="button" class="optional-toggle" onclick="toggleOptional()" id="optToggle">
-        <span>Add optional details</span>
-        <svg id="optArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-
-      <div id="optionalFields" style="display:none">
-        <div class="form-section" style="margin-top:2rem">Optional Details</div>
-        <div class="fg2">
-          <div class="fg">
-            <label for="f-type">Property Type</label>
-            <select id="f-type" name="property_type">
-              <option value="" disabled selected>Select one</option>
-              <option>Single Family</option>
-              <option>Townhome</option>
-              <option>Condo</option>
-              <option>Estate</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="f-avoid">Days / Times to Avoid</label>
-            <input type="text" id="f-avoid" name="avoid" placeholder="e.g. No Fridays" />
-          </div>
-          <div class="fg">
-            <label for="f-name2">Secondary Contact Name</label>
-            <input type="text" id="f-name2" name="secondary_name" placeholder="First Last" />
-          </div>
-          <div class="fg">
-            <label for="f-phone2">Secondary Contact Phone</label>
-            <input type="tel" id="f-phone2" name="secondary_phone" placeholder="(337) 000-0000" />
-          </div>
-          <div class="fg span2">
-            <label for="f-notes">Anything We Should Know <span class="opt">(pets, gate codes, areas to focus on)</span></label>
-            <textarea id="f-notes" name="notes" placeholder="Leave blank if none"></textarea>
-          </div>
-        </div>
       </div>
 
       <div class="submit-row">
@@ -1438,22 +1395,8 @@
   })();
 
   document.getElementById('f-date1').addEventListener('change', function() {
-    const backup = document.getElementById('f-date2');
-    if (this.value) {
-      // Set min to day after preferred date
-      const next = new Date(this.value);
-      next.setDate(next.getDate() + 1);
-      backup.min = next.toISOString().split('T')[0];
-    }
+    // reserved for future date logic
   });
-
-  function toggleOptional() {
-    const fields = document.getElementById('optionalFields');
-    const btn = document.getElementById('optToggle');
-    const open = fields.style.display === 'block';
-    fields.style.display = open ? 'none' : 'block';
-    btn.classList.toggle('open', !open);
-  }
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
@@ -1469,23 +1412,17 @@
     const email = document.getElementById('f-email').value.trim();
     const phone = document.getElementById('f-phone').value.trim();
     const date1 = document.getElementById('f-date1').value;
-    const date2 = document.getElementById('f-date2').value;
 
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const phoneOk = /^[\d\s\(\)\-\+]{7,15}$/.test(phone);
-    const today   = new Date().toISOString().split('T')[0];
     const minDate = new Date(); minDate.setDate(minDate.getDate() + 7);
     const minDateStr = minDate.toISOString().split('T')[0];
     const dateOk  = date1 && date1 >= minDateStr;
-    // Backup must be after preferred date if preferred is set, otherwise just after today
-    const backupMin = date1 || today;
-    const backupOk  = !date2 || date2 > backupMin;
 
     if (!name)     { alert('Please enter your full name.'); document.getElementById('f-name').focus(); return; }
     if (!emailOk)  { alert('Please enter a valid email address.'); document.getElementById('f-email').focus(); return; }
     if (!phoneOk)  { alert('Please enter a valid phone number.'); document.getElementById('f-phone').focus(); return; }
     if (!dateOk)   { alert('Please select a preferred scan date at least one week from today.'); document.getElementById('f-date1').focus(); return; }
-    if (!backupOk) { alert('Backup date must be after your preferred scan date.'); document.getElementById('f-date2').focus(); return; }
 
     btn.textContent = 'Sending...';
     btn.disabled = true;
