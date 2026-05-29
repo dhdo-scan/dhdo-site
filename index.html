@@ -654,19 +654,119 @@
     "description": "White-glove 3D home documentation and asset management service. Protect what matters most before you ever need it.",
     "url": "https://www.dhdoscan.com",
     "telephone": "+13374151951",
+    "email": "support@bradberryconstruct.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lake Charles",
       "addressRegion": "LA",
       "addressCountry": "US"
     },
-    "areaServed": ["Lake Charles, LA", "Lafayette, LA", "Louisiana"],
-    "serviceType": "3D Home Documentation and Asset Management",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Lake Charles",
+        "addressRegion": "LA"
+      },
+      {
+        "@type": "City",
+        "name": "Lafayette",
+        "addressRegion": "LA"
+      },
+      {
+        "@type": "City",
+        "name": "Baton Rouge",
+        "addressRegion": "LA"
+      },
+      {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 30.2266,
+          "longitude": -93.2174
+        },
+        "geoRadius": "160934"
+      }
+    ],
     "priceRange": "$$",
+    "sameAs": [],
     "parentOrganization": {
       "@type": "Organization",
-      "name": "Bradberry Construction & Design"
-    }
+      "name": "Bradberry Construction & Design",
+      "url": "https://bradberryconstruction.com"
+    },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Jonathan Bradberry",
+        "jobTitle": "CEO",
+        "email": "jonathan@dhdoscan.com"
+      },
+      {
+        "@type": "Person",
+        "name": "Jay Joseph",
+        "jobTitle": "Sales Manager",
+        "email": "jay@dhdoscan.com"
+      },
+      {
+        "@type": "Person",
+        "name": "Noah Dressler",
+        "jobTitle": "Sales Representative",
+        "email": "noah@dhdoscan.com"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "DHDO Home Scan Packages",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Basic Home Scan",
+          "description": "Full interior 3D scan, hosted digital model, shareable access link, permanent cloud storage. Up to 3,000 sq ft.",
+          "price": "350",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro Home Scan",
+          "description": "Everything in Basic plus 2 hours of asset tagging with notes, photos, and receipts linked. Clickable item inventory. Up to 3,000 sq ft.",
+          "price": "450",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Commercial Scan",
+          "description": "Full commercial property scan, 4 hours of asset tagging, offices, retail, and restaurants. Hosted digital model.",
+          "price": "800",
+          "priceCurrency": "USD"
+        }
+      ]
+    },
+    "knowsAbout": [
+      {
+        "@type": "Service",
+        "name": "3D Home Documentation",
+        "description": "Matterport 3D scanning of residential properties with tagged assets, serial numbers, and purchase values for insurance and estate documentation.",
+        "provider": { "@type": "LocalBusiness", "name": "DHDO" },
+        "areaServed": "South Louisiana",
+        "serviceType": "Property Documentation"
+      },
+      {
+        "@type": "Service",
+        "name": "Insurance Documentation Scan",
+        "description": "Pre-loss documentation designed to support insurance claims with a complete, timestamped 3D walkthrough and asset inventory.",
+        "provider": { "@type": "LocalBusiness", "name": "DHDO" },
+        "areaServed": "South Louisiana",
+        "serviceType": "Insurance Documentation"
+      },
+      {
+        "@type": "Service",
+        "name": "Commercial Property Scan",
+        "description": "3D documentation of commercial properties including offices, retail spaces, and restaurants.",
+        "provider": { "@type": "LocalBusiness", "name": "DHDO" },
+        "areaServed": "South Louisiana",
+        "serviceType": "Commercial Documentation"
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -1359,6 +1459,7 @@
       <div class="f-col">
         <h5>Contact</h5>
         <p><a href="tel:3374151951">(337) 415-1951</a></p>
+        <p style="margin-top:0.4rem"><a href="#" class="team-email" data-em="moc.tcurtsnocyrrebdarb@troppus" onclick="return openEmail(this)" style="color:rgba(255,255,255,0.35);text-decoration:none;">support@bradberryconstruct.com</a></p>
         <p style="margin-top:0.4rem">Lake Charles, Louisiana</p>
       </div>
     </div>
