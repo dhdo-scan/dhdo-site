@@ -533,9 +533,9 @@
     .scan-card:hover { transform: translateY(-4px); }
     .scan-card:hover .scan-overlay { opacity: 1; }
     .scan-thumb { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+    .scan-thumb-wrap { position: relative; display: block; }
     .scan-overlay {
-      position: absolute; top: 0; left: 0; right: 0;
-      aspect-ratio: 16/10;
+      position: absolute; inset: 0;
       background: rgba(46,26,71,0.55);
       display: flex; align-items: center; justify-content: center;
       opacity: 0; transition: opacity 0.25s;
@@ -920,9 +920,11 @@
     <div class="scan-grid fade">
 
       <a href="https://my.matterport.com/models/SsQeM3UaRWL" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap">
         <img src="img-scan-poolhouse.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Asset Documentation Scan — Pool House Example" />
         <div class="scan-overlay">
           <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
         </div>
         <div class="scan-info">
           <div class="scan-label">Asset Documentation</div>
@@ -933,9 +935,11 @@
       </a>
 
       <a href="https://my.matterport.com/models/Wu6Tk7btz99" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap">
         <img src="img-scan-newbuild.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="New Build Construction Scan Example" />
         <div class="scan-overlay">
           <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
         </div>
         <div class="scan-info">
           <div class="scan-label">New Construction</div>
@@ -946,9 +950,11 @@
       </a>
 
       <a href="https://my.matterport.com/models/bd8XcU4UYR3" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap">
         <img src="img-scan-construction.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Post Construction Scan Example" />
         <div class="scan-overlay">
           <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        </div>
         </div>
         <div class="scan-info">
           <div class="scan-label">Post Construction</div>
