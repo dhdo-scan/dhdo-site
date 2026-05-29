@@ -1330,6 +1330,7 @@
     <form id="consultForm" class="fade" onsubmit="handleSubmit(event)" novalidate>
       <!-- Honeypot — hidden from real users, bots fill it -->
       <input type="text" name="website" style="display:none;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <input type="hidden" name="dhdo_ts" id="dhdo_ts" />
 
       <div class="form-section">Your Information</div>
       <div class="fg2">
@@ -1548,6 +1549,7 @@
 
     const data = new FormData(document.getElementById('consultForm'));
     data.append('form_type', 'landing');
+    document.getElementById('dhdo_ts').value = Date.now();
 
     try {
       // ── REPLACE 'https://script.google.com/macros/s/AKfycbzfvr5UdFFTPOn-Qc4TgcpA0hGlu56O_6h1id3qPY9_EBo6jm4Qe0g9l94APeCd7S-ZsQ/exec' below ──
