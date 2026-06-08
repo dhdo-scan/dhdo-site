@@ -11,7 +11,7 @@
   <style>
     :root {
       --purple:      #2E1A47;
-      --purple-deep: #1A0E2E;
+      --purple-deep: #1A0E2E;h
       --gold:        #C9A24E;
       --gold-hover:  #D9B56A;
       --white:       #FFFFFF;
@@ -529,18 +529,12 @@
           source: 'intake'
         };
 
-        // PATCH: update existing record if email exists
-        await fetch(_sb + '/rest/v1/scan_requests?email=eq.' + encodeURIComponent(email), {
-          method: 'PATCH', headers: _min, body: JSON.stringify(_intake)
-        });
-
-        // INSERT with ignore-duplicates: creates new record if email doesn't exist, silently skips if it does
-        await fetch(_sb + '/rest/v1/scan_requests', {
-          method: 'POST',
-          headers: { ..._min, 'Prefer': 'resolution=ignore-duplicates,return=minimal' },
-          body: JSON.stringify({ ..._intake, name: email, email: email, phone: phone, client_id: null })
-        });
-
+        // Single RPC — SECURITY DEFINER bypasses RLS, handles upsert internally
+                await fetch(_sb + '/rest/v1/rpc/submit_intake', {
+                            method: 'POST',
+                            headers: { 'apikey': _key, 'Authorization': 'Bearer ' + _key, 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ data: { ..._intake, email: email, phone: phone } })
+                });
         // Notify team + send client confirmation (webhook only fires on INSERT, not PATCH)
         fetch(_sb + '/functions/v1/send-notification', {
           method: 'POST',
