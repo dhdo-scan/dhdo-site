@@ -505,28 +505,48 @@
         const _k2 = 'InJwenZ0ZnZnZXFxaXZ1eWt6YWZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NzU5';
         const _k3 = 'MzEsImV4cCI6MjA5NjQ1MTkzMX0.0Gu4pwMyYj2DKciIamu1l36Gl63Ya9Vt-stLXgJH6hI';
         const _key = _k1 + _k2 + _k3;
-        const _hdrs = {
-          'apikey': _key, 'Authorization': 'Bearer ' + _key,
-          'Content-Type': 'application/json', 'Prefer': 'return=representation'
-        };
+        const _min = { 'apikey': _key, 'Authorization': 'Bearer ' + _key, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' };
         const _propAddr = address + (city ? ', ' + city : '');
-        const _type = form.querySelector('[name="property_type"]').value;
-        const _notes = 'Property type: ' + _type;
+        const _getVal = (n) => { const el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() || null : null; };
+        const _intake = {
+          property_address: _propAddr,
+          property_type: _getVal('property_type'),
+          sqft: _getVal('sqft'),
+          stories: _getVal('stories'),
+          year_built: _getVal('year_built'),
+          special_access_notes: _getVal('access_notes'),
+          items_with_receipts: _getVal('items_with_receipts'),
+          items_without_receipts: _getVal('items_no_receipts'),
+          high_value_items: _getVal('high_value_items'),
+          serial_numbers: _getVal('serial_numbers'),
+          secondary_contact_name: _getVal('secondary_name'),
+          secondary_contact_relationship: _getVal('secondary_relationship'),
+          secondary_contact_email: _getVal('secondary_email'),
+          secondary_contact_phone: _getVal('secondary_phone'),
+          scan_notes: _getVal('general_notes'),
+          notes: 'Intake form submitted',
+          status: 'intake_received',
+          source: 'intake'
+        };
 
-        // Step 1: update existing record if email already exists
+        // Try PATCH first (update existing by email)
         const _patch = await fetch(_sb + '/rest/v1/scan_requests?email=eq.' + encodeURIComponent(email), {
-          method: 'PATCH', headers: _hdrs,
-          body: JSON.stringify({ property_address: _propAddr, property_type: _type, notes: _notes, status: 'intake_received', source: 'intake' })
+          method: 'PATCH', headers: _min, body: JSON.stringify(_intake)
         });
-        const _patched = await _patch.json();
 
-        // Step 2: if no existing record, insert new
-        if (!_patched || _patched.length === 0) {
+        // If PATCH returned 404 or no rows, INSERT new record
+        if (_patch.status === 404 || _patch.status === 0) {
           await fetch(_sb + '/rest/v1/scan_requests', {
-            method: 'POST',
-            headers: { ..._hdrs, 'Prefer': 'return=minimal' },
-            body: JSON.stringify({ name: email, email: email, phone: phone, property_address: _propAddr, property_type: _type, notes: _notes, source: 'intake', status: 'intake_received', client_id: null })
+            method: 'POST', headers: _min,
+            body: JSON.stringify({ ..._intake, name: email, email: email, phone: phone, client_id: null })
           });
+        } else if (!_patch.ok) {
+          // Try INSERT as fallback (handles case where PATCH matched 0 rows)
+          const _ins = await fetch(_sb + '/rest/v1/scan_requests', {
+            method: 'POST', headers: _min,
+            body: JSON.stringify({ ..._intake, name: email, email: email, phone: phone, client_id: null })
+          });
+          // 409 = duplicate email = PATCH already worked, ignore
         }
       } catch (_e2) { /* non-blocking */ }
 
