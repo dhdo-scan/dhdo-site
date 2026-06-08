@@ -529,25 +529,24 @@
           source: 'intake'
         };
 
-        // Try PATCH first (update existing by email)
-        const _patch = await fetch(_sb + '/rest/v1/scan_requests?email=eq.' + encodeURIComponent(email), {
+        // PATCH: update existing record if email exists
+        await fetch(_sb + '/rest/v1/scan_requests?email=eq.' + encodeURIComponent(email), {
           method: 'PATCH', headers: _min, body: JSON.stringify(_intake)
         });
 
-        // If PATCH returned 404 or no rows, INSERT new record
-        if (_patch.status === 404 || _patch.status === 0) {
-          await fetch(_sb + '/rest/v1/scan_requests', {
-            method: 'POST', headers: _min,
-            body: JSON.stringify({ ..._intake, name: email, email: email, phone: phone, client_id: null })
-          });
-        } else if (!_patch.ok) {
-          // Try INSERT as fallback (handles case where PATCH matched 0 rows)
-          const _ins = await fetch(_sb + '/rest/v1/scan_requests', {
-            method: 'POST', headers: _min,
-            body: JSON.stringify({ ..._intake, name: email, email: email, phone: phone, client_id: null })
-          });
-          // 409 = duplicate email = PATCH already worked, ignore
-        }
+        // INSERT with ignore-duplicates: creates new record if email doesn't exist, silently skips if it does
+        await fetch(_sb + '/rest/v1/scan_requests', {
+          method: 'POST',
+          headers: { ..._min, 'Prefer': 'resolution=ignore-duplicates,return=minimal' },
+          body: JSON.stringify({ ..._intake, name: email, email: email, phone: phone, client_id: null })
+        });
+
+        // Notify team + send client confirmation (webhook only fires on INSERT, not PATCH)
+        fetch(_sb + '/functions/v1/send-notification', {
+          method: 'POST',
+          headers: { 'apikey': _key, 'Authorization': 'Bearer ' + _key, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ record: { ..._intake, name: email, email: email, phone: phone, source: 'intake' } })
+        }).catch(() => {})
       } catch (_e2) { /* non-blocking */ }
 
       form.style.display = 'none';
