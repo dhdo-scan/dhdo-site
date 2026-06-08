@@ -506,13 +506,42 @@
       });
 
       // no-cors returns opaque response — treat as success
-      if (true) {
-        form.style.display = 'none';
-        document.getElementById('intakeSuccess').classList.add('show');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        throw new Error();
-      }
+
+      // ── Also write to DHDO portal CRM ──
+      try {
+        const _sb = 'https://rpzvtfvgeqqivuykzaft.supabase.co';
+        const _k1 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6';
+        const _k2 = 'InJwenZ0ZnZnZXFxaXZ1eWt6YWZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NzU5';
+        const _k3 = 'MzEsImV4cCI6MjA5NjQ1MTkzMX0.0Gu4pwMyYj2DKciIamu1l36Gl63Ya9Vt-stLXgJH6hI';
+        const _key = _k1 + _k2 + _k3;
+        const _hdrs = {
+          'apikey': _key, 'Authorization': 'Bearer ' + _key,
+          'Content-Type': 'application/json', 'Prefer': 'return=representation'
+        };
+        const _propAddr = address + (city ? ', ' + city : '');
+        const _type = form.querySelector('[name="property_type"]').value;
+        const _notes = 'Property type: ' + _type;
+
+        // Step 1: update existing record if email already exists
+        const _patch = await fetch(_sb + '/rest/v1/scan_requests?email=eq.' + encodeURIComponent(email), {
+          method: 'PATCH', headers: _hdrs,
+          body: JSON.stringify({ property_address: _propAddr, property_type: _type, notes: _notes, status: 'intake_received', source: 'intake' })
+        });
+        const _patched = await _patch.json();
+
+        // Step 2: if no existing record, insert new
+        if (!_patched || _patched.length === 0) {
+          await fetch(_sb + '/rest/v1/scan_requests', {
+            method: 'POST',
+            headers: { ..._hdrs, 'Prefer': 'return=minimal' },
+            body: JSON.stringify({ name: email, email: email, phone: phone, property_address: _propAddr, property_type: _type, notes: _notes, source: 'intake', status: 'intake_received', client_id: null })
+          });
+        }
+      } catch (_e2) { /* non-blocking */ }
+
+      form.style.display = 'none';
+      document.getElementById('intakeSuccess').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch {
       btn.textContent = 'Submit Intake Form';
       btn.disabled = false;
