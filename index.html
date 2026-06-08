@@ -1562,11 +1562,36 @@
         mode: 'no-cors'
       });
 
-      if (true) {
-        window.location.href = 'thank-you.html';
-      } else {
-        throw new Error('Server error');
-      }
+      // ── Also write to DHDO portal CRM ──
+      try {
+        const _sb = 'https://rpzvtfvgeqqivuykzaft.supabase.co';
+        const _k1 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6';
+        const _k2 = 'InJwenZ0ZnZnZXFxaXZ1eWt6YWZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NzU5';
+        const _k3 = 'MzEsImV4cCI6MjA5NjQ1MTkzMX0.0Gu4pwMyYj2DKciIamu1l36Gl63Ya9Vt-stLXgJH6hI';
+        const time = document.getElementById('f-time').value;
+        await fetch(_sb + '/rest/v1/scan_requests', {
+          method: 'POST',
+          headers: {
+            'apikey': _k1 + _k2 + _k3,
+            'Authorization': 'Bearer ' + _k1 + _k2 + _k3,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            preferred_date: date1 || null,
+            notes: time ? 'Best time to reach: ' + time : null,
+            property_address: null,
+            source: 'website',
+            status: 'new',
+            client_id: null
+          })
+        });
+      } catch (_e2) { /* non-blocking — form still redirects */ }
+
+      window.location.href = 'thank-you.html';
     } catch {
       btn.textContent = 'Submit Request';
       btn.disabled = false;
