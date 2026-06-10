@@ -1562,7 +1562,7 @@
         const _k2 = 'InJwenZ0ZnZnZXFxaXZ1eWt6YWZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NzU5';
         const _k3 = 'MzEsImV4cCI6MjA5NjQ1MTkzMX0.0Gu4pwMyYj2DKciIamu1l36Gl63Ya9Vt-stLXgJH6hI';
         const time = document.getElementById('f-time').value;
-        window.__leadTok = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ''; await fetch(_sb + '/rest/v1/scan_requests', {
+        window.__refCode = (function(){ try { return new URLSearchParams(location.search).get('ref') || sessionStorage.getItem('dhdo_ref') || ''; } catch (e) { return ''; } })(); window.__leadTok = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ''; await fetch(_sb + '/rest/v1/scan_requests', {
           method: 'POST',
           headers: {
             'apikey': _k1 + _k2 + _k3,
@@ -1580,7 +1580,8 @@
             source: 'website',
             status: 'new',
             client_id: null,
-            intake_token: (window.__leadTok || null)
+            intake_token: (window.__leadTok || null),
+            ref_code: (window.__refCode || null)
           })
         });
       } catch (_e2) { /* non-blocking — form still redirects */ }
@@ -1593,5 +1594,6 @@
     }
   }
 </script>
+<script>try{var _r=new URLSearchParams(location.search).get('ref');if(_r)sessionStorage.setItem('dhdo_ref',_r);}catch(e){}</script>
 </body>
 </html>
