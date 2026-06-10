@@ -533,7 +533,7 @@
                 await fetch(_sb + '/rest/v1/rpc/submit_intake', {
                             method: 'POST',
                             headers: { 'apikey': _key, 'Authorization': 'Bearer ' + _key, 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ data: { ..._intake, email: email, phone: phone } })
+                            body: JSON.stringify({ data: { ..._intake, email: email, phone: phone, token: (new URLSearchParams(location.search).get('t') || '') } })
                 });
         // Notify team + send client confirmation (webhook only fires on INSERT, not PATCH)
         fetch(_sb + '/functions/v1/send-notification', {
