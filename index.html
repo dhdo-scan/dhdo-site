@@ -73,6 +73,10 @@
       transition: background 0.2s, transform 0.2s !important;
     }
     .nav-cta:hover { background: var(--gold) !important; color: var(--purple) !important; transform: translateY(-1px); }
+    .nav-phone { color: var(--gold) !important; font-weight: 600; display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+    .nav-phone:hover { text-decoration: underline; }
+    .nav-portal { border: 1px solid rgba(255,255,255,0.28); padding: 0.5rem 0.95rem; border-radius: 6px; }
+    .nav-portal:hover { border-color: var(--gold); color: var(--gold) !important; }
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 4px;
@@ -825,6 +829,8 @@
     <li><a href="#process">Our Process</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://portal.dhdoscan.com" class="nav-portal">Client Login</a></li>
+    <li><a href="tel:3374151951" class="nav-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(337) 415-1951</a></li>
     <li><a href="#schedule" class="nav-cta">Schedule a Scan</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
@@ -838,6 +844,8 @@
   <a href="#pricing"  onclick="closeMob()">Pricing</a>
   <a href="#faq"      onclick="closeMob()">FAQ</a>
   <a href="#schedule" onclick="closeMob()" style="color:var(--gold);">Schedule a Scan</a>
+  <a href="https://portal.dhdoscan.com">Client Login</a>
+  <a href="tel:3374151951" style="color:var(--gold);">Call (337) 415-1951</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -856,6 +864,7 @@
     <a href="#schedule" class="btn-gold">Schedule a Scan</a>
     <a href="#process"  class="btn-ghost">See How It Works</a>
   </div>
+  <p style="margin-top:1.35rem;font-size:0.85rem;color:rgba(255,255,255,0.55);position:relative;">Already a DHDO client? <a href="https://portal.dhdoscan.com" style="color:var(--gold);text-decoration:none;font-weight:600;">Sign in to your portal &rarr;</a></p>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     <span class="scroll-label">Scroll</span>
@@ -976,6 +985,78 @@
   <source srcset="img-kitchen.webp" type="image/webp" />
   <img src="img-kitchen.png" class="kitchen-banner" width="1920" height="1200" loading="lazy" alt="Example home interior documented by DHDO" />
 </picture>
+
+<!-- ═══ CLIENT PORTAL ═══ -->
+<style>
+  #portal { background: var(--purple); }
+  .portal-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+  .portal-feats { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; gap: 1.1rem; }
+  .portal-feats li { display: flex; gap: 0.85rem; align-items: flex-start; }
+  .portal-feats .pf-ic { width: 34px; height: 34px; border-radius: 8px; background: rgba(201,162,78,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); }
+  .portal-feats strong { display: block; color: #fff; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .portal-feats span { color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.55; }
+  .portal-mock { border-radius: 14px; overflow: hidden; box-shadow: 0 30px 70px -30px rgba(0,0,0,0.65); border: 1px solid rgba(201,162,78,0.2); background: #fff; }
+  .portal-mock-bar { background: #1A0E2E; padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.45rem; }
+  .portal-mock-bar .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .portal-mock-url { margin-left: 0.75rem; font-size: 0.7rem; color: rgba(255,255,255,0.5); font-family: monospace; }
+  .portal-mock-body { background: #F8F4EE; padding: 1.5rem; }
+  .portal-mock-h { font-family: Georgia, 'Times New Roman', serif; color: var(--purple); font-size: 1.15rem; font-weight: 700; margin: 0 0 0.15rem; }
+  .portal-mock-sub { color: #8a8378; font-size: 0.72rem; margin: 0 0 1.15rem; }
+  .portal-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .portal-card { background: #fff; border: 1px solid #EDE7DD; border-radius: 10px; padding: 0.95rem; box-shadow: 0 1px 2px rgba(46,26,71,0.05); }
+  .portal-card .pc-ic { width: 30px; height: 30px; border-radius: 7px; background: rgba(201,162,78,0.15); display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 0.55rem; }
+  .portal-card .pc-t { color: var(--purple); font-weight: 600; font-size: 0.82rem; }
+  .portal-card .pc-d { color: #9a9488; font-size: 0.68rem; margin-top: 0.12rem; }
+  @media (max-width: 860px) { .portal-wrap { grid-template-columns: 1fr; gap: 2.5rem; } .portal-mock { order: -1; } }
+</style>
+<section id="portal">
+  <div class="inner">
+    <div class="portal-wrap">
+      <div class="fade">
+        <div class="eyebrow">Your Client Portal</div>
+        <h2 class="light">Everything You Own,<br><em style="font-style:italic;color:var(--gold)">One Secure Login Away.</em></h2>
+        <p style="color:rgba(255,255,255,0.7);margin-top:1rem;line-height:1.7;">Every DHDO client gets a private, secure portal. Your 3D tours, tagged asset inventory, signed documents, and invoices all live in one place — ready the instant an adjuster, attorney, or family member needs them.</p>
+        <ul class="portal-feats">
+          <li>
+            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <div><strong>Your 3D Walkthroughs</strong><span>Open your Matterport tours anytime, from any device.</span></div>
+          </li>
+          <li>
+            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+            <div><strong>Asset Inventory &amp; Receipts</strong><span>Every tagged item with make, model, serial, and replacement value.</span></div>
+          </li>
+          <li>
+            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+            <div><strong>Documents &amp; E-Signatures</strong><span>Review and sign your waivers and agreements right in the portal.</span></div>
+          </li>
+          <li>
+            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <div><strong>Private &amp; Secure</strong><span>Bank-level security and a magic-link login — only you can see your home's record.</span></div>
+          </li>
+        </ul>
+        <div style="margin-top:2rem;">
+          <a href="https://portal.dhdoscan.com" class="btn-gold">Open Your Client Portal &rarr;</a>
+        </div>
+      </div>
+      <div class="fade portal-mock" aria-hidden="true">
+        <div class="portal-mock-bar">
+          <span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span>
+          <span class="portal-mock-url">portal.dhdoscan.com</span>
+        </div>
+        <div class="portal-mock-body">
+          <p class="portal-mock-h">Your Scans</p>
+          <p class="portal-mock-sub">Your home, documented and ready whenever you need it.</p>
+          <div class="portal-cards">
+            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div><div class="pc-t">3D Tour</div><div class="pc-d">Living Room &middot; Kitchen</div></div>
+            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/></svg></div><div class="pc-t">My Assets</div><div class="pc-d">42 items &middot; $128,400</div></div>
+            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><div class="pc-t">Documents</div><div class="pc-d">2 of 2 signed</div></div>
+            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="pc-t">Invoices</div><div class="pc-d">Paid in full</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ WHY ═══ -->
 <section id="why">
