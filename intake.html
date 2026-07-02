@@ -11,7 +11,7 @@
   <style>
     :root {
       --purple:      #2E1A47;
-      --purple-deep: #1A0E2E;h
+      --purple-deep: #1A0E2E;
       --gold:        #C9A24E;
       --gold-hover:  #D9B56A;
       --white:       #FFFFFF;
@@ -380,55 +380,6 @@
       </div>
     </div>
 
-    <!-- 5. Permissions & Policies -->
-    <div class="form-block">
-      <div class="form-block-header">
-        <div class="fb-num">5</div>
-        <div>
-          <div class="fb-title">Permissions &amp; Acknowledgments</div>
-          <div class="fb-sub">Please read and check each item before submitting.</div>
-        </div>
-      </div>
-      <div class="policy-block">
-
-        <label class="policy-item">
-          <input type="checkbox" name="ack_items" required />
-          <span class="policy-text">
-            <strong>Item Repositioning</strong> — I understand that if a serial number or VIN can only be accessed by moving furniture or stored items, a repositioning fee of <em>$100 per occurrence</em> will apply. I authorize the scan team to make reasonable repositioning requests on scan day.
-          </span>
-        </label>
-
-        <label class="policy-item">
-          <input type="checkbox" name="ack_scanready" required />
-          <span class="policy-text">
-            <strong>Scan-Ready Home</strong> — I understand my home should be tidy and accessible on scan day. If the team cannot walk through and capture rooms cleanly, a <em>$100 scan-ready fee</em> may apply. I will complete the prep checklist sent with my confirmation.
-          </span>
-        </label>
-
-        <label class="policy-item">
-          <input type="checkbox" name="ack_receipts" required />
-          <span class="policy-text">
-            <strong>Receipt Cutoff</strong> — I understand that receipts and item information must be submitted within <em>7 business days</em> of my scan date. Items submitted after that window will incur an additional labeling fee.
-          </span>
-        </label>
-
-        <label class="policy-item">
-          <input type="checkbox" name="ack_payment" required />
-          <span class="policy-text">
-            <strong>Payment Terms</strong> — I understand that payment is due upon delivery of my completed scan and documentation. Balances unpaid after 14 days are subject to a <em>1.5% monthly finance charge plus a $25 administrative fee</em>.
-          </span>
-        </label>
-
-        <label class="policy-item">
-          <input type="checkbox" name="ack_privacy" required />
-          <span class="policy-text">
-            <strong>Data &amp; Privacy</strong> — I understand that my property information, receipts, and asset data are collected solely for the purpose of creating my DHDO documentation package. This information is kept confidential and is not shared with third parties outside of the scope of my documentation service. <a href="/privacy.html" target="_blank" style="color:var(--gold);text-decoration:underline;">View our Privacy Policy</a>.
-          </span>
-        </label>
-
-      </div>
-    </div>
-
     <div class="intake-submit">
       <p>By submitting, you confirm all information is accurate to the best of your knowledge.<br />Questions before submitting? Call <a href="tel:3374151951" style="color:var(--gold)">(337) 415-1951</a>.</p>
       <button type="submit" id="intakeBtn">Submit Intake Form</button>
@@ -480,15 +431,6 @@
     if (!address)            { alert('Please enter the property address.'); form.querySelector('[name="address"]').focus(); return; }
     if (!city)               { alert('Please enter the city, state, and ZIP.'); form.querySelector('[name="city_state_zip"]').focus(); return; }
     if (!type)               { alert('Please select a property type.'); form.querySelector('[name="property_type"]').focus(); return; }
-
-    // ── Checkbox validation ──
-    const boxes = form.querySelectorAll('input[type="checkbox"][required]');
-    let allChecked = true;
-    boxes.forEach(b => { if (!b.checked) allChecked = false; });
-    if (!allChecked) {
-      alert('Please read and acknowledge all policies before submitting.');
-      return;
-    }
 
     btn.textContent = 'Submitting...';
     btn.disabled = true;
