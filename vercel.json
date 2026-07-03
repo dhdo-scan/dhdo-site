@@ -1,5 +1,9 @@
 {
   "rewrites": [
-    { "source": "/graywood", "destination": "/graywood.html" }
+    { "source": "/graywood", "destination": "/graywood.html" },
+    { "source": "/intake", "destination": "/intake.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/thank-you", "destination": "/thank-you.html" },
+    { "source": "/qr", "destination": "/qr.html" }
   ]
 }
