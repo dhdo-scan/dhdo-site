@@ -183,6 +183,7 @@
         <label for="gw-company">Company</label>
         <input id="gw-company" name="company" type="text" tabindex="-1" autocomplete="off" />
       </div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADxkgwVc19C2VhbF" style="margin:0.75rem 0"></div>
       <button id="gw-btn" class="reserve-btn" type="submit">Reserve My Spot</button>
     </form>
     <p class="note">No payment now. Reserving counts your home toward the neighborhood rate.<br />Questions? Call <a href="tel:3374151951">(337) 415-1951</a></p>
@@ -191,6 +192,7 @@
 <footer>
   <p>DHDO — Digital Home Documentation &amp; Organization &nbsp;&middot;&nbsp; A Division of <a href="https://bradberryconstruction.com">Bradberry Construction &amp; Design</a> &nbsp;&middot;&nbsp; <a href="index.html">Back to main site</a></p>
 </footer>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
   document.getElementById('gwForm').addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -206,38 +208,38 @@
     if (!emailOk) { alert('Please enter a valid email address.'); document.getElementById('gw-email').focus(); return; }
     if (!phoneOk) { alert('Please enter a valid phone number.'); document.getElementById('gw-phone').focus(); return; }
     if (!addr)    { alert('Please enter your street address.'); document.getElementById('gw-address').focus(); return; }
+    var ts = (window.turnstile && turnstile.getResponse()) || '';
+    if (!ts) { alert('Please complete the verification check, then tap Reserve again.'); return; }
     btn.textContent = 'Reserving...';
     btn.disabled = true;
     if (hp) { window.location.href = 'thank-you.html'; return; }
-    var tok = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : '';
     try {
       var _sb = 'https://rpzvtfvgeqqivuykzaft.supabase.co';
       var _k1 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6';
       var _k2 = 'InJwenZ0ZnZnZXFxaXZ1eWt6YWZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NzU5';
       var _k3 = 'MzEsImV4cCI6MjA5NjQ1MTkzMX0.0Gu4pwMyYj2DKciIamu1l36Gl63Ya9Vt-stLXgJH6hI';
-      await fetch(_sb + '/rest/v1/scan_requests', {
+      var _res = await fetch(_sb + '/functions/v1/submit-lead', {
         method: 'POST',
         headers: {
           'apikey': _k1 + _k2 + _k3,
           'Authorization': 'Bearer ' + _k1 + _k2 + _k3,
-          'Content-Type': 'application/json',
-          'Prefer': 'return=minimal'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          token: ts,
           name: name,
           email: email,
           phone: phone,
           property_address: addr,
           notes: 'Graywood neighborhood program signup',
           source: 'website',
-          status: 'new',
-          client_id: null,
-          intake_token: (tok || null),
-          ref_code: 'GRAYWOOD'
+          ref_code: 'GRAYWOOD',
+          hp: hp || ''
         })
       });
-    } catch (_e2) { /* non-blocking — form still redirects */ }
-    window.location.href = 'thank-you.html' + (tok ? ('?t=' + tok) : '');
+      if (!_res.ok) { var _j = await _res.json().catch(function () { return {}; }); alert((_j && _j.error) || 'Something went wrong. Please call (337) 415-1951.'); btn.textContent = 'Reserve My Spot'; btn.disabled = false; try { turnstile.reset(); } catch (e) {} return; }
+    } catch (_e2) { alert('Something went wrong. Please call (337) 415-1951.'); btn.textContent = 'Reserve My Spot'; btn.disabled = false; try { turnstile.reset(); } catch (e) {} return; }
+    window.location.href = 'thank-you.html';
   });
 </script>
 </body>

@@ -1448,6 +1448,7 @@
         </div>
       </div>
 
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADxkgwVc19C2VhbF" style="margin:0 0 1rem"></div>
       <div class="submit-row">
         <button type="submit" id="submitBtn">Request My Scan</button>
         <p class="submit-note">
@@ -1644,7 +1645,7 @@
         const _k2 = 'InJwenZ0ZnZnZXFxaXZ1eWt6YWZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NzU5';
         const _k3 = 'MzEsImV4cCI6MjA5NjQ1MTkzMX0.0Gu4pwMyYj2DKciIamu1l36Gl63Ya9Vt-stLXgJH6hI';
         const time = document.getElementById('f-time').value;
-        var _hpv = ''; try { _hpv = (document.querySelector('#consultForm [name="website"]') || {}).value || ''; } catch (e) {} if (_hpv) { window.location.href = 'thank-you.html'; return; } window.__refCode = (function(){ try { var rr = new URLSearchParams(location.search).get('ref') || sessionStorage.getItem('dhdo_ref') || ''; return rr.replace(/[^A-Za-z0-9_-]/g, '').slice(0, 64); } catch (e) { return ''; } })(); window.__leadTok = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ''; await fetch(_sb + '/rest/v1/scan_requests', {
+        var _hpv = ''; try { _hpv = (document.querySelector('#consultForm [name="website"]') || {}).value || ''; } catch (e) {} if (_hpv) { window.location.href = 'thank-you.html'; return; } window.__refCode = (function(){ try { var rr = new URLSearchParams(location.search).get('ref') || sessionStorage.getItem('dhdo_ref') || ''; return rr.replace(/[^A-Za-z0-9_-]/g, '').slice(0, 64); } catch (e) { return ''; } })(); window.__leadTok = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ''; var _ts = (window.turnstile && turnstile.getResponse()) || ''; if (!_ts) { alert('Please complete the verification check, then tap Request My Scan again.'); btn.textContent = 'Request My Scan'; btn.disabled = false; return; } var _res = await fetch(_sb + '/functions/v1/submit-lead', {
           method: 'POST',
           headers: {
             'apikey': _k1 + _k2 + _k3,
@@ -1653,6 +1654,8 @@
             'Prefer': 'return=minimal'
           },
           body: JSON.stringify({
+            token: _ts,
+            hp: _hpv,
             name: name,
             email: email,
             phone: phone,
@@ -1666,9 +1669,10 @@
             ref_code: (window.__refCode || null)
           })
         });
-      } catch (_e2) { /* non-blocking — form still redirects */ }
+        if (!_res.ok) { const _j = await _res.json().catch(function () { return {}; }); alert((_j && _j.error) || 'Something went wrong. Please call (337) 415-1951.'); btn.textContent = 'Request My Scan'; btn.disabled = false; try { turnstile.reset(); } catch (e) {} return; }
+      } catch (_e2) { btn.textContent = 'Request My Scan'; btn.disabled = false; alert('Something went wrong. Please call (337) 415-1951.'); try { turnstile.reset(); } catch (e) {} return; }
 
-      window.location.href = 'thank-you.html' + (window.__leadTok ? ('?t=' + window.__leadTok) : '');
+      window.location.href = 'thank-you.html';
     } catch {
       btn.textContent = 'Submit Request';
       btn.disabled = false;
@@ -1677,5 +1681,6 @@
   }
 </script>
 <script>try{var _r=new URLSearchParams(location.search).get('ref');if(_r)sessionStorage.setItem('dhdo_ref',_r);}catch(e){}</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
