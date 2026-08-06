@@ -12,25 +12,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <title>Privacy Policy | DHDO</title>
-  <meta name="description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana.">
+  <title>Home Inventory &amp; 3D Property Documentation in Lafayette, LA | DHDO</title>
+  <meta name="description" content="Home inventory and 3D property documentation in Lafayette, LA from DHDO — dated home and business scans with a tagged inventory, built for Acadiana flood risk. Book a scan today.">
   <!-- ── Technical SEO (dev, 2026-07-31, per Lauren's brief) ──
        og:title / og:description deliberately mirror this page's own <title> and meta
        description above; og:url mirrors the canonical. Keep them in sync if either changes.
        CANONICAL KEEPS .html. When .html is stripped at some point after launch, these
        canonicals AND the og:url must change in the same pass as the 301s, or every page
        will point search engines at a URL that no longer serves. -->
-  <link rel="canonical" href="https://www.dhdoscan.com/privacy.html" />
+  <link rel="canonical" href="https://www.dhdoscan.com/lafayette.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.dhdoscan.com/privacy.html" />
-  <meta property="og:title" content="Privacy Policy | DHDO" />
-  <meta property="og:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
-  <meta property="og:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
+  <meta property="og:url" content="https://www.dhdoscan.com/lafayette.html" />
+  <meta property="og:title" content="Home Inventory &amp; 3D Property Documentation in Lafayette, LA | DHDO" />
+  <meta property="og:description" content="Home inventory and 3D property documentation in Lafayette, LA from DHDO — dated home and business scans with a tagged inventory, built for Acadiana flood risk. Book a scan today." />
+  <meta property="og:image" content="https://www.dhdoscan.com/media/cormier-dollhouse-side-img.png" />
   <meta property="og:site_name" content="DHDO — Digital Home Documentation &amp; Organization" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | DHDO" />
-  <meta name="twitter:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
-  <meta name="twitter:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
+  <meta name="twitter:title" content="Home Inventory &amp; 3D Property Documentation in Lafayette, LA | DHDO" />
+  <meta name="twitter:description" content="Home inventory and 3D property documentation in Lafayette, LA from DHDO — dated home and business scans with a tagged inventory, built for Acadiana flood risk. Book a scan today." />
+  <meta name="twitter:image" content="https://www.dhdoscan.com/media/cormier-dollhouse-side-img.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -737,6 +737,12 @@
     .quote-block .q-cite { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-style: normal; }
     .quote-block .q-role { display: block; margin-top: 0.35rem; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.03em; text-transform: none; color: rgba(255,255,255,0.45); }
     /* ── stat strip (compact single-stat band) ── */
+    /* ── service area map (2026-07-31) ── */
+    .map-wrap { margin-top: 2.75rem; border: 1px solid rgba(201,162,78,0.28); border-radius: 2px; overflow: hidden; box-shadow: 0 20px 50px -22px rgba(26,14,46,0.3); line-height: 0; }
+    .map-wrap iframe { width: 100%; height: 420px; border: 0; display: block; filter: saturate(0.85); }
+    @media (max-width: 720px) { .map-wrap iframe { height: 320px; } }
+    .map-cap { margin-top: 1rem; font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(46,26,71,0.6); }
+
     .stat-strip { background: var(--purple-deep); text-align: center; }
     .stat-strip .stat-num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; color: var(--gold); }
     .stat-strip .stat-label { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.6); max-width: 580px; margin: 1rem auto 0; }
@@ -829,10 +835,70 @@
         ]
       },
       {
+        "@type": "LocalBusiness",
+        "name": "DHDO — Digital Home Documentation & Organization",
+        "image": "https://www.dhdoscan.com/logo-primary.png",
+        "telephone": "+1-337-415-1951",
+        "email": "hello@dhdoscan.com",
+        "url": "https://www.dhdoscan.com/lafayette.html",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lafayette", "addressRegion": "LA", "addressCountry": "US" },
+        "areaServed": [
+          { "@type": "City", "name": "Lafayette" },
+          { "@type": "AdministrativeArea", "name": "Lafayette Parish" },
+          { "@type": "AdministrativeArea", "name": "Acadiana" }
+        ],
+        "parentOrganization": { "@type": "Organization", "name": "Bradberry Construction & Design" }
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhdoscan.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.dhdoscan.com/privacy.html" }
+          { "@type": "ListItem", "position": 2, "name": "Lafayette", "item": "https://www.dhdoscan.com/lafayette.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Lafayette hasn't taken a direct hurricane hit like Cameron or Lake Charles — does that mean I'm not really at risk?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not really. Lafayette has never taken one catastrophic direct hit, but it's absorbed a steady string of storms over 20 years — Rita's regional damage in 2005, Gustav and Ike's wind in 2008, Laura and Delta's wind and power outages in 2020 (Delta alone caused the 4th-largest power outage in Louisiana history, largely because it hit populated Lafayette directly, unlike Laura). And the parish's actual worst disaster on record didn't involve wind at all — the August 2016 flood, which ultimately damaged an estimated 4,000–5,000 homes parish-wide, wasn't even a named storm. Waiting for \"the big one\" to hit here is exactly the gap this closes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "My home isn't near the Vermilion River — do I still need to worry about flooding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Most flooding in Lafayette Parish doesn't come from the river overflowing its banks — it comes from the coulees that feed it, and from flash flooding that isn't on FEMA's official maps at all. A December 2023 storm flooded parts of Downtown that aren't in any mapped flood zone. Local modeling that accounts for that flash-flood risk shows nearly half of everything built in Lafayette Parish since 2001 sits inside a broader flood-risk zone than FEMA's map alone shows — so distance from the river isn't a reliable measure of your actual exposure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I own rental property near UL Lafayette — is documentation worth it for a rental, not just my own home?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — UL Lafayette's roughly 12,000 students drive a large off-campus rental market with constant tenant turnover. A dated, tagged record of a unit's condition and furnishings gives landlords and property managers a clear baseline for security deposit disputes and damage claims between tenants, not just for a catastrophic loss."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I own an older home in one of Lafayette's historic districts — does documentation work differently for a historic property?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It matters more, not differently. Districts like Sterling Grove and Freetown-Port Rico include homes with original materials, millwork, and architectural details from the 1800s and early 1900s that cost far more to replace than a standard policy assumes. A detailed, tagged record makes the case for the specialized coverage — or claim value — that kind of home actually requires."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need a specific reason, like a storm on the way, to book a scan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Plenty of Lafayette clients book without any disaster in mind — before or after a renovation, during estate planning, or simply because they've never had a real inventory of what they own. Local flood and storm risk is a strong reason to prioritize it, not the only one."
+            }
+          }
         ]
       }
     ]
@@ -915,96 +981,248 @@
   <a href="tel:3374151951" style="color:var(--gold);">Call (337) 415-1951</a>
 </div>
 
-<section class="page-hero" style="padding-bottom:3.5rem;">
+<!-- ═══ HERO ═══ -->
+<section class="page-hero fade">
   <div class="hero-grid-lines"></div>
   <div class="hero-orb"></div>
   <div class="inner">
-    <div class="hero-eyebrow">Legal</div>
-    <h1>Privacy <em>Policy</em></h1>
-    <p class="hero-sub">How DHDO collects, uses, and protects your information.</p>
+    <div class="hero-eyebrow">Serving Lafayette &amp; Lafayette Parish</div>
+    <h1>3D Property Documentation in <em>Lafayette Parish, LA</em></h1>
+    <p class="hero-sub">In a parish where flooding doesn't wait for a hurricane, a documented property is a claim backed by a record — not memory. A premium, done-for-you scan and tagged asset inventory, built for Acadiana homeowners and business owners who know exactly what's at stake.</p>
+    <div class="hero-actions">
+      <a href="book-a-scan.html" class="btn-gold">Book a Scan</a>
+      <a href="#process" class="btn-ghost">See How It Works</a>
+    </div>
   </div>
 </section>
 
-<style>
-  .legal-content { max-width: 820px; }
-  .legal-content h3 { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:400; color:var(--purple); margin:2.5rem 0 0.75rem; }
-  .legal-content p { font-size:1rem; line-height:1.85; color:rgba(46,26,71,0.86); margin-bottom:1rem; }
-  .legal-content strong { color:var(--purple); font-weight:600; }
-  .legal-content .legal-meta { font-size:0.78rem; color:rgba(46,26,71,0.5); letter-spacing:0.04em; margin-bottom:1.75rem; }
-  .legal-content a { color:var(--gold); text-decoration:none; }
-</style>
-<section class="bg-cream fade">
-  <div class="inner legal-content">
-    <p class="legal-meta">Last updated: July 31, 2026</p>
-    <p>DHDO — Digital Home Documentation &amp; Organization (&ldquo;DHDO,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a division of <a href="https://bradberryconstruction.com/" target="_blank" rel="noopener">Bradberry Construction &amp; Design</a>, provides three-dimensional property documentation and related organizational services in South Louisiana. This Privacy Policy explains what information we collect, how we use and share it, how we protect it, and the choices available to you. It applies to dhdoscan.com, the DHDO Client Portal at <a href="https://portal.dhdoscan.com" target="_blank" rel="noopener">portal.dhdoscan.com</a>, and the services we provide.</p>
-
-    <h3>Information We Collect</h3>
-    <p><strong>Information you give us.</strong> When you request a scan, contact us, or schedule an appointment, we collect your name, email address, phone number, property address, and any scheduling preferences or notes you provide.</p>
-    <p><strong>Documentation data.</strong> When we scan a property, we create a three-dimensional digital record and may catalog assets you ask us to tag, including make, model, serial number, purchase date, and any receipts or details you share with us (&ldquo;Client Home Documentation&rdquo;).</p>
-    <p><strong>Portal access data.</strong> When you access the DHDO Client Portal, we collect the information needed to verify your identity and grant access to your documentation, such as your magic-link token, login timestamp, and general session activity. The Portal does not require you to create or remember a traditional password.</p>
-    <p><strong>Automatically collected.</strong> Like most websites, we collect basic usage data (pages visited, device and browser type, approximate location) through cookies and analytics tools to understand how the site is used and to keep it secure.</p>
-
-    <h3>Information We Do Not Intentionally Collect</h3>
-    <p>We do not intend to collect Social Security numbers, driver&rsquo;s license or state identification numbers, passport numbers, financial account usernames or passwords, full payment card numbers or security codes, medical records, or personal information from children under 13 through our website or standard intake process. Before a scan, clients are responsible for removing, concealing, or identifying any medications, financial documents, identification documents, security codes, firearms, safes, or other sensitive items they do not want captured.</p>
-
-    <h3>How We Use Your Information</h3>
-    <p>We use your information to schedule and deliver your documentation service, communicate with you about your scan and account, provide access to your Client Portal, respond to inquiries, organize and tag Client Home Documentation (including with the assistance of software and artificial-intelligence tools described below), improve our website and services, and meet legal or security obligations.</p>
-
-    <h3>How We Share Your Information</h3>
-    <p>We do not sell your personal information or your Client Home Documentation. We share information only with service providers that help us operate — for example, Matterport or similar scanning and hosting platforms, website hosting, secure database and portal infrastructure, email delivery, payment processing, and website analytics and bot-protection tools — and only as needed to provide the service.</p>
-    <p>We will not share your Client Home Documentation with law firms, insurance agents, insurance carriers, adjusters, family members, contractors, appraisers, realtors, or estate planners unless you direct us to, except where disclosure is required by law or necessary for our authorized vendors to perform services on our behalf.</p>
-    <p><strong>Sharing through the Client Portal.</strong> The Client Portal lets you grant an insurance agent or other party of your choosing secure, read-only access to your Client Home Documentation through a one-click invitation. You decide who receives access, and you may revoke it at any time through the Portal. A party you&rsquo;ve granted access to may add supporting materials, such as claim-related estimates or paperwork, to your record with your permission. DHDO does not grant or expand this access on its own, and no agent or third party ever sees a record you have not chosen to share.</p>
-    <p>We may also disclose information if required by law, court order, or legal process, or to protect our rights, safety, or property.</p>
-
-    <h3>How We Store and Protect It</h3>
-    <!-- ACCURACY (dev, 2026-07-31) — TWO CHANGES TO LAUREN'S DRAFT, BOTH CHECKED AGAINST PRODUCTION:
-         (1) Her draft said logins are "protected by two-factor authentication by default". They are not.
-             SMS 2FA is OPT-IN and 2 of 7 live clients have switched it on. A privacy policy is the wrong
-             place to overstate a control, so this says "available on your account" instead. Make 2FA the
-             default in the portal and Lauren's stronger wording becomes true and can go back in.
-         (2) Her draft said "You may add an additional password to any individual scan." The column
-             exists but 0 of 7 scans use it and there is no confirmed client-facing control, so this says
-             an additional password "can be added on request" until that is verified. -->
-    <p>Your documentation is stored securely off-site in the cloud and accessed through a private, magic-link login, with two-factor authentication available on your account. An additional password can be added to an individual scan on request for your most sensitive records. Your Client Home Documentation is hosted redundantly across Matterport&rsquo;s secure cloud infrastructure and DHDO&rsquo;s own systems, which are independently reviewed for security. No method of storage or transmission is completely secure, but we work to keep your data protected.</p>
-
-    <h3>Data Retention</h3>
-    <!-- Lauren, 2026-07-31: your note says this section still needs a revision pass on how scan-only
-         service is handled. Using your v2 wording as-is for now — the last paragraph is the part you
-         flagged. Also note this replaces the old flat "three (3) years from final delivery" retention
-         period, which no longer matched how Annual Record Care actually works. -->
-    <p>How long DHDO keeps your Client Home Documentation depends on your Annual Record Care status. While Annual Record Care is active on your account, your 3D scan, asset inventory, and related documentation remain hosted and accessible through your Client Portal.</p>
-    <p>Annual Record Care runs in twelve-month terms. Some packages, such as the Guided Property Record, include your first year of Annual Record Care with your scan; other packages may add it separately, as described in your service agreement or rate card.</p>
-    <p>If your Annual Record Care term ends and is not renewed, you have thirty (30) days from the end of that term to renew before we take further action. If you do not renew within that thirty-day window, DHDO will delete your hosted scan and remove your Portal access. This does not affect the physical hard drive or USB copy of your original scan delivered to you at project completion &mdash; that copy remains yours to keep, and DHDO has no ability to access or delete it remotely.</p>
-    <p>For projects delivered without Annual Record Care, such as scan-only service, DHDO retains your documentation only as needed to complete delivery, plus a limited period afterward for quality assurance and administrative purposes, after which it is deleted from our active systems.</p>
-
-    <h3 id="cookies">Cookies &amp; Analytics</h3>
-    <p>We use cookies and analytics tools (including Google Analytics via Google Tag Manager) to measure site usage, and bot-protection tools (Cloudflare Turnstile) to help secure our forms. When you first visit our website, we display a short cookie notice letting you know about this use and linking to this Policy. You can control cookies through your browser settings at any time; disabling them may affect how parts of the site work.</p>
-
-    <h3>Artificial Intelligence and Automated Tools</h3>
-    <p>DHDO may use software tools, automation, or artificial-intelligence features — including third-party AI services such as Google&rsquo;s Gemini — to help organize, tag, and manage Client Home Documentation, such as identifying and labeling assets by make, model, or category.</p>
-    <p>The Client Portal includes an AI-assisted feature that lets you add new items to your inventory by submitting a photo, which the AI uses to suggest a name, brand, model, and similar details for your review before saving.</p>
-    <p>These tools support DHDO&rsquo;s service delivery only and are subject to the confidentiality and security terms of our vendor agreements. DHDO will not use identifiable Client Home Documentation to train public or third-party artificial-intelligence models without your separate written consent.</p>
-
-    <h3>Your Choices</h3>
-    <p>You may contact us to request access to, correction of, deletion of, or a copy of the information we hold about you, including your Client Home Documentation, and you may opt out of marketing messages at any time. You may also ask us to restrict certain sharing of your information. We aim to respond within thirty (30) days of a verifiable request. We may need to verify your identity before fulfilling a request involving Client Home Documentation, property records, or Portal access, and we may decline or limit a request where permitted or required by law.</p>
-
-    <h3>Children&rsquo;s Privacy</h3>
-    <p>Our services are directed to adults, and we do not knowingly collect personal information from children under 13 through our website. Home scans may incidentally capture rooms, belongings, or images associated with minors when an adult client authorizes the scan. The client authorizing the scan is responsible for removing, concealing, or excluding anything involving children that they do not want captured. Consent regarding minors is further addressed in DHDO&rsquo;s Client Scan Authorization and Data Consent Form, completed prior to each on-site visit.</p>
-
-    <h3>Professional Disclaimer</h3>
-    <p>DHDO provides independent digital home documentation and organization services only. DHDO is not a law firm, insurance company, insurance agency, public adjuster, appraiser, or licensed home inspector, and does not adjust claims, determine or assign insurance values, or provide legal, tax, or insurance advice. DHDO does not guarantee coverage, claim outcomes, evidentiary admissibility, or premium discounts. Clients should consult their own licensed professional for advice specific to their situation.</p>
-
-    <h3>Marketing, Demonstrations, and Case Studies</h3>
-    <p>DHDO will not use identifiable Client Home Documentation, interior home images, or private client records in public marketing, demonstrations, case studies, testimonials, or social media without your separate written permission.</p>
-
-    <h3>Changes to This Policy</h3>
-    <p>We may update this policy from time to time. When we do, we will revise the &ldquo;Last Updated&rdquo; date above, and material changes will be reflected on this page.</p>
-
-    <h3>Contact Us</h3>
-    <p>Questions about this policy or your information? Reach us at <a href="#" class="team-email" data-em="moc.nacsodhd@olleh" onclick="return openEmail(this)">hello@dhdoscan.com</a> or <a href="tel:3374151951">(337) 415-1951</a> — DHDO, Lake Charles, Louisiana.</p>
+<section class="media-sec fade" style="padding-top:3.5rem;">
+  <div class="inner">
+    <img src="media/cormier-dollhouse-side-img.png" alt="Matterport 3D dollhouse view of a documented Acadiana-area home" loading="lazy" style="width:100%;height:auto;border-radius:2px;display:block;border:1px solid rgba(201,162,78,0.25);box-shadow:0 20px 50px -20px rgba(26,14,46,0.35);" />
   </div>
 </section>
 
+<!-- ═══ ABOUT / LOCAL INTRO ═══ -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="eyebrow">What We Document</div>
+        <h2>The DHDO Record: What You Actually Receive</h2>
+        <p>DHDO provides 3D property documentation in Lafayette, LA — every room and every item, documented before you need it. A DHDO scan isn't a folder of phone photos.</p>
+        <p style="margin-top:1rem;">It's a structured, navigable record of your entire Lafayette property — built once, ready whenever you need it, and stored off-site regardless of what happens to the physical house itself.</p>
+      </div>
+      <div class="about-cards fade" style="transition-delay:0.15s">
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4>A Full 3D Tour</h4>
+            <p>Every room, closet, garage, and outbuilding captured in an immersive, walkable 3D model — not a snapshot, a space you can move through.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4>Tagged Assets with Receipts &amp; Serials</h4>
+            <p>Make, model, serial number, and purchase date embedded directly into the scan for every item you choose to document — furniture, electronics, appliances, valuables.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>A Secure, Shareable Link</h4>
+            <p>Your complete record lives in a private client portal, accessible from any device and easy to share with an adjuster, contractor, or family member the moment it's needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY LAFAYETTE ═══
+     REWRITTEN 2026-07-31 per Lauren. The old copy led with Hurricane Delta; her version correctly
+     leads with the AUGUST 2016 FLOOD, because that is the parish's worst disaster on record and it
+     wasn't a named storm at all -- which is the whole argument of the section.
+
+     ⚠ SOURCE-CHECK BEFORE PUBLISH: the copy below carries specific, checkable figures (20+ inches of
+     rain; Vermilion River at its highest since 1940; 4,000-5,000 homes flooded parish-wide; Delta as
+     the 4th-largest power outage in Louisiana history). These came from Lauren's research and are
+     used verbatim. They are exactly the kind of numbers that get quoted back at you, so they want one
+     citation pass before this goes live. -->
+<section id="why">
+  <div class="inner">
+    <div class="fade" style="text-align:center">
+      <div class="eyebrow center">Why Lafayette</div>
+      <h2>Why Lafayette Homes Need Documentation</h2>
+      <p class="why-lead">Lafayette Parish&rsquo;s worst disaster in decades wasn&rsquo;t a hurricane &mdash; and that&rsquo;s exactly what makes the real risk easy to underestimate. Between recurring flooding and a steady run of Gulf storms, the question here isn&rsquo;t really &ldquo;what if&rdquo; &mdash; it&rsquo;s &ldquo;when,&rdquo; and &ldquo;will I be ready.&rdquo;</p>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>The Parish&rsquo;s Defining Disaster Wasn&rsquo;t a Hurricane</h3>
+        <p>In August 2016, an unnamed rain system stalled over Acadiana for two days, dropping more than 20 inches of rain and pushing the Vermilion River to its highest level since 1940. An estimated 4,000 to 5,000 homes across Lafayette Parish flooded. Add two decades of Gulf storms on top of that &mdash; Rita in 2005, Gustav and Ike in 2008, Laura and Delta in 2020 &mdash; and the region&rsquo;s real exposure runs well beyond hurricane season.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Records Get Lost in the Chaos</h3>
+        <p>After a flood or a storm, floors get ripped out, damaged items get hauled to the curb before anyone thinks to photograph them, and receipts get lost in the scramble. A homeowner reconstructing what they owned from memory, weeks or months later, is starting from a disadvantage that was avoidable.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Built Before You Need It</h3>
+        <p>A DHDO scan is meant to help avoid that disadvantage. It&rsquo;s built before the water rises or the wind picks up, stored off-site, and ready the moment a roof leaks, a fence goes down, or a home floods &mdash; regardless of what happens to the physical house itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE AREA — LAFAYETTE PARISH ═══ (copy revised + map added 2026-07-31)
+     Same source-check note as the Why section applies to the flood figures in Blocks 2 and 3. -->
+<section class="bg-cream" id="service-area">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">Where We Work</div>
+      <h2>Serving Lafayette Parish</h2>
+      <p style="font-size:0.97rem;font-weight:300;line-height:1.95;color:rgba(46,26,71,0.78);max-width:620px;margin-top:1.25rem;">DHDO scans homes, rental properties, and local businesses throughout Lafayette and the surrounding Lafayette Parish communities, including these areas:</p>
+    </div>
+    <div class="about-cards fade" style="flex-direction:row;flex-wrap:wrap;gap:1.5px;background:var(--cream-dark);margin-top:3rem;">
+      <div class="acard" style="flex:1 1 240px;border-left:2px solid var(--gold);">
+        <div>
+          <h4>Downtown &amp; River Ranch</h4>
+          <p>Established Lafayette neighborhoods &mdash; River Ranch sits directly along the Vermilion River corridor &mdash; home to properties with decades of accumulated furnishings, art, and valuables worth documenting in detail.</p>
+        </div>
+      </div>
+      <div class="acard" style="flex:1 1 240px;border-left:2px solid var(--gold);">
+        <div>
+          <h4>Broussard &amp; Youngsville</h4>
+          <p>Growing communities across Lafayette Parish, including upscale developments like Youngsville&rsquo;s Sugar Mill Pond, sitting in some of the parish&rsquo;s fastest-growing flood-risk corridors &mdash; homes in Youngsville&rsquo;s Highland Ridge subdivision took on up to 20 inches of water in the 2016 flood.</p>
+        </div>
+      </div>
+      <div class="acard" style="flex:1 1 240px;border-left:2px solid var(--gold);">
+        <div>
+          <h4>Scott &amp; Carencro</h4>
+          <p>Inland Lafayette Parish communities where wind, rain, and drainage &mdash; not storm surge &mdash; drive the real risk; homes near Scott&rsquo;s Country Living Estates have flooded more than once in the past 15 years.</p>
+        </div>
+      </div>
+    </div>
+    <p class="fade" style="margin-top:2.25rem;font-size:0.9rem;font-weight:300;line-height:1.85;color:rgba(46,26,71,0.78);">We serve the surrounding Greater Lafayette area and the rest of Lafayette Parish. If you&rsquo;re a homeowner, HOA, or business outside these named areas, reach out &mdash; we&rsquo;re likely already scanning nearby.</p>
+
+    <!-- ═══ SERVICE AREA MAP (new, 2026-07-31) ═══
+         Keyless `?output=embed` form, same as the Lake Charles page -- no API key, no billing. Lauren
+         asked that this one "cover all the parishes surrounding lafayette", so it is centred on
+         Lafayette at a wider zoom (z=8) than the Calcasieu map, which pulls in St. Landry, St. Martin,
+         Vermilion, Iberia, Acadia and Evangeline rather than framing Lafayette Parish alone. -->
+    <div class="map-wrap fade">
+      <iframe
+        src="https://www.google.com/maps?q=Lafayette+Parish,+Louisiana&amp;z=8&amp;output=embed"
+        title="Map of DHDO's service area across Lafayette Parish and the surrounding Acadiana parishes"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+    <p class="map-cap fade">DHDO&rsquo;s service area across Lafayette Parish and the surrounding Acadiana parishes.</p>
+    <p class="fade" style="margin-top:1.25rem;font-size:0.9rem;font-weight:300;line-height:1.85;color:rgba(46,26,71,0.78);">If you don&rsquo;t see your location listed on this page, please call or message to inquire if we will travel to your location.</p>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══
+     REWRITTEN 2026-07-31 per Lauren. This was "Two Reasons Local Homeowners Book a Scan" with 3
+     value-proposition blocks; it is now an actual 4-step process, which is what the H2 promises and
+     what the hero's "See How It Works" anchor implies. 4th step uses the same .step markup. -->
+<section id="process">
+  <div class="inner">
+    <div class="process-hd fade">
+      <div class="eyebrow">Our Process</div>
+      <h2 class="light">How Your Lafayette <em style="font-style:italic;color:var(--gold)">Scan Works</em></h2>
+      <p style="font-size:0.9rem;font-weight:300;line-height:1.9;color:rgba(255,255,255,0.82);max-width:560px;margin-top:1.25rem;">Booking takes one phone call. From there, we handle everything &mdash; most Lafayette homes and businesses are fully documented in a single visit.</p>
+    </div>
+    <div class="steps">
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>1</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Step One</div>
+          <h3>Schedule Your Scan</h3>
+          <p>Call or fill out the form. Every inquiry gets a response within 12 hours, and most scans are booked within days.</p>
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>2</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Step Two</div>
+          <h3>We Scan Your Property</h3>
+          <p>One visit, start to finish. A DHDO operator walks every room, closet, garage, and outbuilding &mdash; or every classroom and common area, for a business &mdash; with our 3D camera. Nothing is touched or moved.</p>
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>3</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Step Three</div>
+          <h3>Assets Get Tagged</h3>
+          <p>Furniture, electronics, appliances, and valuables are tagged directly in the model with make, model, serial number, and purchase date &mdash; plus a link to the item online where one exists, so an adjuster or contractor can see exactly what it is and what it currently sells for. If it&rsquo;s listed online, we&rsquo;ll find it. DHDO documents; it doesn&rsquo;t appraise or assign values.</p>
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>4</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Step Four</div>
+          <h3>Your Record Is Delivered</h3>
+          <p>Your finished walkthrough, floor plans, still photos, and tagged inventory land in your private, secure client portal &mdash; ready to share with an adjuster, contractor, or family member the moment you need it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BAND ═══ -->
+<section class="cta-band fade">
+  <h2>Protect your Lafayette home before the next storm season.</h2>
+  <p>Booking is done over a quick phone call. We'll schedule your scan and walk you through what to expect.</p>
+  <a href="book-a-scan.html" class="btn-dark">Book a Scan</a>
+</section>
+<!-- ═══ FAQ (new, 2026-07-31) — local Lafayette / Acadiana questions ═══
+     Matching FAQPage schema is in the ld+json @graph in <head>. Change one, change both.
+     ⚠ SOURCE-CHECK: Q1 and Q2 carry specific figures (Delta as the 4th-largest power outage in
+     Louisiana history; a December 2023 storm flooding unmapped parts of Downtown; nearly half of
+     everything built in the parish since 2001 sitting in a broader flood-risk zone than FEMA maps
+     show; UL Lafayette's ~12,000 students). Lauren's research, used verbatim, wants a citation pass. -->
+<section id="faq" class="fade">
+  <div class="inner">
+    <div class="fade" style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow center">Local Questions</div>
+      <h2>Lafayette Questions, Straight Answers</h2>
+    </div>
+    <div class="faq-grid fade">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Lafayette hasn&rsquo;t taken a direct hurricane hit like Cameron or Lake Charles &mdash; does that mean I&rsquo;m not really at risk?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Not really. Lafayette has never taken one catastrophic direct hit, but it&rsquo;s absorbed a steady string of storms over 20 years &mdash; Rita&rsquo;s regional damage in 2005, Gustav and Ike&rsquo;s wind in 2008, Laura and Delta&rsquo;s wind and power outages in 2020 (Delta alone caused the 4th-largest power outage in Louisiana history, largely because it hit populated Lafayette directly, unlike Laura). And the parish&rsquo;s actual worst disaster on record didn&rsquo;t involve wind at all &mdash; the August 2016 flood, which ultimately damaged an estimated 4,000&ndash;5,000 homes parish-wide, wasn&rsquo;t even a named storm. Waiting for &ldquo;the big one&rdquo; to hit here is exactly the gap this closes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">My home isn&rsquo;t near the Vermilion River &mdash; do I still need to worry about flooding?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Yes. Most flooding in Lafayette Parish doesn&rsquo;t come from the river overflowing its banks &mdash; it comes from the coulees that feed it, and from flash flooding that isn&rsquo;t on FEMA&rsquo;s official maps at all. A December 2023 storm flooded parts of Downtown that aren&rsquo;t in any mapped flood zone. Local modeling that accounts for that flash-flood risk shows nearly half of everything built in Lafayette Parish since 2001 sits inside a broader flood-risk zone than FEMA&rsquo;s map alone shows &mdash; so distance from the river isn&rsquo;t a reliable measure of your actual exposure.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I own rental property near UL Lafayette &mdash; is documentation worth it for a rental, not just my own home?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Yes &mdash; UL Lafayette&rsquo;s roughly 12,000 students drive a large off-campus rental market with constant tenant turnover. A dated, tagged record of a unit&rsquo;s condition and furnishings gives landlords and property managers a clear baseline for security deposit disputes and damage claims between tenants, not just for a catastrophic loss.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I own an older home in one of Lafayette&rsquo;s historic districts &mdash; does documentation work differently for a historic property?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>It matters more, not differently. Districts like Sterling Grove and Freetown-Port Rico include homes with original materials, millwork, and architectural details from the 1800s and early 1900s that cost far more to replace than a standard policy assumes. A detailed, tagged record makes the case for the specialized coverage &mdash; or claim value &mdash; that kind of home actually requires.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I need a specific reason, like a storm on the way, to book a scan?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>No. Plenty of Lafayette clients book without any disaster in mind &mdash; before or after a renovation, during estate planning, or simply because they&rsquo;ve never had a real inventory of what they own. Local flood and storm risk is a strong reason to prioritize it, not the only one.</p></div>
+      </div>
+    </div>
+    <div class="faq-cta-row">
+      <a href="faq.html" class="btn-outline-purple">See All Questions</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="inner">

@@ -1,28 +1,57 @@
-# DHDO — Digital Home Documentation Operations
+# DHDO — Digital Home Documentation & Organization
 
-DHDO is a professional Matterport 3D scanning and digital property documentation service based in Lake Charles, Louisiana. A division of Bradberry Construction & Design.
+DHDO is a professional Matterport 3D scanning and home inventory service based in Lake Charles,
+Louisiana. A division of Bradberry Construction & Design.
 
 ## What We Do
 
-We scan residential and commercial properties using Matterport 3D technology to create permanent, shareable digital records. Clients receive a hosted Matterport model, detailed floor plans, still photography, and embedded asset tags (make, model, serial number, purchase date, replacement value).
+We scan residential and commercial properties using Matterport 3D technology to create shareable
+digital records. Clients receive a hosted Matterport 3D model, floor plans, still photography, and an
+embedded home inventory with items tagged by make, model, serial number and purchase date.
+
+Where an item can be found online, we include a link to that exact product or the closest comparable
+one — if it is listed online, we will find it.
+
+**DHDO does not appraise items or assign values.** The link shows what an item is and what it
+currently sells for; it is not a valuation, and because listings change or are removed it is a
+starting point rather than a settled figure. Formal valuations are the work of a licensed appraiser.
+
+Clients also receive a physical hard drive containing their files, plus a short tutorial on using and
+uploading those files themselves.
 
 ## Primary Use Cases
 
-- **Insurance documentation**: Pre-loss documentation that protects policyholders from lowball settlements after hurricanes, fires, floods, and other disasters. Lake Charles, LA has experienced multiple major hurricanes.
-- **Contractor documentation**: Visual records of work-in-progress and completed projects.
-- **Property management**: Detailed records for landlords and property managers.
-- **Investment property**: Due diligence and portfolio documentation for real estate investors.
-- **HOA neighborhood programs**: Bulk pricing for neighborhoods (10+ homes: $50 off/home; 20+ homes: $75 off/home; full neighborhood: custom quote).
+- **Insurance documentation**: Pre-loss documentation so policyholders can prove what they owned after
+  hurricanes, fires, floods and other disasters. Lake Charles has experienced multiple major hurricanes.
+- **Home inventory**: A room-by-room record of a home and its contents for homeowners.
+- **Estate planning**: A dated record of a home and its contents to support attorneys, executors and
+  advisors. Not an appraisal and not a legal filing.
+- **Real estate**: An independent, dated record of a property's condition and contents at the time of
+  a transaction.
+- **Contractor documentation**: Visual records of work in progress and completed projects.
+- **Property management and investment property**: Records for landlords, managers and investors.
+- **HOA and neighborhood programs**: Quoted custom every time, based on the scope of the work, the
+  location, and the number of homes involved. There is no fixed per-home discount.
 
 ## Service Area
 
-Lake Charles, Louisiana and surrounding areas (approximately 100-mile radius). Target neighborhoods include Graywood, Country Club, Maplewood, Moss Lake, Prien Lake, Contraband Bayou, and Gillis/Carlyss.
+Lake Charles, Louisiana and surrounding areas (roughly a 100-mile radius), including Lafayette and
+Acadiana. Neighborhoods served include Graywood, Country Club, Maplewood, Moss Lake, Prien Lake,
+Contraband Bayou, and Gillis/Carlyss.
 
 ## Pricing
 
-- Basic Residential: $350
-- Pro Residential: $450
-- Commercial: $800+
+Package pricing, hosting terms and add-ons are maintained on one page and change from time to time:
+https://www.dhdoscan.com/pricing.html
+
+Portal hosting is not permanent — Basic includes a set number of months and other packages run on
+Annual Record Care. See the pricing page for current terms.
+
+## Turnaround
+
+The on-site visit takes one to three hours depending on the size of the property and the package.
+Turnaround depends on what was booked; current figures are on the FAQ:
+https://www.dhdoscan.com/faq.html
 
 ## Contact
 
@@ -32,15 +61,31 @@ Lake Charles, Louisiana and surrounding areas (approximately 100-mile radius). T
 
 ## Team
 
-- Jonathan Bradberry — CEO, Bradberry Construction & Design / DHDO
-- Noah — Lead Sales & Scan Operations
-- Jay — Operations, CRM, scheduling, delivery
+- Jonathan Bradberry
+- Noah Dressler
+- Jay Joseph
 
 ## Key Pages
 
-- Homepage / Book a Scan: https://www.dhdoscan.com/
-- Privacy Policy: https://www.dhdoscan.com/privacy.html
+- Homepage: https://www.dhdoscan.com/
+- Home inventory / home documentation: https://www.dhdoscan.com/home-documentation.html
+- Book a scan: https://www.dhdoscan.com/book-a-scan.html
+- Pricing: https://www.dhdoscan.com/pricing.html
+- For insurance professionals: https://www.dhdoscan.com/insurance-professionals.html
+- Hurricane preparation: https://www.dhdoscan.com/hurricane.html
+- Estate planning: https://www.dhdoscan.com/estate-planning.html
+- Real estate: https://www.dhdoscan.com/real-estate.html
+- Lake Charles: https://www.dhdoscan.com/lake-charles.html
+- Lafayette: https://www.dhdoscan.com/lafayette.html
+- FAQ: https://www.dhdoscan.com/faq.html
+- About: https://www.dhdoscan.com/about.html
+- Privacy policy: https://www.dhdoscan.com/privacy.html
 
 ## About
 
-DHDO is positioned as the premium, white-glove Matterport documentation service in Southwest Louisiana. Not the cheapest — the best. All scan deliverables are provided within 5–7 business days.
+DHDO is positioned as the premium, white-glove Matterport documentation and home inventory service in
+Southwest Louisiana. Not the cheapest — the best.
+
+DHDO provides property documentation only. It is not insurance, legal, or financial advice, and not an
+appraisal, inspection or valuation service. Coverage, valuation and claim decisions rest with the
+client's insurer, attorney or advisor.

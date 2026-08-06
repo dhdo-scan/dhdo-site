@@ -12,24 +12,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <title>Privacy Policy | DHDO</title>
-  <meta name="description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana.">
+  <title>Pre-Loss Home Documentation for Insurance Agents | Lake Charles, LA – DHDO</title>
+  <meta name="description" content="Done-for-you pre-loss documentation that protects your clients and your book. Partner with DHDO to give South Louisiana agents and adjusters an answer at claim time.">
   <!-- ── Technical SEO (dev, 2026-07-31, per Lauren's brief) ──
        og:title / og:description deliberately mirror this page's own <title> and meta
        description above; og:url mirrors the canonical. Keep them in sync if either changes.
        CANONICAL KEEPS .html. When .html is stripped at some point after launch, these
        canonicals AND the og:url must change in the same pass as the 301s, or every page
        will point search engines at a URL that no longer serves. -->
-  <link rel="canonical" href="https://www.dhdoscan.com/privacy.html" />
+  <link rel="canonical" href="https://www.dhdoscan.com/insurance-professionals.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.dhdoscan.com/privacy.html" />
-  <meta property="og:title" content="Privacy Policy | DHDO" />
-  <meta property="og:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
+  <meta property="og:url" content="https://www.dhdoscan.com/insurance-professionals.html" />
+  <meta property="og:title" content="Pre-Loss Home Documentation for Insurance Agents | Lake Charles, LA – DHDO" />
+  <meta property="og:description" content="Done-for-you pre-loss documentation that protects your clients and your book. Partner with DHDO to give South Louisiana agents and adjusters an answer at claim time." />
   <meta property="og:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
   <meta property="og:site_name" content="DHDO — Digital Home Documentation &amp; Organization" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | DHDO" />
-  <meta name="twitter:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
+  <meta name="twitter:title" content="Pre-Loss Home Documentation for Insurance Agents | Lake Charles, LA – DHDO" />
+  <meta name="twitter:description" content="Done-for-you pre-loss documentation that protects your clients and your book. Partner with DHDO to give South Louisiana agents and adjusters an answer at claim time." />
   <meta name="twitter:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -239,7 +239,11 @@
       margin: 1.5rem auto 4rem;
     }
     .why-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      /* LAYOUT FIX (dev, 2026-07-31): was repeat(3, 1fr) with FOUR cards, so "Your Clients" sat alone
+         on a second row at one-third width with two-thirds of the row empty — that is the "4 cards sit
+         awkwardly" note. 2x2 balances both rows. Not 4-up: card 02 (Surplus & Specialty Lines) carries
+         the longest copy on the page and crushes into a narrow column at a quarter width. */
+      display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 1.5px; background: var(--cream-dark);
     }
     .why-card {
@@ -720,6 +724,18 @@
     .bg-purple-deep { background: var(--purple-deep); }
     .bg-purple .eyebrow::after, .bg-purple-deep .eyebrow::after { background: rgba(201,162,78,0.35); }
   
+    /* ── media placeholders + image band (for media added later) ── */
+    .media-sec { padding: 0 6% 5.5rem; }
+    .media-ph { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.65rem; text-align: center; min-height: 300px; padding: 2.5rem 2rem; border: 2px dashed rgba(201,162,78,0.5); border-radius: 2px; color: var(--purple); background: repeating-linear-gradient(45deg, rgba(201,162,78,0.05), rgba(201,162,78,0.05) 12px, rgba(201,162,78,0.09) 12px, rgba(201,162,78,0.09) 24px); }
+    .media-ph svg { width: 34px; height: 34px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .media-ph .mph-label { font-family: 'Outfit', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .media-ph .mph-desc { font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 300; line-height: 1.65; max-width: 420px; color: rgba(46,26,71,0.72); }
+    .media-ph .mph-spec { font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(46,26,71,0.4); }
+    .media-band { position: relative; }
+    .media-band img { width: 100%; height: 470px; object-fit: cover; object-position: center; display: block; }
+    .media-band .media-credit { position: absolute; right: 12px; bottom: 10px; font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 0.03em; color: rgba(255,255,255,0.8); background: rgba(26,14,46,0.55); padding: 3px 9px; border-radius: 3px; }
+    @media (max-width: 720px) { .media-band img { height: 300px; } .media-ph { min-height: 210px; } }
+
     /* ── nav actions: avatar (client portal) button + hamburger ── */
     .nav-actions { display: flex; align-items: center; gap: 0.85rem; }
     .nav-avatar { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(46,26,71,0.22); color: var(--purple) !important; transition: all 0.2s; text-decoration: none; }
@@ -804,40 +820,150 @@
     .bg-purple .media-ph .mph-desc, .bg-purple-deep .media-ph .mph-desc {
       color: rgba(255,255,255,0.75) !important;
     }
+
+    /* ── before/after pair: pre-loss record vs post-event scan, stacked side by side (2026-07-31) ── */
+    .ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.75rem; }
+    .ba-pane { position: relative; }
+    .ba-tag { position: absolute; top: 0; left: 0; z-index: 2; background: var(--gold); color: var(--purple-deep); font-family: 'Outfit', sans-serif; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.4rem 0.85rem; }
+    .ba-ph { width: 100%; aspect-ratio: 4 / 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.7rem; text-align: center; padding: 2rem 1.35rem 1.35rem; border: 2px dashed rgba(201,162,78,0.5); border-radius: 2px; background: repeating-linear-gradient(45deg, rgba(201,162,78,0.06), rgba(201,162,78,0.06) 12px, rgba(201,162,78,0.1) 12px, rgba(201,162,78,0.1) 24px); }
+    .ba-need { font-family: 'Outfit', sans-serif; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .ba-note { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.78); max-width: 300px; }
+    .ba-cap { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.72); text-align: center; max-width: 700px; margin: 0 auto 2.5rem; }
+    /* 900px, matching .why-grid — at 721-900px a 2-up pair leaves ~305px panes, too cramped for the
+       overlay tag plus the caption, and a before/after only reads side by side if both are legible. */
+    @media (max-width: 900px) { .ba-pair { grid-template-columns: 1fr; } }
+    /* ── 2026-07-26 Carla round: real paragraph break between stacked body paragraphs ── */
+    .about-grid .fade p + p { margin-top: 1.15rem; }
+    /* ── What We Do now has 4 supporting cards: 2x2 on desktop, stacked on mobile ── */
+    @media (min-width: 901px) { .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-content: start; } }
 </style>
 
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.dhdoscan.com/#org",
+      "name": "DHDO — Digital Home Documentation & Organization",
+      "alternateName": "DHDO",
+      "url": "https://www.dhdoscan.com/",
+      "logo": "https://www.dhdoscan.com/logo-primary.png",
+      "image": "https://www.dhdoscan.com/logo-primary.png",
+      "telephone": "+1-337-415-1951",
+      "email": "hello@dhdoscan.com",
+      "parentOrganization": {
         "@type": "Organization",
-        "@id": "https://www.dhdoscan.com/#org",
-        "name": "DHDO — Digital Home Documentation & Organization",
-        "alternateName": "DHDO",
-        "url": "https://www.dhdoscan.com/",
-        "logo": "https://www.dhdoscan.com/logo-primary.png",
-        "telephone": "+1-337-415-1951",
-        "email": "hello@dhdoscan.com",
-        "parentOrganization": { "@type": "Organization", "name": "Bradberry Construction & Design" },
-        "areaServed": [
-          { "@type": "City", "name": "Lake Charles" },
-          { "@type": "AdministrativeArea", "name": "Calcasieu Parish" },
-          { "@type": "City", "name": "Lafayette" },
-          { "@type": "AdministrativeArea", "name": "Lafayette Parish" },
-          { "@type": "AdministrativeArea", "name": "South Louisiana" }
-        ]
+        "name": "Bradberry Construction & Design"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhdoscan.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.dhdoscan.com/privacy.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake Charles"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Calcasieu Parish"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Pre-Loss Documentation for Insurance Professionals",
+      "name": "Documentation for Insurance Professionals",
+      "description": "Done-for-you pre-loss documentation that protects your clients and your book. Partner with DHDO to give South Louisiana agents and adjusters an answer at claim time.",
+      "url": "https://www.dhdoscan.com/insurance-professionals.html",
+      "provider": {
+        "@id": "https://www.dhdoscan.com/#org"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake Charles"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Calcasieu Parish"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insurance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Documentation for Insurance Professionals",
+          "item": "https://www.dhdoscan.com/insurance-professionals.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the introduction process work for agents and brokers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You don’t sell or manage anything — you make an introduction. Give your client DHDO’s contact information, or let us know you have a client interested, and our team handles scheduling, the scan, and delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What sets DHDO apart from a home inventory app or DIY checklist my client could use instead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apps and checklists ask the homeowner to do the work, and most never finish — so when a claim happens, there’s often nothing usable to hand an adjuster. DHDO is done-for-you: our team scans the property, tags the assets, and delivers a complete, professional-grade record your client never has to build or maintain themselves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this integrate with my existing claims or renewal workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DHDO doesn’t require you or your agency to adopt any new software. Your client’s record is delivered as a single secure link you can share with an adjuster or carrier alongside however you already handle claims and renewals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see my client’s scan, or only they and the carrier?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your client owns their record and decides who sees it. They can share their secure portal link with you, an adjuster, or a carrier at their discretion — DHDO doesn’t grant agency access automatically, and we don’t sell or share client documentation with third parties. If a client wants you to have standing access, they can add you directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with excess & surplus (E&S), commercial, or high-net-worth accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — DHDO scans and tags residential, commercial, and industrial properties, including high-value homes often written through E&S/surplus carriers, where the complexity and value of the property typically call for more detailed documentation. The process doesn’t change based on carrier type: DHDO documents the property, and your carrier decides how that factors into underwriting or pricing."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -915,96 +1041,285 @@
   <a href="tel:3374151951" style="color:var(--gold);">Call (337) 415-1951</a>
 </div>
 
-<section class="page-hero" style="padding-bottom:3.5rem;">
+<!-- ═══ HERO ═══ -->
+<section class="page-hero">
   <div class="hero-grid-lines"></div>
   <div class="hero-orb"></div>
   <div class="inner">
-    <div class="hero-eyebrow">Legal</div>
-    <h1>Privacy <em>Policy</em></h1>
-    <p class="hero-sub">How DHDO collects, uses, and protects your information.</p>
+    <div class="hero-eyebrow">For Insurance Professionals</div>
+    <h1>Pre-Loss Documentation That Gives Insurance Agents <em>an Answer</em> at Claim Time</h1>
+    <p class="hero-sub">DHDO provides done-for-you Matterport 3D pre-loss documentation for insurance agents, brokers, and adjusters across South Louisiana. Your client gets a professional, tagged, and dated record of their home — built before a claim, not reconstructed after one — so you're never the one without an answer when a client calls.</p>
+    <div class="hero-actions">
+      <a href="book-a-scan.html" class="btn-gold">Book a Scan</a>
+      <a href="#why" class="btn-ghost">See How We Help</a>
+    </div>
   </div>
 </section>
 
-<style>
-  .legal-content { max-width: 820px; }
-  .legal-content h3 { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:400; color:var(--purple); margin:2.5rem 0 0.75rem; }
-  .legal-content p { font-size:1rem; line-height:1.85; color:rgba(46,26,71,0.86); margin-bottom:1rem; }
-  .legal-content strong { color:var(--purple); font-weight:600; }
-  .legal-content .legal-meta { font-size:0.78rem; color:rgba(46,26,71,0.5); letter-spacing:0.04em; margin-bottom:1.75rem; }
-  .legal-content a { color:var(--gold); text-decoration:none; }
-</style>
-<section class="bg-cream fade">
-  <div class="inner legal-content">
-    <p class="legal-meta">Last updated: July 31, 2026</p>
-    <p>DHDO — Digital Home Documentation &amp; Organization (&ldquo;DHDO,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a division of <a href="https://bradberryconstruction.com/" target="_blank" rel="noopener">Bradberry Construction &amp; Design</a>, provides three-dimensional property documentation and related organizational services in South Louisiana. This Privacy Policy explains what information we collect, how we use and share it, how we protect it, and the choices available to you. It applies to dhdoscan.com, the DHDO Client Portal at <a href="https://portal.dhdoscan.com" target="_blank" rel="noopener">portal.dhdoscan.com</a>, and the services we provide.</p>
-
-    <h3>Information We Collect</h3>
-    <p><strong>Information you give us.</strong> When you request a scan, contact us, or schedule an appointment, we collect your name, email address, phone number, property address, and any scheduling preferences or notes you provide.</p>
-    <p><strong>Documentation data.</strong> When we scan a property, we create a three-dimensional digital record and may catalog assets you ask us to tag, including make, model, serial number, purchase date, and any receipts or details you share with us (&ldquo;Client Home Documentation&rdquo;).</p>
-    <p><strong>Portal access data.</strong> When you access the DHDO Client Portal, we collect the information needed to verify your identity and grant access to your documentation, such as your magic-link token, login timestamp, and general session activity. The Portal does not require you to create or remember a traditional password.</p>
-    <p><strong>Automatically collected.</strong> Like most websites, we collect basic usage data (pages visited, device and browser type, approximate location) through cookies and analytics tools to understand how the site is used and to keep it secure.</p>
-
-    <h3>Information We Do Not Intentionally Collect</h3>
-    <p>We do not intend to collect Social Security numbers, driver&rsquo;s license or state identification numbers, passport numbers, financial account usernames or passwords, full payment card numbers or security codes, medical records, or personal information from children under 13 through our website or standard intake process. Before a scan, clients are responsible for removing, concealing, or identifying any medications, financial documents, identification documents, security codes, firearms, safes, or other sensitive items they do not want captured.</p>
-
-    <h3>How We Use Your Information</h3>
-    <p>We use your information to schedule and deliver your documentation service, communicate with you about your scan and account, provide access to your Client Portal, respond to inquiries, organize and tag Client Home Documentation (including with the assistance of software and artificial-intelligence tools described below), improve our website and services, and meet legal or security obligations.</p>
-
-    <h3>How We Share Your Information</h3>
-    <p>We do not sell your personal information or your Client Home Documentation. We share information only with service providers that help us operate — for example, Matterport or similar scanning and hosting platforms, website hosting, secure database and portal infrastructure, email delivery, payment processing, and website analytics and bot-protection tools — and only as needed to provide the service.</p>
-    <p>We will not share your Client Home Documentation with law firms, insurance agents, insurance carriers, adjusters, family members, contractors, appraisers, realtors, or estate planners unless you direct us to, except where disclosure is required by law or necessary for our authorized vendors to perform services on our behalf.</p>
-    <p><strong>Sharing through the Client Portal.</strong> The Client Portal lets you grant an insurance agent or other party of your choosing secure, read-only access to your Client Home Documentation through a one-click invitation. You decide who receives access, and you may revoke it at any time through the Portal. A party you&rsquo;ve granted access to may add supporting materials, such as claim-related estimates or paperwork, to your record with your permission. DHDO does not grant or expand this access on its own, and no agent or third party ever sees a record you have not chosen to share.</p>
-    <p>We may also disclose information if required by law, court order, or legal process, or to protect our rights, safety, or property.</p>
-
-    <h3>How We Store and Protect It</h3>
-    <!-- ACCURACY (dev, 2026-07-31) — TWO CHANGES TO LAUREN'S DRAFT, BOTH CHECKED AGAINST PRODUCTION:
-         (1) Her draft said logins are "protected by two-factor authentication by default". They are not.
-             SMS 2FA is OPT-IN and 2 of 7 live clients have switched it on. A privacy policy is the wrong
-             place to overstate a control, so this says "available on your account" instead. Make 2FA the
-             default in the portal and Lauren's stronger wording becomes true and can go back in.
-         (2) Her draft said "You may add an additional password to any individual scan." The column
-             exists but 0 of 7 scans use it and there is no confirmed client-facing control, so this says
-             an additional password "can be added on request" until that is verified. -->
-    <p>Your documentation is stored securely off-site in the cloud and accessed through a private, magic-link login, with two-factor authentication available on your account. An additional password can be added to an individual scan on request for your most sensitive records. Your Client Home Documentation is hosted redundantly across Matterport&rsquo;s secure cloud infrastructure and DHDO&rsquo;s own systems, which are independently reviewed for security. No method of storage or transmission is completely secure, but we work to keep your data protected.</p>
-
-    <h3>Data Retention</h3>
-    <!-- Lauren, 2026-07-31: your note says this section still needs a revision pass on how scan-only
-         service is handled. Using your v2 wording as-is for now — the last paragraph is the part you
-         flagged. Also note this replaces the old flat "three (3) years from final delivery" retention
-         period, which no longer matched how Annual Record Care actually works. -->
-    <p>How long DHDO keeps your Client Home Documentation depends on your Annual Record Care status. While Annual Record Care is active on your account, your 3D scan, asset inventory, and related documentation remain hosted and accessible through your Client Portal.</p>
-    <p>Annual Record Care runs in twelve-month terms. Some packages, such as the Guided Property Record, include your first year of Annual Record Care with your scan; other packages may add it separately, as described in your service agreement or rate card.</p>
-    <p>If your Annual Record Care term ends and is not renewed, you have thirty (30) days from the end of that term to renew before we take further action. If you do not renew within that thirty-day window, DHDO will delete your hosted scan and remove your Portal access. This does not affect the physical hard drive or USB copy of your original scan delivered to you at project completion &mdash; that copy remains yours to keep, and DHDO has no ability to access or delete it remotely.</p>
-    <p>For projects delivered without Annual Record Care, such as scan-only service, DHDO retains your documentation only as needed to complete delivery, plus a limited period afterward for quality assurance and administrative purposes, after which it is deleted from our active systems.</p>
-
-    <h3 id="cookies">Cookies &amp; Analytics</h3>
-    <p>We use cookies and analytics tools (including Google Analytics via Google Tag Manager) to measure site usage, and bot-protection tools (Cloudflare Turnstile) to help secure our forms. When you first visit our website, we display a short cookie notice letting you know about this use and linking to this Policy. You can control cookies through your browser settings at any time; disabling them may affect how parts of the site work.</p>
-
-    <h3>Artificial Intelligence and Automated Tools</h3>
-    <p>DHDO may use software tools, automation, or artificial-intelligence features — including third-party AI services such as Google&rsquo;s Gemini — to help organize, tag, and manage Client Home Documentation, such as identifying and labeling assets by make, model, or category.</p>
-    <p>The Client Portal includes an AI-assisted feature that lets you add new items to your inventory by submitting a photo, which the AI uses to suggest a name, brand, model, and similar details for your review before saving.</p>
-    <p>These tools support DHDO&rsquo;s service delivery only and are subject to the confidentiality and security terms of our vendor agreements. DHDO will not use identifiable Client Home Documentation to train public or third-party artificial-intelligence models without your separate written consent.</p>
-
-    <h3>Your Choices</h3>
-    <p>You may contact us to request access to, correction of, deletion of, or a copy of the information we hold about you, including your Client Home Documentation, and you may opt out of marketing messages at any time. You may also ask us to restrict certain sharing of your information. We aim to respond within thirty (30) days of a verifiable request. We may need to verify your identity before fulfilling a request involving Client Home Documentation, property records, or Portal access, and we may decline or limit a request where permitted or required by law.</p>
-
-    <h3>Children&rsquo;s Privacy</h3>
-    <p>Our services are directed to adults, and we do not knowingly collect personal information from children under 13 through our website. Home scans may incidentally capture rooms, belongings, or images associated with minors when an adult client authorizes the scan. The client authorizing the scan is responsible for removing, concealing, or excluding anything involving children that they do not want captured. Consent regarding minors is further addressed in DHDO&rsquo;s Client Scan Authorization and Data Consent Form, completed prior to each on-site visit.</p>
-
-    <h3>Professional Disclaimer</h3>
-    <p>DHDO provides independent digital home documentation and organization services only. DHDO is not a law firm, insurance company, insurance agency, public adjuster, appraiser, or licensed home inspector, and does not adjust claims, determine or assign insurance values, or provide legal, tax, or insurance advice. DHDO does not guarantee coverage, claim outcomes, evidentiary admissibility, or premium discounts. Clients should consult their own licensed professional for advice specific to their situation.</p>
-
-    <h3>Marketing, Demonstrations, and Case Studies</h3>
-    <p>DHDO will not use identifiable Client Home Documentation, interior home images, or private client records in public marketing, demonstrations, case studies, testimonials, or social media without your separate written permission.</p>
-
-    <h3>Changes to This Policy</h3>
-    <p>We may update this policy from time to time. When we do, we will revise the &ldquo;Last Updated&rdquo; date above, and material changes will be reflected on this page.</p>
-
-    <h3>Contact Us</h3>
-    <p>Questions about this policy or your information? Reach us at <a href="#" class="team-email" data-em="moc.nacsodhd@olleh" onclick="return openEmail(this)">hello@dhdoscan.com</a> or <a href="tel:3374151951">(337) 415-1951</a> — DHDO, Lake Charles, Louisiana.</p>
+<!-- ═══ ABOUT — What We Do ═══ -->
+<section id="about" class="fade">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="eyebrow">What We Do</div>
+        <h2>The Call You Never Have to Make</h2>
+        <p>The hardest call in your book is the one where a client's claim is disputed and there's nothing to point to. DHDO closes that gap before it opens. Our team scans the property, tags the assets, and delivers a timestamped digital record your client — and you — can reference the day it matters.</p>
+        <p>In Lake Charles, this isn't hypothetical. After Hurricanes Laura and Delta, thousands of homeowners had to prove what they'd lost from memory and a few phone photos — and many settled for less because of it. A pre-loss record is the difference between remembering a room and documenting it.</p>
+        <p>DHDO is a documentation tool, not an insurance producer, adjuster, or inspector. We don't determine coverage, assign value, or make underwriting calls — we document what's there, so the people who do have a solid, dated record to start from.</p>
+        <img src="media/poolhouse-assettagging-shaq.png" alt="A high-value signed item documented and asset-tagged inside a DHDO pre-loss scan — item, condition, and proof of ownership recorded before any claim" loading="lazy" style="width:100%;height:auto;margin-top:2rem;border-radius:2px;display:block;border:1px solid rgba(201,162,78,0.25);box-shadow:0 20px 50px -20px rgba(26,14,46,0.35);" />
+      </div>
+      <div class="about-cards fade" style="transition-delay:0.15s">
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Pre-Loss, Not Post-Claim</h4>
+            <p>Every scan happens before a loss, not after — the difference between a record insurers can rely on and a homeowner's memory of a room that no longer exists.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h4>Done For You, Not DIY</h4>
+            <p>Home inventory apps ask homeowners to do the work, and most never finish it. DHDO's team does the scan, the tagging, and the delivery — nothing for your client to maintain.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4>A Record Every Party Can Reference</h4>
+            <p>One secure link. Your client, your office, and the adjuster can each view the same documented record — no chasing photos or receipts after the fact.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0L2.7 16.7a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4z"/><line x1="7" y1="17" x2="9" y2="15"/><line x1="10.5" y1="13.5" x2="12.5" y2="11.5"/><line x1="14" y1="10" x2="16" y2="8"/></svg>
+          </div>
+          <div>
+            <h4>Measured, Not Estimated</h4>
+            <p>Hand-measured inspections leave room for error — overshoot the footprint and a client pays for coverage they don't need; undershoot it and they're underinsured on what they do have. A DHDO scan captures exact measurements from day one, so the file starts from a precise record, not a guess.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ═══ CLIENT REVIEW — REMOVED FOR LAUNCH 2026-08-06 (JJ) ═══
+     Was publishing draft words under the byline "Client Name".
+
+     THE DRAFT IS KEPT HERE ON PURPOSE — read it to a real agent and ask whether they would put their
+     name to it, or say it their own way. Chris Gaudet (State Farm) and Zac Picard (Goosehead) are
+     both live agents on the portal and are the obvious people to ask. Must NOT go live attributed to
+     anyone until approved in writing.
+
+       "Having a pre-loss record we can point an adjuster to changes the whole conversation
+        at claim time."
+
+     TO RESTORE:
+
+     <section class="quote-block fade">
+       <div class="inner fade">
+         <span class="q-glyph">&ldquo;</span>
+         <blockquote>THEIR APPROVED WORDS.</blockquote>
+         <span class="q-cite">THEIR NAME</span>
+         <span class="q-role">Insurance Professional &middot; Lake Charles, LA</span>
+       </div>
+     </section>
+     ═══ -->
+
+<!-- ═══ WHY — How We Help ═══ -->
+<section id="why" class="fade">
+  <div class="inner">
+    <div class="fade" style="text-align:center;margin-bottom:3.5rem">
+      <div class="eyebrow center">How We Help</div>
+      <h2>Built Around How You Work</h2>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>Agents &amp; Brokers</h3>
+        <p>You make the introduction — that's the entire ask. No new software, no added workflow, no cost to your agency. Your client gets a documented home; you get a client who's harder to lose after a bad claim.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Surplus &amp; Specialty Lines</h3>
+        <p>E&amp;S, commercial, and high-net-worth accounts often have more room to work with than a standard admitted policy allows. A dated, tagged record gives your client something concrete to bring into that conversation — including on premium, where your carrier allows it.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Adjusters</h3>
+        <p>Review a property without waiting on access. A DHDO scan gives you room-by-room detail, tagged assets, and current condition, so you can work a file from your desk.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <h3>Your Clients</h3>
+        <p>One secure link to their home's digital record — 3D walkthrough, floor plans, photos, and tagged belongings with purchase details — ready whenever they need it, not just after a loss.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS — How Partnering Works ═══ -->
+<section id="process" class="fade">
+  <div class="inner">
+    <div class="process-hd fade">
+      <div class="eyebrow">Our Process</div>
+      <h2 class="light">How Partnering <em style="font-style:italic;color:var(--gold)">Works</em></h2>
+    </div>
+    <div class="steps">
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>1</span></div></div>
+        <div class="step-body">
+          <h3>A Short Call, No Commitment</h3>
+          <p>We walk you through what DHDO does and how the introduction works. No contract, no obligation.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>2</span></div></div>
+        <div class="step-body">
+          <h3>Billed to Your Client, Not Your Agency</h3>
+          <p>Your client pays for their own scan directly, the same as any home service. There's no cost or billing relationship on your end.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>3</span></div></div>
+        <div class="step-body">
+          <h3>One Visit, Delivered in Days</h3>
+          <!-- JJ 2026-08-05: was "about a week". Corrected to two weeks.
+               ⚠ CONFLICT TO RESOLVE: faq.html still promises a fully tagged inventory "within 5-7
+               business days", which is roughly ONE week, not two. Both numbers are now live on the
+               same site and they contradict each other. JJ: if two weeks is the real turnaround, the
+               FAQ needs the same change - not touched here because it is a delivery promise to
+               customers, not a marketing line. -->
+          <p>A DHDO team member scans the property in a single visit. Your client's digital record is delivered within about two weeks of the visit.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>4</span></div></div>
+        <div class="step-body">
+          <h3>One Link Into Your Existing Workflow</h3>
+          <p>Your client's record lives in one shareable link you can reference at renewal, at claim time, or any time a client calls — no new system for your office to learn.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BAND ═══ -->
+<section class="cta-band fade">
+  <h2>Give your clients an answer before they need one.</h2>
+  <p>Start the conversation about pre-loss documentation for your book of business across South Louisiana.</p>
+  <p style="font-style:italic;font-size:0.82rem;color:var(--purple);opacity:0.8;line-height:1.7;max-width:520px;margin:-0.75rem auto 2rem;">No cost to you or your agency. You make the introduction — we handle the rest.</p>
+  <a href="book-a-scan.html" class="btn-dark">Book a Scan</a>
+</section>
+
+<!-- ═══ CLIENT PORTAL — agent / pre- & post-loss view ═══ -->
+<section class="bg-purple fade">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">The Client Portal</div>
+      <h2 class="light">One Secure Home for Every <em style="font-style:italic;color:var(--gold)">Record</em></h2>
+      <p class="section-lead light-lead">Every scan, floor plan, and tagged asset lives in one secure client portal — not scattered across texts, emails, or a drawer of receipts. Your client controls access and can share it directly with you or their adjuster when it's needed. For agents, that access becomes a claims advantage. Once a client shares their record, you can pull the pre-loss scan up next to the post-event scan, side by side, and see exactly what changed — no guesswork, no dispute over what was there, just a documented answer that moves the claim forward.</p>
+    </div>
+    <!-- Added 2026-08-05 (JJ: "use the /media files as well"). This file was sitting in media/
+         referenced by NO page. It is the strongest asset for this section: the pool house dollhouse
+         with the inventory pins actually visible, "Presented by DHDO" on it, so it shows an agent
+         what a pre-loss record looks like without needing a loss to have happened. -->
+    <div class="fade" style="margin-bottom:3rem;">
+      <img src="media/poolhouse-dollhouse-assettagging-side-img.png" alt="A documented property shown as a 3D dollhouse with individual inventory tags pinned to items throughout the space, presented in the DHDO portal" loading="lazy" style="width:100%;height:auto;border-radius:2px;display:block;border:1px solid rgba(201,162,78,0.25);box-shadow:0 20px 50px -20px rgba(26,14,46,0.45);" />
+      <p style="font-size:0.72rem; color:rgba(255,255,255,0.55); letter-spacing:0.03em; margin-top:0.7rem; text-align:center;">An actual pre-loss record. Each pin is a tagged item, filterable by category &mdash; this is what your client can hand an adjuster.</p>
+    </div>
+
+    <!-- ═══ BEFORE / AFTER PAIR — REMOVED FOR LAUNCH 2026-08-06 (JJ) ═══
+         Two empty "Asset needed" panes were live here, plus a caption promising a comparison that
+         had no images under it. The tagged-dollhouse image above already carries this section, so
+         removing this leaves the page complete rather than short.
+
+         NOT filled from media/ deliberately: every pool house image we hold is the SAME INTACT
+         space, so using one as the "after" would present an undamaged room as post-loss damage — a
+         fabricated loss image on the page that sells claims evidence.
+
+         ASSET NEEDED: two photographs of ONE property from ONE vantage point, before and after a
+         real event. Mismatched angles break it even if both images are real. The .ba-pair, .ba-pane,
+         .ba-tag, .ba-ph and .ba-cap CSS is all still in the stylesheet, so this drops straight back
+         in. TO RESTORE, put both files in media/ and paste:
+
+         <div class="ba-pair fade">
+           <div class="ba-pane">
+             <span class="ba-tag">Before &middot; pre-loss record</span>
+             <img src="media/BEFORE.jpg" alt="The property documented before the event" loading="lazy" />
+           </div>
+           <div class="ba-pane">
+             <span class="ba-tag">After &middot; post-event scan</span>
+             <img src="media/AFTER.jpg" alt="The same property scanned after the event, same vantage point" loading="lazy" />
+           </div>
+         </div>
+         <p class="ba-cap fade">Same property, same vantage point, two dates. Side by side in the portal, the difference is the evidence &mdash; nobody has to remember what was in the room.</p>
+         ═══ -->
+    <div class="hero-actions fade">
+      <a href="https://portal.dhdoscan.com" class="btn-gold">View the Client Portal</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT STRIP ═══ -->
+<section class="stat-strip fade">
+  <div class="inner">
+    <div class="stat-num">74%</div>
+    <p class="stat-label">of homeowners who lost their homes in a recent major disaster were underinsured — most believed they were fully covered.<span style="font-size:0.7rem; color:rgba(255,255,255,0.7); letter-spacing:0.04em; display:block; margin-top:0.75rem;">Source: <a href="https://www.colorado.edu/today/2025/01/09/study-reveals-widespread-underinsurance-among-homeowners-exposing-risk-wake-devastating" target="_blank" rel="noopener" style="color:rgba(201,162,78,0.9); text-decoration:underline; text-underline-offset:2px;">University of Colorado Boulder, Marshall Fire underinsurance study</a></span></p>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" class="fade">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">FAQ</div>
+      <h2>Common Questions,<br>Straight Answers.</h2>
+    </div>
+    <div class="faq-grid fade">
+      <div class="faq-item">
+        <!-- CHANGED (dev, 2026-07-31): Lauren's v4 Q1 drops the old closing sentence, which read
+             "There's no referral fee, no compensation, and no cost to you or your agency — nothing that
+             creates a licensing or disclosure question". That is now contradicted by her NEW faq.html
+             Q13, which announces an affiliate program paying incentives on completed referrals. Removing
+             it here is correct. FLAG FOR JONATHAN/LEGAL: paying licensed insurance producers for
+             referrals is exactly the licensing/disclosure question that sentence used to disclaim —
+             worth confirming against Louisiana producer and anti-rebating rules before the affiliate
+             program is promoted to agents. -->
+        <button class="faq-q" onclick="toggleFaq(this)">How does the introduction process work for agents and brokers?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>You don’t sell or manage anything — you make an introduction. Give your client DHDO’s contact information, or let us know you have a client interested, and our team handles scheduling, the scan, and delivery.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What sets DHDO apart from a home inventory app or DIY checklist my client could use instead?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Apps and checklists ask the homeowner to do the work, and most never finish — so when a claim happens, there’s often nothing usable to hand an adjuster. DHDO is done-for-you: our team scans the property, tags the assets, and delivers a complete, professional-grade record your client never has to build or maintain themselves.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Does this integrate with my existing claims or renewal workflow?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>DHDO doesn’t require you or your agency to adopt any new software. Your client’s record is delivered as a single secure link you can share with an adjuster or carrier alongside however you already handle claims and renewals.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I see my client’s scan, or only they and the carrier?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Your client owns their record and decides who sees it. They can share their secure portal link with you, an adjuster, or a carrier at their discretion — DHDO doesn’t grant agency access automatically, and we don’t sell or share client documentation with third parties. If a client wants you to have standing access, they can add you directly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you work with excess &amp; surplus (E&amp;S), commercial, or high-net-worth accounts?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Yes — DHDO scans and tags residential, commercial, and industrial properties, including high-value homes often written through E&amp;S/surplus carriers, where the complexity and value of the property typically call for more detailed documentation. The process doesn’t change based on carrier type: DHDO documents the property, and your carrier decides how that factors into underwriting or pricing.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="inner">

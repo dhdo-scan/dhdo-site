@@ -12,25 +12,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <title>Privacy Policy | DHDO</title>
-  <meta name="description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana.">
+  <title>Estate Inventory Documentation in South Louisiana | DHDO</title>
+  <meta name="description" content="Estate inventory documentation in South Louisiana — a professional 3D record of a home and its contents to support estate planning, succession, and executors.">
   <!-- ── Technical SEO (dev, 2026-07-31, per Lauren's brief) ──
        og:title / og:description deliberately mirror this page's own <title> and meta
        description above; og:url mirrors the canonical. Keep them in sync if either changes.
        CANONICAL KEEPS .html. When .html is stripped at some point after launch, these
        canonicals AND the og:url must change in the same pass as the 301s, or every page
        will point search engines at a URL that no longer serves. -->
-  <link rel="canonical" href="https://www.dhdoscan.com/privacy.html" />
+  <link rel="canonical" href="https://www.dhdoscan.com/estate-planning.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.dhdoscan.com/privacy.html" />
-  <meta property="og:title" content="Privacy Policy | DHDO" />
-  <meta property="og:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
-  <meta property="og:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
+  <meta property="og:url" content="https://www.dhdoscan.com/estate-planning.html" />
+  <meta property="og:title" content="Estate Inventory Documentation in South Louisiana | DHDO" />
+  <meta property="og:description" content="Estate inventory documentation in South Louisiana — a professional 3D record of a home and its contents to support estate planning, succession, and executors." />
+  <meta property="og:image" content="https://www.dhdoscan.com/media/poolhouse-dollhouse-measurements.png" />
   <meta property="og:site_name" content="DHDO — Digital Home Documentation &amp; Organization" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | DHDO" />
-  <meta name="twitter:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
-  <meta name="twitter:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
+  <meta name="twitter:title" content="Estate Inventory Documentation in South Louisiana | DHDO" />
+  <meta name="twitter:description" content="Estate inventory documentation in South Louisiana — a professional 3D record of a home and its contents to support estate planning, succession, and executors." />
+  <meta name="twitter:image" content="https://www.dhdoscan.com/media/poolhouse-dollhouse-measurements.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -804,40 +804,133 @@
     .bg-purple .media-ph .mph-desc, .bg-purple-deep .media-ph .mph-desc {
       color: rgba(255,255,255,0.75) !important;
     }
+    /* ── 2026-07-26 Carla round: real paragraph break between stacked body paragraphs ── */
+    .about-grid .fade p + p { margin-top: 1.15rem; }
+    /* ── estate examples: two cards, so a 2-up grid (mobile still single column) ── */
+    #scans .scan-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 720px) { #scans .scan-grid { grid-template-columns: 1fr; } }
 </style>
 
     <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.dhdoscan.com/#org",
+      "name": "DHDO — Digital Home Documentation & Organization",
+      "alternateName": "DHDO",
+      "url": "https://www.dhdoscan.com/",
+      "logo": "https://www.dhdoscan.com/logo-primary.png",
+      "telephone": "+1-337-415-1951",
+      "email": "hello@dhdoscan.com",
+      "parentOrganization": {
         "@type": "Organization",
-        "@id": "https://www.dhdoscan.com/#org",
-        "name": "DHDO — Digital Home Documentation & Organization",
-        "alternateName": "DHDO",
-        "url": "https://www.dhdoscan.com/",
-        "logo": "https://www.dhdoscan.com/logo-primary.png",
-        "telephone": "+1-337-415-1951",
-        "email": "hello@dhdoscan.com",
-        "parentOrganization": { "@type": "Organization", "name": "Bradberry Construction & Design" },
-        "areaServed": [
-          { "@type": "City", "name": "Lake Charles" },
-          { "@type": "AdministrativeArea", "name": "Calcasieu Parish" },
-          { "@type": "City", "name": "Lafayette" },
-          { "@type": "AdministrativeArea", "name": "Lafayette Parish" },
-          { "@type": "AdministrativeArea", "name": "South Louisiana" }
-        ]
+        "name": "Bradberry Construction & Design"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhdoscan.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.dhdoscan.com/privacy.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake Charles"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Calcasieu Parish"
+        },
+        {
+          "@type": "City",
+          "name": "Lafayette"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Lafayette Parish"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Estate Inventory Documentation",
+      "name": "Estate Inventory Documentation",
+      "description": "A professional, dated 3D record of a home and its contents — a walkable model, floor plans, photos, and tagged belongings — to support estate planning, Louisiana successions, and executors in South Louisiana.",
+      "provider": {
+        "@id": "https://www.dhdoscan.com/#org"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dhdoscan.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Estate Planning",
+          "item": "https://www.dhdoscan.com/estate-planning.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is a DHDO scan the same as an appraisal or a legal estate inventory?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A DHDO scan is a documentation tool — a detailed 3D record of the home and its contents. It doesn’t assign values or replace a required legal filing. What it does record, for each tagged item, is make, model, serial number and purchase date, plus a link to that exact product online or the closest comparable one where it can be found — if it is listed online, we will find it. That link shows what the item is and what it currently sells for; it is not an appraisal, and because listings change or get removed it is a starting point rather than a settled figure. For formal valuations or legal documents, a licensed appraiser or your attorney handles those, and the scan supports their work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How detailed does an estate inventory need to be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Detailed enough that anyone reviewing it — family, an executor, an attorney, or a tax authority — can identify each item and trust the account. In practice, high-value pieces like jewelry, art, and collectibles are listed individually, while everyday belongings are grouped by category. A DHDO scan captures that identifying detail visually: every room, plus tags noting make, model, and specifics on the items that matter, so less gets missed. The values themselves come from a licensed appraiser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this help my executor with a Louisiana succession?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can support the work, though it isn’t a substitute for legal counsel. A Louisiana succession requires the executor to file a sworn descriptive list of the estate’s assets, valued at fair market value at the time of death and typically prepared by your attorney. A DHDO record gives them a visual, room-by-room reference of the home’s contents to work from while preparing that list — and if privacy is a concern, Louisiana law allows the sworn descriptive list itself to be filed under seal, shielding asset values from public record. Your attorney guides what your specific succession requires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who controls access to the record, and what happens to it after the estate is settled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You decide who gets access from the start — an executor, an heir, an attorney, or an advisor — through your secure client portal, and access can be shared or handed off as circumstances change. Each scan also comes with a physical thumb drive that’s yours to keep permanently. Portal access runs on an annual basis — see our Privacy Policy for how renewal works. Families keep the thumb drive as a lasting reference regardless, and can renew portal access, pass it to heirs, or coordinate a handoff to a new owner if that’s part of the plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep certain rooms, items, or a safe out of the scan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Before the visit, you tell us what’s off-limits — a closet, a room, the contents of a safe — and it’s left out of the scan itself, not just kept from whoever sees the record afterward. You’re in control of what gets documented from the start."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -915,93 +1008,211 @@
   <a href="tel:3374151951" style="color:var(--gold);">Call (337) 415-1951</a>
 </div>
 
-<section class="page-hero" style="padding-bottom:3.5rem;">
+<!-- ═══ HERO ═══ -->
+<section class="page-hero fade">
   <div class="hero-grid-lines"></div>
   <div class="hero-orb"></div>
   <div class="inner">
-    <div class="hero-eyebrow">Legal</div>
-    <h1>Privacy <em>Policy</em></h1>
-    <p class="hero-sub">How DHDO collects, uses, and protects your information.</p>
+    <div class="hero-eyebrow">Estate Planning</div>
+    <h1>Estate Inventory Documentation <em>in South Louisiana</em></h1>
+    <p class="hero-sub">One independent record of a home and everything in it &mdash; so the family, the executor, and the attorney or advisor guiding them all work from the same picture, whether you're planning ahead or settling an estate.</p>
+    <div class="hero-actions">
+      <a href="book-a-scan.html" class="btn-gold">Book a Scan</a>
+      <a href="#professionals" class="btn-ghost">For Attorneys &amp; Advisors</a>
+    </div>
   </div>
 </section>
 
-<style>
-  .legal-content { max-width: 820px; }
-  .legal-content h3 { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:400; color:var(--purple); margin:2.5rem 0 0.75rem; }
-  .legal-content p { font-size:1rem; line-height:1.85; color:rgba(46,26,71,0.86); margin-bottom:1rem; }
-  .legal-content strong { color:var(--purple); font-weight:600; }
-  .legal-content .legal-meta { font-size:0.78rem; color:rgba(46,26,71,0.5); letter-spacing:0.04em; margin-bottom:1.75rem; }
-  .legal-content a { color:var(--gold); text-decoration:none; }
-</style>
-<section class="bg-cream fade">
-  <div class="inner legal-content">
-    <p class="legal-meta">Last updated: July 31, 2026</p>
-    <p>DHDO — Digital Home Documentation &amp; Organization (&ldquo;DHDO,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a division of <a href="https://bradberryconstruction.com/" target="_blank" rel="noopener">Bradberry Construction &amp; Design</a>, provides three-dimensional property documentation and related organizational services in South Louisiana. This Privacy Policy explains what information we collect, how we use and share it, how we protect it, and the choices available to you. It applies to dhdoscan.com, the DHDO Client Portal at <a href="https://portal.dhdoscan.com" target="_blank" rel="noopener">portal.dhdoscan.com</a>, and the services we provide.</p>
+<!-- ═══ WHAT WE DO ═══ -->
+<section id="about" class="fade">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="eyebrow">What We Do</div>
+        <h2>One Record of the Home and Everything In It</h2>
+        <p>Estate inventory documentation is a professional, dated record of a home and its contents &mdash; a walkable 3D model, floor plans, still photos, and tagged belongings, from furniture and art to jewelry and heirlooms, each noted with make, model, and detail where available. It's built to support estate planning and the family, executors, and advisors who one day settle an estate.</p>
+        <p>More than half of U.S. adults &mdash; 56% &mdash; have none of the core estate planning documents in place, and even the ones who do rarely account for the home itself and everything inside it. That gap is what a DHDO scan closes. It works alongside your attorney, financial advisor, or estate professional &mdash; not as an appraisal, a valuation, or a legal service.<span style="font-size:0.7rem; color:rgba(46,26,71,0.55); letter-spacing:0.04em; display:block; margin-top:0.7rem;">Source: <a href="https://trustandwill.com/learn/estate-planning-report-2026" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline; text-underline-offset:2px;">Trust &amp; Will 2026 Estate Planning Report</a></span></p>
+        <!-- JJ 2026-08-05: the 3D dollhouse view of a documented HOME, as asked for. Was
+             poolhouse-dollhouse-measurements.png, whose alt claimed "a documented home, floor by
+             floor" while the image is a single open pool house room with dimension labels. This one
+             is a real multi-room home - bedrooms, kitchen, dining, baths, staircase - so the copy
+             above it ("a record of the home and everything in it") is now actually depicted. -->
+        <img src="media/cormier-dollhouse-side-img.png" alt="Matterport 3D dollhouse view of a documented home, cut away to show every labelled room at once - bedrooms, kitchen, living and dining rooms, bathrooms and closets" loading="lazy" style="width:110%;height:auto;margin-top:2rem;display:block;margin-left:-5%;" />
+        <p style="font-size:0.72rem; color:rgba(46,26,71,0.55); letter-spacing:0.03em; margin-top:0.6rem;">An actual DHDO scan, shown as the 3D &ldquo;dollhouse&rdquo; view &mdash; every room in the home visible at once.</p>
+      </div>
+      <div class="about-cards fade" style="transition-delay:0.15s">
+        <div class="acard">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/></svg></div>
+          <div><h4>A Detailed Home Inventory</h4><p>A room-by-room record of the home and its contents, with individual tags on the pieces that matter &mdash; make, model, and identifying detail where available. It's the difference between a category on a list and a clear picture of the actual item.</p></div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div><h4>Support for a Louisiana Succession</h4><p>In Louisiana, settling an estate means filing a sworn descriptive list of what the person owned. Pulling that together from memory, old receipts, and a house full of belongings is one of the heaviest parts of the job &mdash; and it usually falls to family in the middle of grief. A DHDO record gives the executor and their attorney a clear visual account of the home to work from, so the estate is easier to see and the family has a clearer starting point for settling it.</p></div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+          <div><h4>One Shared Reference for Everyone Involved</h4><p>Your record is delivered through a secure, private client portal. Heirs, executors, and advisors can all view the same record from wherever they are &mdash; no passing files around, no scheduling another walkthrough, no one working from a different version of the home.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h3>Information We Collect</h3>
-    <p><strong>Information you give us.</strong> When you request a scan, contact us, or schedule an appointment, we collect your name, email address, phone number, property address, and any scheduling preferences or notes you provide.</p>
-    <p><strong>Documentation data.</strong> When we scan a property, we create a three-dimensional digital record and may catalog assets you ask us to tag, including make, model, serial number, purchase date, and any receipts or details you share with us (&ldquo;Client Home Documentation&rdquo;).</p>
-    <p><strong>Portal access data.</strong> When you access the DHDO Client Portal, we collect the information needed to verify your identity and grant access to your documentation, such as your magic-link token, login timestamp, and general session activity. The Portal does not require you to create or remember a traditional password.</p>
-    <p><strong>Automatically collected.</strong> Like most websites, we collect basic usage data (pages visited, device and browser type, approximate location) through cookies and analytics tools to understand how the site is used and to keep it secure.</p>
+<!-- ═══ WHO THIS IS FOR ═══ -->
+<section class="bg-white fade">
+  <div class="inner">
+    <div style="text-align:center;">
+      <div class="eyebrow center">Who It's For</div>
+      <h2 style="text-align:center;">One Record, Every Side of the Table</h2>
+    </div>
+    <div class="why-grid fade" style="margin-top:3rem;">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>For Families Planning Ahead</h3>
+        <p>Documenting the home is one of the most concrete steps on an estate planning checklist &mdash; and one of the few that spares the people you love from guesswork later. It's a way to leave clarity, not just instructions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>For Executors &amp; Those Settling an Estate</h3>
+        <p>Stepping in as executor often means accounting for a home full of belongings you didn't live with, on a deadline, while everyone around you is grieving. A full visual record turns that from a guessing game into something you can actually work through.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>For Downsizing &amp; Later-Life Moves</h3>
+        <p>For families preparing to downsize or move a parent, a shareable record lets relatives review the home from anywhere and sort out who takes what &mdash; together and ahead of time, instead of in a rushed weekend.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h3>Information We Do Not Intentionally Collect</h3>
-    <p>We do not intend to collect Social Security numbers, driver&rsquo;s license or state identification numbers, passport numbers, financial account usernames or passwords, full payment card numbers or security codes, medical records, or personal information from children under 13 through our website or standard intake process. Before a scan, clients are responsible for removing, concealing, or identifying any medications, financial documents, identification documents, security codes, firearms, safes, or other sensitive items they do not want captured.</p>
+<!-- ═══ FOR PROFESSIONALS ═══ -->
+<section id="professionals" class="bg-cream fade">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="eyebrow">For Professionals</div>
+        <h2>A Documentation Partner for Estate Practices</h2>
+        <p>When a client passes without a record of their home, the work lands on you &mdash; reconstructing an estate from receipts, memory, and a family's phone photos. DHDO gives your practice a consistent, professional record of a client's home and contents, so intake, distribution, and succession filings start from something solid. We handle the documentation, so you can focus on the work only you can do.</p>
+        <div style="margin-top:2rem;">
+          <a href="book-a-scan.html" class="btn-outline-purple">Partner with DHDO</a>
+        </div>
+      </div>
+      <div class="fade" style="transition-delay:0.15s; display:flex; align-items:center;">
+        <img src="media/poolhouse-assettagging-shaq.png" alt="A high-value item documented and asset-tagged inside a DHDO scan — make, condition, and proof of ownership recorded" loading="lazy" style="width:100%;height:auto;border-radius:2px;display:block;border:1px solid rgba(201,162,78,0.25);box-shadow:0 20px 50px -20px rgba(26,14,46,0.35);" />
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h3>How We Use Your Information</h3>
-    <p>We use your information to schedule and deliver your documentation service, communicate with you about your scan and account, provide access to your Client Portal, respond to inquiries, organize and tag Client Home Documentation (including with the assistance of software and artificial-intelligence tools described below), improve our website and services, and meet legal or security obligations.</p>
+<!-- ═══ STAT STRIP ═══ -->
+<section class="stat-strip fade">
+  <div class="inner fade">
+    <div class="stat-num">44%</div>
+    <p class="stat-label">of U.S. residents have never made a <a href="home-documentation.html" style="color:inherit; text-decoration:underline; text-underline-offset:2px;">home inventory</a> &mdash; leaving families and executors to reconstruct a lifetime of belongings from memory.<span style="font-size:0.7rem; color:rgba(255,255,255,0.7); letter-spacing:0.04em; display:block; margin-top:0.75rem;">Source: <a href="https://newsroom.farmers.com/2019-03-20-Farmers-Insurance-R-Study-Finds-Almost-Half-of-U-S-Residents-Do-Not-Have-A-Home-Inventory-List-Should-A-Disaster-Strike" target="_blank" rel="noopener" style="color:rgba(201,162,78,0.9); text-decoration:underline; text-underline-offset:2px;">Farmers Insurance Seasonal Smarts study, 2019</a></span></p>
+  </div>
+</section>
 
-    <h3>How We Share Your Information</h3>
-    <p>We do not sell your personal information or your Client Home Documentation. We share information only with service providers that help us operate — for example, Matterport or similar scanning and hosting platforms, website hosting, secure database and portal infrastructure, email delivery, payment processing, and website analytics and bot-protection tools — and only as needed to provide the service.</p>
-    <p>We will not share your Client Home Documentation with law firms, insurance agents, insurance carriers, adjusters, family members, contractors, appraisers, realtors, or estate planners unless you direct us to, except where disclosure is required by law or necessary for our authorized vendors to perform services on our behalf.</p>
-    <p><strong>Sharing through the Client Portal.</strong> The Client Portal lets you grant an insurance agent or other party of your choosing secure, read-only access to your Client Home Documentation through a one-click invitation. You decide who receives access, and you may revoke it at any time through the Portal. A party you&rsquo;ve granted access to may add supporting materials, such as claim-related estimates or paperwork, to your record with your permission. DHDO does not grant or expand this access on its own, and no agent or third party ever sees a record you have not chosen to share.</p>
-    <p>We may also disclose information if required by law, court order, or legal process, or to protect our rights, safety, or property.</p>
+<!-- ═══ WHY IT MATTERS ═══ -->
+<section id="why" class="fade">
+  <div class="inner">
+    <div class="fade" style="text-align:center">
+      <div class="eyebrow center">Why It Matters</div>
+      <h2>What a Record Settles That Memory Can't</h2>
+      <p class="why-lead">The hardest parts of an estate are rarely the big, obvious assets. They're the details &mdash; what was in the home, whose it was, and what everyone remembers differently. A record made ahead of time replaces recollection with reference.</p>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>Captured While the Story Can Still Be Told</h3>
+        <p>The best record is made while the person who knows the home best can still say what each piece is and where it came from &mdash; the ring that belonged to a grandmother, the painting bought on a trip decades ago. Once that's gone, no inventory can bring the story back. That's what we capture now.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Fewer Fights Over the Things That Matter Most</h3>
+        <p>The items that divide families are seldom the most valuable ones &mdash; they're the personal ones, where the meaning outweighs the price. When wishes were never written down, the people left behind are left to guess. A shared, itemized record gives everyone the same starting point.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Handled With Discretion</h3>
+        <p>A record of a family's home is private, and we treat it that way &mdash; kept secure and shared only with the people you choose. Discretion is part of how these records are meant to be handled.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h3>How We Store and Protect It</h3>
-    <!-- ACCURACY (dev, 2026-07-31) — TWO CHANGES TO LAUREN'S DRAFT, BOTH CHECKED AGAINST PRODUCTION:
-         (1) Her draft said logins are "protected by two-factor authentication by default". They are not.
-             SMS 2FA is OPT-IN and 2 of 7 live clients have switched it on. A privacy policy is the wrong
-             place to overstate a control, so this says "available on your account" instead. Make 2FA the
-             default in the portal and Lauren's stronger wording becomes true and can go back in.
-         (2) Her draft said "You may add an additional password to any individual scan." The column
-             exists but 0 of 7 scans use it and there is no confirmed client-facing control, so this says
-             an additional password "can be added on request" until that is verified. -->
-    <p>Your documentation is stored securely off-site in the cloud and accessed through a private, magic-link login, with two-factor authentication available on your account. An additional password can be added to an individual scan on request for your most sensitive records. Your Client Home Documentation is hosted redundantly across Matterport&rsquo;s secure cloud infrastructure and DHDO&rsquo;s own systems, which are independently reviewed for security. No method of storage or transmission is completely secure, but we work to keep your data protected.</p>
+<!-- ═══ CTA ═══ -->
+<section class="cta-band fade">
+  <h2>Make the home part of your estate plan.</h2>
+  <p>A record made today is one your family and their advisors can rely on for years. Booking takes one quick phone call &mdash; we'll confirm your scan date within one business day. We're based in Lake Charles and serve families across South Louisiana.</p>
+  <a href="book-a-scan.html" class="btn-dark">Book a Scan</a>
+</section>
 
-    <h3>Data Retention</h3>
-    <!-- Lauren, 2026-07-31: your note says this section still needs a revision pass on how scan-only
-         service is handled. Using your v2 wording as-is for now — the last paragraph is the part you
-         flagged. Also note this replaces the old flat "three (3) years from final delivery" retention
-         period, which no longer matched how Annual Record Care actually works. -->
-    <p>How long DHDO keeps your Client Home Documentation depends on your Annual Record Care status. While Annual Record Care is active on your account, your 3D scan, asset inventory, and related documentation remain hosted and accessible through your Client Portal.</p>
-    <p>Annual Record Care runs in twelve-month terms. Some packages, such as the Guided Property Record, include your first year of Annual Record Care with your scan; other packages may add it separately, as described in your service agreement or rate card.</p>
-    <p>If your Annual Record Care term ends and is not renewed, you have thirty (30) days from the end of that term to renew before we take further action. If you do not renew within that thirty-day window, DHDO will delete your hosted scan and remove your Portal access. This does not affect the physical hard drive or USB copy of your original scan delivered to you at project completion &mdash; that copy remains yours to keep, and DHDO has no ability to access or delete it remotely.</p>
-    <p>For projects delivered without Annual Record Care, such as scan-only service, DHDO retains your documentation only as needed to complete delivery, plus a limited period afterward for quality assurance and administrative purposes, after which it is deleted from our active systems.</p>
+<!-- ═══ EXPLORE EXAMPLES ═══ -->
+<section id="scans">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">See It For Yourself</div>
+      <h2 class="light">Explore Real Scans.<br><em style="font-style:italic;color:var(--gold)">Walk Through Before You Book.</em></h2>
+      <p class="scans-intro">These are actual Matterport scans DHDO has delivered to clients. Click any card to explore the full interactive 3D model &mdash; this is exactly what you receive.</p>
+    </div>
+    <div class="scan-grid fade">
+      <a href="https://my.matterport.com/models/SsQeM3UaRWL" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-poolhouse.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Asset documentation scan — pool house example" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Asset Documentation</div><div class="scan-name">Pool House Example</div><div class="scan-desc">See how valuables and high-ticket items get tagged with receipts and purchase details &mdash; directly inside the scan.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a href="https://my.matterport.com/models/bd8XcU4UYR3" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-construction.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Whole home scan example — every room documented" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Asset Documentation</div><div class="scan-name">Whole Home Example</div><div class="scan-desc">A finished home captured room by room &mdash; the same level of detail your estate record will have.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+    </div>
+  </div>
+</section>
 
-    <h3 id="cookies">Cookies &amp; Analytics</h3>
-    <p>We use cookies and analytics tools (including Google Analytics via Google Tag Manager) to measure site usage, and bot-protection tools (Cloudflare Turnstile) to help secure our forms. When you first visit our website, we display a short cookie notice letting you know about this use and linking to this Policy. You can control cookies through your browser settings at any time; disabling them may affect how parts of the site work.</p>
+<!-- ═══ CLIENT REVIEW — REMOVED FOR LAUNCH 2026-08-06 (JJ) ═══
+     Was publishing "An approved client quote will live here…" over the byline "Client Name".
+     Same call Lauren made on the homepage: a pending-quote placeholder reads worse than no quote.
 
-    <h3>Artificial Intelligence and Automated Tools</h3>
-    <p>DHDO may use software tools, automation, or artificial-intelligence features — including third-party AI services such as Google&rsquo;s Gemini — to help organize, tag, and manage Client Home Documentation, such as identifying and labeling assets by make, model, or category.</p>
-    <p>The Client Portal includes an AI-assisted feature that lets you add new items to your inventory by submitting a photo, which the AI uses to suggest a name, brand, model, and similar details for your review before saving.</p>
-    <p>These tools support DHDO&rsquo;s service delivery only and are subject to the confidentiality and security terms of our vendor agreements. DHDO will not use identifiable Client Home Documentation to train public or third-party artificial-intelligence models without your separate written consent.</p>
+     TO RESTORE, once a real estate-planning client has approved a quote IN WRITING:
 
-    <h3>Your Choices</h3>
-    <p>You may contact us to request access to, correction of, deletion of, or a copy of the information we hold about you, including your Client Home Documentation, and you may opt out of marketing messages at any time. You may also ask us to restrict certain sharing of your information. We aim to respond within thirty (30) days of a verifiable request. We may need to verify your identity before fulfilling a request involving Client Home Documentation, property records, or Portal access, and we may decline or limit a request where permitted or required by law.</p>
+     <section class="quote-block">
+       <div class="inner fade">
+         <span class="q-glyph">&ldquo;</span>
+         <blockquote>THEIR WORDS.</blockquote>
+         <span class="q-cite">THEIR NAME</span>
+         <span class="q-role">Estate Planning Client</span>
+       </div>
+     </section>
+     ═══ -->
 
-    <h3>Children&rsquo;s Privacy</h3>
-    <p>Our services are directed to adults, and we do not knowingly collect personal information from children under 13 through our website. Home scans may incidentally capture rooms, belongings, or images associated with minors when an adult client authorizes the scan. The client authorizing the scan is responsible for removing, concealing, or excluding anything involving children that they do not want captured. Consent regarding minors is further addressed in DHDO&rsquo;s Client Scan Authorization and Data Consent Form, completed prior to each on-site visit.</p>
-
-    <h3>Professional Disclaimer</h3>
-    <p>DHDO provides independent digital home documentation and organization services only. DHDO is not a law firm, insurance company, insurance agency, public adjuster, appraiser, or licensed home inspector, and does not adjust claims, determine or assign insurance values, or provide legal, tax, or insurance advice. DHDO does not guarantee coverage, claim outcomes, evidentiary admissibility, or premium discounts. Clients should consult their own licensed professional for advice specific to their situation.</p>
-
-    <h3>Marketing, Demonstrations, and Case Studies</h3>
-    <p>DHDO will not use identifiable Client Home Documentation, interior home images, or private client records in public marketing, demonstrations, case studies, testimonials, or social media without your separate written permission.</p>
-
-    <h3>Changes to This Policy</h3>
-    <p>We may update this policy from time to time. When we do, we will revise the &ldquo;Last Updated&rdquo; date above, and material changes will be reflected on this page.</p>
-
-    <h3>Contact Us</h3>
-    <p>Questions about this policy or your information? Reach us at <a href="#" class="team-email" data-em="moc.nacsodhd@olleh" onclick="return openEmail(this)">hello@dhdoscan.com</a> or <a href="tel:3374151951">(337) 415-1951</a> — DHDO, Lake Charles, Louisiana.</p>
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">FAQ</div>
+      <h2>Common Questions, Straight Answers</h2>
+    </div>
+    <div class="faq-grid fade">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is a DHDO scan the same as an appraisal or a legal estate inventory?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>No. A DHDO scan is a documentation tool — a detailed 3D record of the home and its contents. <strong>It doesn’t assign values</strong> or replace a required legal filing. What it does record, for each tagged item, is make, model, serial number and purchase date, plus a link to that exact product online or the closest comparable one where it can be found — if it’s listed online, we’ll find it. That link shows what the item is and what it currently sells for; it isn’t an appraisal, and because listings change or get removed it’s a starting point rather than a settled figure. For formal valuations or legal documents, a licensed appraiser or your attorney handles those, and the scan supports their work.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How detailed does an estate inventory need to be?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Detailed enough that anyone reviewing it — family, an executor, an attorney, or a tax authority — can identify each item and trust the account. In practice, high-value pieces like jewelry, art, and collectibles are listed individually, while everyday belongings are grouped by category. A DHDO scan captures that identifying detail visually: every room, plus tags noting make, model, and specifics on the items that matter, so less gets missed. The values themselves come from a licensed appraiser.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can this help my executor with a Louisiana succession?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>It can support the work, though it isn’t a substitute for legal counsel. A Louisiana succession requires the executor to file a sworn descriptive list of the estate’s assets, valued at fair market value at the time of death and typically prepared by your attorney. A DHDO record gives them a visual, room-by-room reference of the home’s contents to work from while preparing that list — and if privacy is a concern, Louisiana law allows the sworn descriptive list itself to be filed under seal, shielding asset values from public record. Your attorney guides what your specific succession requires.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Who controls access to the record, and what happens to it after the estate is settled?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>You decide who gets access from the start — an executor, an heir, an attorney, or an advisor — through your secure client portal, and access can be shared or handed off as circumstances change. Each scan also comes with a physical thumb drive that’s yours to keep permanently. Portal access runs on an annual basis — see our Privacy Policy for how renewal works. Families keep the thumb drive as a lasting reference regardless, and can renew portal access, pass it to heirs, or coordinate a handoff to a new owner if that’s part of the plan.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I keep certain rooms, items, or a safe out of the scan?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Yes. Before the visit, you tell us what’s off-limits — a closet, a room, the contents of a safe — and it’s left out of the scan itself, not just kept from whoever sees the record afterward. You’re in control of what gets documented from the start.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 

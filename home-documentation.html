@@ -12,25 +12,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <title>Privacy Policy | DHDO</title>
-  <meta name="description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana.">
+  <!-- SEO 2026-08-05 (JJ): "home inventory" is what people actually search - nobody looks up
+       "documentation". The phrase appeared ZERO times in any title, meta description or H1 across all
+       13 pages before this pass. Added here, in the description and in the H1 sub-line, while keeping
+       "home documentation" so the existing ranking term is not dropped. Lauren should review. -->
+  <title>Home Inventory &amp; Pre-Loss Home Documentation | South Louisiana | DHDO</title>
+  <meta name="description" content="A professional home inventory for South Louisiana homeowners. DHDO builds your tagged, insurance-ready 3D home inventory before a loss, so your next claim rests on proof instead of memory.">
   <!-- ── Technical SEO (dev, 2026-07-31, per Lauren's brief) ──
        og:title / og:description deliberately mirror this page's own <title> and meta
        description above; og:url mirrors the canonical. Keep them in sync if either changes.
        CANONICAL KEEPS .html. When .html is stripped at some point after launch, these
        canonicals AND the og:url must change in the same pass as the 301s, or every page
        will point search engines at a URL that no longer serves. -->
-  <link rel="canonical" href="https://www.dhdoscan.com/privacy.html" />
+  <link rel="canonical" href="https://www.dhdoscan.com/home-documentation.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.dhdoscan.com/privacy.html" />
-  <meta property="og:title" content="Privacy Policy | DHDO" />
-  <meta property="og:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
-  <meta property="og:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
+  <meta property="og:url" content="https://www.dhdoscan.com/home-documentation.html" />
+  <meta property="og:title" content="Home Inventory &amp; Pre-Loss Home Documentation | South Louisiana | DHDO" />
+  <meta property="og:description" content="A professional home inventory for South Louisiana homeowners. DHDO builds your tagged, insurance-ready 3D home inventory before a loss, so your next claim rests on proof instead of memory." />
+  <meta property="og:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-bat.png" />
   <meta property="og:site_name" content="DHDO — Digital Home Documentation &amp; Organization" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | DHDO" />
-  <meta name="twitter:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
-  <meta name="twitter:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
+  <meta name="twitter:title" content="Home Inventory &amp; Pre-Loss Home Documentation | South Louisiana | DHDO" />
+  <meta name="twitter:description" content="A professional home inventory for South Louisiana homeowners. DHDO builds your tagged, insurance-ready 3D home inventory before a loss, so your next claim rests on proof instead of memory." />
+  <meta name="twitter:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-bat.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -720,6 +724,18 @@
     .bg-purple-deep { background: var(--purple-deep); }
     .bg-purple .eyebrow::after, .bg-purple-deep .eyebrow::after { background: rgba(201,162,78,0.35); }
   
+    /* ── media placeholders + image band (for media added later) ── */
+    .media-sec { padding: 0 6% 5.5rem; }
+    .media-ph { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.65rem; text-align: center; min-height: 300px; padding: 2.5rem 2rem; border: 2px dashed rgba(201,162,78,0.5); border-radius: 2px; color: var(--purple); background: repeating-linear-gradient(45deg, rgba(201,162,78,0.05), rgba(201,162,78,0.05) 12px, rgba(201,162,78,0.09) 12px, rgba(201,162,78,0.09) 24px); }
+    .media-ph svg { width: 34px; height: 34px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .media-ph .mph-label { font-family: 'Outfit', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .media-ph .mph-desc { font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 300; line-height: 1.65; max-width: 420px; color: rgba(46,26,71,0.72); }
+    .media-ph .mph-spec { font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(46,26,71,0.4); }
+    .media-band { position: relative; }
+    .media-band img { width: 100%; height: 470px; object-fit: cover; object-position: center; display: block; }
+    .media-band .media-credit { position: absolute; right: 12px; bottom: 10px; font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 0.03em; color: rgba(255,255,255,0.8); background: rgba(26,14,46,0.55); padding: 3px 9px; border-radius: 3px; }
+    @media (max-width: 720px) { .media-band img { height: 300px; } .media-ph { min-height: 210px; } }
+
     /* ── nav actions: avatar (client portal) button + hamburger ── */
     .nav-actions { display: flex; align-items: center; gap: 0.85rem; }
     .nav-avatar { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(46,26,71,0.22); color: var(--purple) !important; transition: all 0.2s; text-decoration: none; }
@@ -806,38 +822,132 @@
     }
 </style>
 
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.dhdoscan.com/#org",
+      "name": "DHDO — Digital Home Documentation & Organization",
+      "alternateName": "DHDO",
+      "url": "https://www.dhdoscan.com/",
+      "logo": "https://www.dhdoscan.com/logo-primary.png",
+      "image": "https://www.dhdoscan.com/logo-primary.png",
+      "telephone": "+1-337-415-1951",
+      "email": "hello@dhdoscan.com",
+      "parentOrganization": {
         "@type": "Organization",
-        "@id": "https://www.dhdoscan.com/#org",
-        "name": "DHDO — Digital Home Documentation & Organization",
-        "alternateName": "DHDO",
-        "url": "https://www.dhdoscan.com/",
-        "logo": "https://www.dhdoscan.com/logo-primary.png",
-        "telephone": "+1-337-415-1951",
-        "email": "hello@dhdoscan.com",
-        "parentOrganization": { "@type": "Organization", "name": "Bradberry Construction & Design" },
-        "areaServed": [
-          { "@type": "City", "name": "Lake Charles" },
-          { "@type": "AdministrativeArea", "name": "Calcasieu Parish" },
-          { "@type": "City", "name": "Lafayette" },
-          { "@type": "AdministrativeArea", "name": "Lafayette Parish" },
-          { "@type": "AdministrativeArea", "name": "South Louisiana" }
-        ]
+        "name": "Bradberry Construction & Design"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhdoscan.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.dhdoscan.com/privacy.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake Charles"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Calcasieu Parish"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Pre-Loss Home Documentation",
+      "name": "Pre-Loss Home Documentation for South Louisiana Homeowners",
+      "description": "A professional home inventory for South Louisiana homeowners. DHDO builds your tagged, insurance-ready 3D home inventory before a loss, so your next claim rests on proof instead of memory.",
+      "url": "https://www.dhdoscan.com/home-documentation.html",
+      "provider": {
+        "@id": "https://www.dhdoscan.com/#org"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake Charles"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Calcasieu Parish"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insurance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Documentation for Homeowners",
+          "item": "https://www.dhdoscan.com/home-documentation.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I really need professional documentation if I already have homeowners insurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Having a policy and being able to prove a loss are two different things. When you file a claim, your insurer wants an updated record of what you owned and what it was worth — without it, adjusters have little to verify, and claims can settle lower or take longer. A DHDO scan creates that record before you ever need it, so a policy you’re already paying for actually pays out the way it’s supposed to. A DHDO scan doesn’t replace your insurance — it supports it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I document, and does it matter if I’m missing receipts for some items?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ideally everything of meaningful value — furniture, electronics, appliances, tools, and any high-value pieces like jewelry or collectibles, which often carry their own coverage limits separate from your general contents coverage. Missing a receipt isn’t a dealbreaker: our tagging process captures make, model, and serial number directly off the item itself, which gives you documented proof even without the original paperwork."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my insurance cover the cost of the scan, or do I pay for it directly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Documentation itself typically isn’t billed to your policy — most clients pay directly. Check with your agent about whether any portion may be reimbursable under your specific policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I own valuable items like jewelry, art, or collectibles — does documentation help with those specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and this is where documentation matters most. Most policies cap coverage on categories like jewelry at a combined limit — often just a couple thousand dollars total — regardless of what any single piece is worth. A tagged, photographed record of each piece gives you and your agent what’s needed to evaluate whether you need additional coverage (a rider or floater) and gives an adjuster clear proof if you ever file a claim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I update my documentation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can add new purchases yourself anytime through the portal’s AI-assisted tool — snap a photo of the item or its serial label and it fills in the make, model, and serial for you. Beyond that, we recommend a fresh look once a year, or after a renovation or major purchase. Your Annual Record Care plan includes one free rescan a year as part of the service, so keeping current doesn’t cost extra."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -915,96 +1025,302 @@
   <a href="tel:3374151951" style="color:var(--gold);">Call (337) 415-1951</a>
 </div>
 
-<section class="page-hero" style="padding-bottom:3.5rem;">
+<!-- ═══ HERO ═══ -->
+<section class="page-hero">
   <div class="hero-grid-lines"></div>
   <div class="hero-orb"></div>
   <div class="inner">
-    <div class="hero-eyebrow">Legal</div>
-    <h1>Privacy <em>Policy</em></h1>
-    <p class="hero-sub">How DHDO collects, uses, and protects your information.</p>
+    <div class="hero-eyebrow">For South Louisiana Homeowners</div>
+    <h1>Pre-Loss Home Documentation.<br><em>Before the Storm Has a Name.</em></h1>
+    <p class="hero-sub">DHDO documents your entire home &mdash; every room, every item, tagged and dated &mdash; so you're never rebuilding your case from scratch when it matters most.</p>
+    <div class="hero-actions">
+      <a href="book-a-scan.html" class="btn-gold">Book a Scan</a>
+    </div>
   </div>
 </section>
 
-<style>
-  .legal-content { max-width: 820px; }
-  .legal-content h3 { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:400; color:var(--purple); margin:2.5rem 0 0.75rem; }
-  .legal-content p { font-size:1rem; line-height:1.85; color:rgba(46,26,71,0.86); margin-bottom:1rem; }
-  .legal-content strong { color:var(--purple); font-weight:600; }
-  .legal-content .legal-meta { font-size:0.78rem; color:rgba(46,26,71,0.5); letter-spacing:0.04em; margin-bottom:1.75rem; }
-  .legal-content a { color:var(--gold); text-decoration:none; }
-</style>
-<section class="bg-cream fade">
-  <div class="inner legal-content">
-    <p class="legal-meta">Last updated: July 31, 2026</p>
-    <p>DHDO — Digital Home Documentation &amp; Organization (&ldquo;DHDO,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a division of <a href="https://bradberryconstruction.com/" target="_blank" rel="noopener">Bradberry Construction &amp; Design</a>, provides three-dimensional property documentation and related organizational services in South Louisiana. This Privacy Policy explains what information we collect, how we use and share it, how we protect it, and the choices available to you. It applies to dhdoscan.com, the DHDO Client Portal at <a href="https://portal.dhdoscan.com" target="_blank" rel="noopener">portal.dhdoscan.com</a>, and the services we provide.</p>
-
-    <h3>Information We Collect</h3>
-    <p><strong>Information you give us.</strong> When you request a scan, contact us, or schedule an appointment, we collect your name, email address, phone number, property address, and any scheduling preferences or notes you provide.</p>
-    <p><strong>Documentation data.</strong> When we scan a property, we create a three-dimensional digital record and may catalog assets you ask us to tag, including make, model, serial number, purchase date, and any receipts or details you share with us (&ldquo;Client Home Documentation&rdquo;).</p>
-    <p><strong>Portal access data.</strong> When you access the DHDO Client Portal, we collect the information needed to verify your identity and grant access to your documentation, such as your magic-link token, login timestamp, and general session activity. The Portal does not require you to create or remember a traditional password.</p>
-    <p><strong>Automatically collected.</strong> Like most websites, we collect basic usage data (pages visited, device and browser type, approximate location) through cookies and analytics tools to understand how the site is used and to keep it secure.</p>
-
-    <h3>Information We Do Not Intentionally Collect</h3>
-    <p>We do not intend to collect Social Security numbers, driver&rsquo;s license or state identification numbers, passport numbers, financial account usernames or passwords, full payment card numbers or security codes, medical records, or personal information from children under 13 through our website or standard intake process. Before a scan, clients are responsible for removing, concealing, or identifying any medications, financial documents, identification documents, security codes, firearms, safes, or other sensitive items they do not want captured.</p>
-
-    <h3>How We Use Your Information</h3>
-    <p>We use your information to schedule and deliver your documentation service, communicate with you about your scan and account, provide access to your Client Portal, respond to inquiries, organize and tag Client Home Documentation (including with the assistance of software and artificial-intelligence tools described below), improve our website and services, and meet legal or security obligations.</p>
-
-    <h3>How We Share Your Information</h3>
-    <p>We do not sell your personal information or your Client Home Documentation. We share information only with service providers that help us operate — for example, Matterport or similar scanning and hosting platforms, website hosting, secure database and portal infrastructure, email delivery, payment processing, and website analytics and bot-protection tools — and only as needed to provide the service.</p>
-    <p>We will not share your Client Home Documentation with law firms, insurance agents, insurance carriers, adjusters, family members, contractors, appraisers, realtors, or estate planners unless you direct us to, except where disclosure is required by law or necessary for our authorized vendors to perform services on our behalf.</p>
-    <p><strong>Sharing through the Client Portal.</strong> The Client Portal lets you grant an insurance agent or other party of your choosing secure, read-only access to your Client Home Documentation through a one-click invitation. You decide who receives access, and you may revoke it at any time through the Portal. A party you&rsquo;ve granted access to may add supporting materials, such as claim-related estimates or paperwork, to your record with your permission. DHDO does not grant or expand this access on its own, and no agent or third party ever sees a record you have not chosen to share.</p>
-    <p>We may also disclose information if required by law, court order, or legal process, or to protect our rights, safety, or property.</p>
-
-    <h3>How We Store and Protect It</h3>
-    <!-- ACCURACY (dev, 2026-07-31) — TWO CHANGES TO LAUREN'S DRAFT, BOTH CHECKED AGAINST PRODUCTION:
-         (1) Her draft said logins are "protected by two-factor authentication by default". They are not.
-             SMS 2FA is OPT-IN and 2 of 7 live clients have switched it on. A privacy policy is the wrong
-             place to overstate a control, so this says "available on your account" instead. Make 2FA the
-             default in the portal and Lauren's stronger wording becomes true and can go back in.
-         (2) Her draft said "You may add an additional password to any individual scan." The column
-             exists but 0 of 7 scans use it and there is no confirmed client-facing control, so this says
-             an additional password "can be added on request" until that is verified. -->
-    <p>Your documentation is stored securely off-site in the cloud and accessed through a private, magic-link login, with two-factor authentication available on your account. An additional password can be added to an individual scan on request for your most sensitive records. Your Client Home Documentation is hosted redundantly across Matterport&rsquo;s secure cloud infrastructure and DHDO&rsquo;s own systems, which are independently reviewed for security. No method of storage or transmission is completely secure, but we work to keep your data protected.</p>
-
-    <h3>Data Retention</h3>
-    <!-- Lauren, 2026-07-31: your note says this section still needs a revision pass on how scan-only
-         service is handled. Using your v2 wording as-is for now — the last paragraph is the part you
-         flagged. Also note this replaces the old flat "three (3) years from final delivery" retention
-         period, which no longer matched how Annual Record Care actually works. -->
-    <p>How long DHDO keeps your Client Home Documentation depends on your Annual Record Care status. While Annual Record Care is active on your account, your 3D scan, asset inventory, and related documentation remain hosted and accessible through your Client Portal.</p>
-    <p>Annual Record Care runs in twelve-month terms. Some packages, such as the Guided Property Record, include your first year of Annual Record Care with your scan; other packages may add it separately, as described in your service agreement or rate card.</p>
-    <p>If your Annual Record Care term ends and is not renewed, you have thirty (30) days from the end of that term to renew before we take further action. If you do not renew within that thirty-day window, DHDO will delete your hosted scan and remove your Portal access. This does not affect the physical hard drive or USB copy of your original scan delivered to you at project completion &mdash; that copy remains yours to keep, and DHDO has no ability to access or delete it remotely.</p>
-    <p>For projects delivered without Annual Record Care, such as scan-only service, DHDO retains your documentation only as needed to complete delivery, plus a limited period afterward for quality assurance and administrative purposes, after which it is deleted from our active systems.</p>
-
-    <h3 id="cookies">Cookies &amp; Analytics</h3>
-    <p>We use cookies and analytics tools (including Google Analytics via Google Tag Manager) to measure site usage, and bot-protection tools (Cloudflare Turnstile) to help secure our forms. When you first visit our website, we display a short cookie notice letting you know about this use and linking to this Policy. You can control cookies through your browser settings at any time; disabling them may affect how parts of the site work.</p>
-
-    <h3>Artificial Intelligence and Automated Tools</h3>
-    <p>DHDO may use software tools, automation, or artificial-intelligence features — including third-party AI services such as Google&rsquo;s Gemini — to help organize, tag, and manage Client Home Documentation, such as identifying and labeling assets by make, model, or category.</p>
-    <p>The Client Portal includes an AI-assisted feature that lets you add new items to your inventory by submitting a photo, which the AI uses to suggest a name, brand, model, and similar details for your review before saving.</p>
-    <p>These tools support DHDO&rsquo;s service delivery only and are subject to the confidentiality and security terms of our vendor agreements. DHDO will not use identifiable Client Home Documentation to train public or third-party artificial-intelligence models without your separate written consent.</p>
-
-    <h3>Your Choices</h3>
-    <p>You may contact us to request access to, correction of, deletion of, or a copy of the information we hold about you, including your Client Home Documentation, and you may opt out of marketing messages at any time. You may also ask us to restrict certain sharing of your information. We aim to respond within thirty (30) days of a verifiable request. We may need to verify your identity before fulfilling a request involving Client Home Documentation, property records, or Portal access, and we may decline or limit a request where permitted or required by law.</p>
-
-    <h3>Children&rsquo;s Privacy</h3>
-    <p>Our services are directed to adults, and we do not knowingly collect personal information from children under 13 through our website. Home scans may incidentally capture rooms, belongings, or images associated with minors when an adult client authorizes the scan. The client authorizing the scan is responsible for removing, concealing, or excluding anything involving children that they do not want captured. Consent regarding minors is further addressed in DHDO&rsquo;s Client Scan Authorization and Data Consent Form, completed prior to each on-site visit.</p>
-
-    <h3>Professional Disclaimer</h3>
-    <p>DHDO provides independent digital home documentation and organization services only. DHDO is not a law firm, insurance company, insurance agency, public adjuster, appraiser, or licensed home inspector, and does not adjust claims, determine or assign insurance values, or provide legal, tax, or insurance advice. DHDO does not guarantee coverage, claim outcomes, evidentiary admissibility, or premium discounts. Clients should consult their own licensed professional for advice specific to their situation.</p>
-
-    <h3>Marketing, Demonstrations, and Case Studies</h3>
-    <p>DHDO will not use identifiable Client Home Documentation, interior home images, or private client records in public marketing, demonstrations, case studies, testimonials, or social media without your separate written permission.</p>
-
-    <h3>Changes to This Policy</h3>
-    <p>We may update this policy from time to time. When we do, we will revise the &ldquo;Last Updated&rdquo; date above, and material changes will be reflected on this page.</p>
-
-    <h3>Contact Us</h3>
-    <p>Questions about this policy or your information? Reach us at <a href="#" class="team-email" data-em="moc.nacsodhd@olleh" onclick="return openEmail(this)">hello@dhdoscan.com</a> or <a href="tel:3374151951">(337) 415-1951</a> — DHDO, Lake Charles, Louisiana.</p>
+<!-- ═══ WHAT WE DO ═══ -->
+<section id="about" class="fade">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="eyebrow">What We Do</div>
+        <h2>What Digital Home Documentation Actually Is</h2>
+        <p>An app or a folder of photos can't stand in for proof. A DHDO scan is a navigable, timestamped 3D record of your home &mdash; built once, trusted whenever you need it.</p>
+        <p style="font-weight:500;margin-top:1rem;">Phone photos and inventory apps depend on you remembering to use them consistently, and most homeowners never finish the job. DHDO's process happens once, done by a professional, so it doesn't rely on your follow-through.</p>
+        <p style="margin-top:1rem;">Each scan is enriched with tagged assets, serial numbers, purchase dates, and receipts where provided &mdash; a living document your insurance adjuster can navigate, your attorney can reference, and your family can rely on.</p>
+        <img src="media/poolhouse-assettagging-bat.png" alt="A signed collectible documented and asset-tagged inside a DHDO scan — item, value, and proof of ownership recorded" loading="lazy" style="width:100%;height:auto;margin-top:2rem;border-radius:2px;display:block;" />
+      </div>
+      <div class="about-cards fade" style="transition-delay:0.15s">
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4>A Complete 3D Walkthrough</h4>
+            <p>Every room, closet, and outbuilding &mdash; captured in immersive, navigable detail, not a stack of phone photos.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4>Every Item, Tagged and Linked</h4>
+            <p>Make, model, serial number, and purchase date &mdash; embedded directly into the scan, not a spreadsheet you have to maintain. Where the item can be found online we link to it, so you can see what it is and what it sells for today. We don&rsquo;t appraise or assign values.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Ready the Moment You Need It</h4>
+            <p>Stored securely off-site, accessible from any device the instant an adjuster or attorney asks for proof.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<section class="stat-strip fade">
+  <div class="inner">
+    <div class="stat-num">53%</div>
+    <p class="stat-label">of homeowners have never completed a home inventory of their belongings, leaving them with nothing to prove what they owned if the worst happens.<span style="font-size:0.7rem; color:rgba(255,255,255,0.7); letter-spacing:0.04em; display:block; margin-top:0.75rem;">Source: <a href="https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance" target="_blank" rel="noopener" style="color:rgba(201,162,78,0.9); text-decoration:underline; text-underline-offset:2px;">Insurance Information Institute / Munich Re Consumer Survey, 2023</a></span></p>
+  </div>
+</section>
+
+<!-- ═══ WHY IT MATTERS ═══ -->
+<section id="why">
+  <div class="inner">
+    <div class="fade" style="text-align:center">
+      <div class="eyebrow center">Why It Matters</div>
+      <h2>Why Your Claim Depends on Documentation</h2>
+      <p class="why-lead">Homes without a documented inventory routinely settle for less than they're owed &mdash; not from bad faith, but from a lack of proof. A tagged, dated 3D record can give you the leverage of evidence instead of the burden of recall.</p>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>Proof Insurers Require</h3>
+        <p>Insurers ask you to prove what you owned. Without that proof, a claim becomes a negotiation built on memory and estimates. A DHDO record gives your adjuster a complete, timestamped walkthrough of every room and every item that may support a fair, faster outcome &mdash; what the item is, not what we say it&rsquo;s worth.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>How It Can Change Your Outcome</h3>
+        <p>Roughly <strong>two out of three homeowners are underinsured</strong> &mdash; and after a loss, you can only recover what you can prove you owned. A navigable, dated 3D record, built before a loss rather than reconstructed after one, gives your adjuster item-level evidence of exactly what was in your home &mdash; make, model, serial number, and a link to the item online where one exists: the difference between a settlement based on memory and one based on proof.<span style="font-size:0.7rem; color:rgba(46,26,71,0.55); letter-spacing:0.04em; display:block; margin-top:0.9rem;">Source: <a href="https://www.insurancejournal.com/news/national/2022/05/06/666406.htm" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline; text-underline-offset:2px;">Harris Poll for the American Property Casualty Insurance Association (APCIA), 2022</a></span></p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Ready When It Matters</h3>
+        <p>Your documentation is already backed up off-site, so it's accessible the moment you need it &mdash; even if your home isn't. When a storm or dispute forces a claim, your proof is waiting instead of gone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXAMPLE SCANS ═══ -->
+<section id="scans">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">See It For Yourself</div>
+      <h2 class="light">Explore Real Scans.<br><em style="font-style:italic;color:var(--gold)">Walk Through Before You Book.</em></h2>
+      <p class="scans-intro">These are actual Matterport scans we've delivered to clients. Click any card to explore the full interactive 3D model — this is exactly what you receive.</p>
+    </div>
+    <div class="scan-grid fade">
+      <a href="https://my.matterport.com/models/SsQeM3UaRWL" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-poolhouse.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Asset documentation scan — pool house example" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Asset Documentation</div><div class="scan-name">Pool House Example</div><div class="scan-desc">See how valuables and high-ticket items get tagged with receipts and purchase details — directly inside the scan.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a href="https://my.matterport.com/models/Wu6Tk7btz99" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-newbuild.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="New build construction scan example" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">New Construction</div><div class="scan-name">New Build Example</div><div class="scan-desc">A newly built property captured in complete 3D before a single claim, dispute, or renovation ever comes up.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a href="https://my.matterport.com/models/bd8XcU4UYR3" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-construction.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Post construction scan example" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Post Construction</div><div class="scan-name">Construction Example</div><div class="scan-desc">Walk a finished renovation room by room — every upgrade documented with the detail your adjuster actually needs.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process">
+  <div class="inner">
+    <div class="process-hd fade">
+      <div class="eyebrow">Our Process</div>
+      <h2 class="light">Six Steps.<br>Two to Three Weeks.<br><em style="font-style:italic;color:var(--gold)">A Lifetime of Protection.</em></h2>
+    </div>
+    <div class="steps">
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>1</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Today</div>
+          <h3>Welcome &amp; Sign-Up</h3>
+          <p>Complete your client information form and onboarding packet. We confirm your scan date within one business day.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>2</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">3&ndash;4 Business Days</div>
+          <h3>Preparation Window</h3>
+          <p>Gather receipts for major purchases and make a list of every item you want tagged. Tidy each room for scan day.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>3</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Scan Day</div>
+          <h3>We Come to You</h3>
+          <p>Our team arrives on your scheduled date. The scan takes one to three hours depending on size &mdash; you don't need to follow us room to room.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>4</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">5&ndash;7 Business Days</div>
+          <h3>Processing &amp; Labeling</h3>
+          <p>We process the 3D scan and attach asset tags using your receipts and item information &mdash; make, model, serial number, and purchase date.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>5</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Day 7 Post-Scan</div>
+          <h3>Receipt Cutoff</h3>
+          <p>Receipts received after the 7th business day following your scan can't be added without an additional labeling fee.</p>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>6</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Delivery</div>
+          <h3>Your Documentation, Delivered</h3>
+          <p>You receive your secure 3D scan link and complete asset documentation, ready to share with an adjuster, attorney, or family member.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLIENT PORTAL ═══ -->
+<section class="bg-purple">
+  <div class="inner fade">
+    <div class="eyebrow">Your Client Portal</div>
+    <h2 class="light">Everything You Own, One Secure Login Away</h2>
+    <p class="section-lead light-lead">Your 3D tours, tagged inventory, signed documents, and invoices &mdash; all in one secure place, behind a private magic-link login, ready whenever an adjuster or attorney asks.</p>
+    <!-- ═══ PORTAL SCREENSHOT — REMOVED FOR LAUNCH 2026-08-06 (JJ) ═══
+         An empty 16:9 dashed box reading "Asset needed · portal homepage" was live here. The section
+         still reads fine without it: heading, lead paragraph, and the button straight into the portal.
+
+         ASSET NEEDED: a screenshot or short screen-recording GIF of the client portal homepage — the
+         logged-in dashboard showing scans, inventory and documents. 16:9.
+
+         WHO CAN TAKE IT: someone signed in as an admin. The portal is behind magic-link auth, so it
+         cannot be captured without a real session — this one genuinely needs a person, not a tool.
+         Careful to use a demo or partner account rather than a real customer's household, or the
+         screenshot publishes someone's real address and belongings.
+
+         TO RESTORE, put the file in media/ and paste this in place of this comment:
+
+         <img src="media/portal-home.png" alt="The DHDO client portal dashboard, showing a client's scans, inventory and documents" loading="lazy" style="width:100%;height:auto;display:block;border-radius:2px;border:1px solid rgba(201,162,78,0.25);" />
+         ═══ -->
+    <div style="margin-top:2.5rem;">
+      <a href="https://portal.dhdoscan.com" class="btn-gold">Open Your Client Portal &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING (REMOVED 2026-07-31) ═══
+     Zakk: "remove the pricing plan section entirely ... since things are changing so much, i don't want
+     us to have to go through and update multiple touch points. the pricing page will be our main source
+     of truth." The four package cards, all figures, and the "permanent cloud hosting" claim (now wrong —
+     hosting is 4 months on Basic / annual with Annual Record Care) are gone from this page.
+
+     What replaces them is a band with NO figures in it, so there is nothing here to keep in sync. It
+     exists only so this page still routes to pricing.html; nothing else on the page linked to pricing
+     except the nav and footer. Delete the band if you'd rather the page not mention pricing at all. ═══ -->
+<section id="pricing">
+  <div class="inner fade">
+    <div class="eyebrow">Pricing</div>
+    <h2>Straightforward Packages, Confirmed Before You Book</h2>
+    <p class="section-lead">Residential and commercial documentation packages, add-ons, and Annual Record Care are all laid out on one page &mdash; including how homes over 3,000 sq ft are priced. Your exact price is confirmed at sign-up, within one business day of your consultation.</p>
+    <div class="pricing-footer">
+      <a href="pricing.html" class="btn-outline-purple">See Packages &amp; Pricing</a>
+      <p>Booking is done over a quick phone call &mdash; no forms to fill out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLIENT REVIEW — REMOVED FOR LAUNCH 2026-08-06 (JJ) ═══
+     Was publishing draft words under the byline "Client Name".
+
+     THE DRAFT IS KEPT HERE ON PURPOSE — it is a good starting point to read to a real homeowner and
+     ask whether they would put their name to it or say it in their own words. It must NOT go live
+     attributed to anyone until they have approved it in writing.
+
+       "Having every room and every item already documented took all the guesswork out of our claim.
+        We weren't scrambling for receipts — it was all just there."
+
+     TO RESTORE:
+
+     <section class="quote-block">
+       <div class="inner fade">
+         <span class="q-glyph">&ldquo;</span>
+         <blockquote>THEIR APPROVED WORDS.</blockquote>
+         <span class="q-cite">THEIR NAME</span>
+         <span class="q-role">Homeowner &middot; Lake Charles, LA</span>
+       </div>
+     </section>
+     ═══ -->
+
+<!-- ═══ CTA BAND ═══ -->
+
+<section class="cta-band">
+  <h2>Ready to document what you own?</h2>
+  <p>Booking takes one quick phone call &mdash; we'll confirm your scan date within one business day.</p>
+  <a href="book-a-scan.html" class="btn-dark">Book a Scan</a>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">FAQ</div>
+      <h2>Common Questions, Straight Answers</h2>
+    </div>
+    <div class="faq-grid fade">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do I really need professional documentation if I already have homeowners insurance?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Having a policy and being able to prove a loss are two different things. When you file a claim, your insurer wants an updated record of what you owned and what it was worth — without it, adjusters have little to verify, and claims can settle lower or take longer. A DHDO scan creates that record before you ever need it, so a policy you’re already paying for actually pays out the way it’s supposed to. A DHDO scan doesn’t replace your insurance — it supports it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What should I document, and does it matter if I’m missing receipts for some items?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Ideally everything of meaningful value — furniture, electronics, appliances, tools, and any high-value pieces like jewelry or collectibles, which often carry their own coverage limits separate from your general contents coverage. Missing a receipt isn’t a dealbreaker: our tagging process captures make, model, and serial number directly off the item itself, which gives you documented proof even without the original paperwork.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will my insurance cover the cost of the scan, or do I pay for it directly?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Documentation itself typically isn’t billed to your policy — most clients pay directly. Check with your agent about whether any portion may be reimbursable under your specific policy.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I own valuable items like jewelry, art, or collectibles — does documentation help with those specifically?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Yes, and this is where documentation matters most. Most policies cap coverage on categories like jewelry at a combined limit — often just a couple thousand dollars total — regardless of what any single piece is worth. A tagged, photographed record of each piece gives you and your agent what’s needed to evaluate whether you need additional coverage (a rider or floater) and gives an adjuster clear proof if you ever file a claim.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How often should I update my documentation?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>You can add new purchases yourself anytime through the portal’s AI-assisted tool — snap a photo of the item or its serial label and it fills in the make, model, and serial for you. Beyond that, we recommend a fresh look once a year, or after a renovation or major purchase. Your Annual Record Care plan includes one free rescan a year as part of the service, so keeping current doesn’t cost extra.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="inner">

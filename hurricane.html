@@ -12,24 +12,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <title>Privacy Policy | DHDO</title>
-  <meta name="description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana.">
+  <title>Hurricane Insurance Claim Documentation in South Louisiana | DHDO</title>
+  <meta name="description" content="Pre-loss home documentation for South Louisiana homeowners. DHDO's tagged 3D record gives you a dated baseline of your property, before the storm.">
   <!-- ── Technical SEO (dev, 2026-07-31, per Lauren's brief) ──
        og:title / og:description deliberately mirror this page's own <title> and meta
        description above; og:url mirrors the canonical. Keep them in sync if either changes.
        CANONICAL KEEPS .html. When .html is stripped at some point after launch, these
        canonicals AND the og:url must change in the same pass as the 301s, or every page
        will point search engines at a URL that no longer serves. -->
-  <link rel="canonical" href="https://www.dhdoscan.com/privacy.html" />
+  <link rel="canonical" href="https://www.dhdoscan.com/hurricane.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.dhdoscan.com/privacy.html" />
-  <meta property="og:title" content="Privacy Policy | DHDO" />
-  <meta property="og:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
+  <meta property="og:url" content="https://www.dhdoscan.com/hurricane.html" />
+  <meta property="og:title" content="Hurricane Insurance Claim Documentation in South Louisiana | DHDO" />
+  <meta property="og:description" content="Pre-loss home documentation for South Louisiana homeowners. DHDO's tagged 3D record gives you a dated baseline of your property, before the storm." />
   <meta property="og:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
   <meta property="og:site_name" content="DHDO — Digital Home Documentation &amp; Organization" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy Policy | DHDO" />
-  <meta name="twitter:description" content="How DHDO — Digital Home Documentation & Organization collects, uses, and protects your information across South Louisiana." />
+  <meta name="twitter:title" content="Hurricane Insurance Claim Documentation in South Louisiana | DHDO" />
+  <meta name="twitter:description" content="Pre-loss home documentation for South Louisiana homeowners. DHDO's tagged 3D record gives you a dated baseline of your property, before the storm." />
   <meta name="twitter:image" content="https://www.dhdoscan.com/media/poolhouse-assettagging-shaq.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -720,6 +720,18 @@
     .bg-purple-deep { background: var(--purple-deep); }
     .bg-purple .eyebrow::after, .bg-purple-deep .eyebrow::after { background: rgba(201,162,78,0.35); }
   
+    /* ── media placeholders + image band (for media added later) ── */
+    .media-sec { padding: 0 6% 5.5rem; }
+    .media-ph { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.65rem; text-align: center; min-height: 300px; padding: 2.5rem 2rem; border: 2px dashed rgba(201,162,78,0.5); border-radius: 2px; color: var(--purple); background: repeating-linear-gradient(45deg, rgba(201,162,78,0.05), rgba(201,162,78,0.05) 12px, rgba(201,162,78,0.09) 12px, rgba(201,162,78,0.09) 24px); }
+    .media-ph svg { width: 34px; height: 34px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+    .media-ph .mph-label { font-family: 'Outfit', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .media-ph .mph-desc { font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 300; line-height: 1.65; max-width: 420px; color: rgba(46,26,71,0.72); }
+    .media-ph .mph-spec { font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(46,26,71,0.4); }
+    .media-band { position: relative; }
+    .media-band img { width: 100%; height: 470px; object-fit: cover; object-position: center; display: block; }
+    .media-band .media-credit { position: absolute; right: 12px; bottom: 10px; font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 0.03em; color: rgba(255,255,255,0.8); background: rgba(26,14,46,0.55); padding: 3px 9px; border-radius: 3px; }
+    @media (max-width: 720px) { .media-band img { height: 300px; } .media-ph { min-height: 210px; } }
+
     /* ── nav actions: avatar (client portal) button + hamburger ── */
     .nav-actions { display: flex; align-items: center; gap: 0.85rem; }
     .nav-avatar { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(46,26,71,0.22); color: var(--purple) !important; transition: all 0.2s; text-decoration: none; }
@@ -804,40 +816,131 @@
     .bg-purple .media-ph .mph-desc, .bg-purple-deep .media-ph .mph-desc {
       color: rgba(255,255,255,0.75) !important;
     }
+    /* ── 2026-07-26 Carla round: real paragraph break between stacked body paragraphs ── */
+    .about-grid .fade p + p { margin-top: 1.15rem; }
 </style>
 
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.dhdoscan.com/#org",
+      "name": "DHDO — Digital Home Documentation & Organization",
+      "alternateName": "DHDO",
+      "url": "https://www.dhdoscan.com/",
+      "logo": "https://www.dhdoscan.com/logo-primary.png",
+      "image": "https://www.dhdoscan.com/logo-primary.png",
+      "telephone": "+1-337-415-1951",
+      "email": "hello@dhdoscan.com",
+      "parentOrganization": {
         "@type": "Organization",
-        "@id": "https://www.dhdoscan.com/#org",
-        "name": "DHDO — Digital Home Documentation & Organization",
-        "alternateName": "DHDO",
-        "url": "https://www.dhdoscan.com/",
-        "logo": "https://www.dhdoscan.com/logo-primary.png",
-        "telephone": "+1-337-415-1951",
-        "email": "hello@dhdoscan.com",
-        "parentOrganization": { "@type": "Organization", "name": "Bradberry Construction & Design" },
-        "areaServed": [
-          { "@type": "City", "name": "Lake Charles" },
-          { "@type": "AdministrativeArea", "name": "Calcasieu Parish" },
-          { "@type": "City", "name": "Lafayette" },
-          { "@type": "AdministrativeArea", "name": "Lafayette Parish" },
-          { "@type": "AdministrativeArea", "name": "South Louisiana" }
-        ]
+        "name": "Bradberry Construction & Design"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhdoscan.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.dhdoscan.com/privacy.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake Charles"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Calcasieu Parish"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Hurricane Insurance Claim Documentation",
+      "name": "Hurricane Insurance Claim Documentation for South Louisiana",
+      "description": "Pre-loss home documentation for South Louisiana homeowners. DHDO's tagged 3D record gives you a dated baseline of your property, before the storm.",
+      "url": "https://www.dhdoscan.com/hurricane.html",
+      "provider": {
+        "@id": "https://www.dhdoscan.com/#org"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake Charles"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Calcasieu Parish"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Louisiana"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hurricane",
+          "item": "https://www.dhdoscan.com/hurricane.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where does this fit into my hurricane prep checklist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ahead of almost everything else on that list. Most hurricane prep — batteries, shutters, water — happens once a storm is being tracked, but documentation only counts if it’s finished before then. Treat it as a start-of-season task, not a storm-week one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my insurance company accept a 3D scan as proof for my claim if my home is damaged during a storm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most adjusters welcome more documentation, not less — a dated, room-by-room record gives them a reference point instead of relying only on your account of what was lost, and can help support your case if there’s ever a dispute over whether damage was pre-existing. Pre-existing damage disputes are a common way insurers reduce payouts, and a dated pre-loss record is a direct, real-world defense against that. We can’t guarantee how any specific insurer or adjuster will weigh it in the claims process; that decision sits with your policy. What we can guarantee is that the record exists, is dated, and is ready when you need it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my home or business is already damaged before I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The value of this service is documenting a property before a loss, so the record clearly predates the storm. If damage has already occurred, a scan can still capture the current condition for your own records, but it can’t establish a pre-loss baseline after the fact. Call (337) 415-1951 and we’ll talk through whether documentation still makes sense for your situation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you document businesses and community buildings, or only homes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both — the process is the same, just scoped to the property. A single office takes less time than a full apartment complex or church campus, so let us know the size and layout when you book and we’ll quote the visit accordingly, rather than charging a flat homeowner rate for a much larger space."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "After a storm hits my home, what should I do in addition to my DHDO scan to support my claim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your pre-loss scan establishes the baseline — what you owned and its condition before the storm. After landfall, take dated photos or video of the damage itself, keep receipts for any emergency repairs (tarping, board-up, water mitigation), and avoid discarding damaged items until your adjuster has seen them or told you it’s fine to do so. Together, the before-and-after record gives your adjuster the clearest possible picture."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -915,96 +1018,239 @@
   <a href="tel:3374151951" style="color:var(--gold);">Call (337) 415-1951</a>
 </div>
 
-<section class="page-hero" style="padding-bottom:3.5rem;">
+<!-- ═══ HERO ═══ -->
+<section class="page-hero">
   <div class="hero-grid-lines"></div>
   <div class="hero-orb"></div>
   <div class="inner">
-    <div class="hero-eyebrow">Legal</div>
-    <h1>Privacy <em>Policy</em></h1>
-    <p class="hero-sub">How DHDO collects, uses, and protects your information.</p>
+    <div class="hero-eyebrow">For Homeowners and Businesses</div>
+    <h1>Hurricane Insurance Claim Documentation for <em>South Louisiana</em></h1>
+    <p class="hero-sub">A claim backed by dated proof, not a memory. DHDO builds a room-by-room record of your home or business — every appliance, every serial number, every room — before a storm ever forms, so if your property is affected, you have evidence instead of guesswork.</p>
+    <div class="hero-actions">
+      <a href="book-a-scan.html" class="btn-gold">Book a Scan</a>
+      <a href="#why" class="btn-ghost">Why It Matters</a>
+    </div>
   </div>
 </section>
 
-<style>
-  .legal-content { max-width: 820px; }
-  .legal-content h3 { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:400; color:var(--purple); margin:2.5rem 0 0.75rem; }
-  .legal-content p { font-size:1rem; line-height:1.85; color:rgba(46,26,71,0.86); margin-bottom:1rem; }
-  .legal-content strong { color:var(--purple); font-weight:600; }
-  .legal-content .legal-meta { font-size:0.78rem; color:rgba(46,26,71,0.5); letter-spacing:0.04em; margin-bottom:1.75rem; }
-  .legal-content a { color:var(--gold); text-decoration:none; }
-</style>
-<section class="bg-cream fade">
-  <div class="inner legal-content">
-    <p class="legal-meta">Last updated: July 31, 2026</p>
-    <p>DHDO — Digital Home Documentation &amp; Organization (&ldquo;DHDO,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a division of <a href="https://bradberryconstruction.com/" target="_blank" rel="noopener">Bradberry Construction &amp; Design</a>, provides three-dimensional property documentation and related organizational services in South Louisiana. This Privacy Policy explains what information we collect, how we use and share it, how we protect it, and the choices available to you. It applies to dhdoscan.com, the DHDO Client Portal at <a href="https://portal.dhdoscan.com" target="_blank" rel="noopener">portal.dhdoscan.com</a>, and the services we provide.</p>
+<div class="media-band">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Laura_2020-08-27_0420Z.jpg" alt="Satellite view of Hurricane Laura approaching the Louisiana coast, August 2020" loading="lazy" width="1200" height="1500" />
+  <span class="media-credit">NASA / NOAA satellite imagery &middot; Hurricane Laura, Aug 2020 (public domain)</span>
+</div>
 
-    <h3>Information We Collect</h3>
-    <p><strong>Information you give us.</strong> When you request a scan, contact us, or schedule an appointment, we collect your name, email address, phone number, property address, and any scheduling preferences or notes you provide.</p>
-    <p><strong>Documentation data.</strong> When we scan a property, we create a three-dimensional digital record and may catalog assets you ask us to tag, including make, model, serial number, purchase date, and any receipts or details you share with us (&ldquo;Client Home Documentation&rdquo;).</p>
-    <p><strong>Portal access data.</strong> When you access the DHDO Client Portal, we collect the information needed to verify your identity and grant access to your documentation, such as your magic-link token, login timestamp, and general session activity. The Portal does not require you to create or remember a traditional password.</p>
-    <p><strong>Automatically collected.</strong> Like most websites, we collect basic usage data (pages visited, device and browser type, approximate location) through cookies and analytics tools to understand how the site is used and to keep it secure.</p>
-
-    <h3>Information We Do Not Intentionally Collect</h3>
-    <p>We do not intend to collect Social Security numbers, driver&rsquo;s license or state identification numbers, passport numbers, financial account usernames or passwords, full payment card numbers or security codes, medical records, or personal information from children under 13 through our website or standard intake process. Before a scan, clients are responsible for removing, concealing, or identifying any medications, financial documents, identification documents, security codes, firearms, safes, or other sensitive items they do not want captured.</p>
-
-    <h3>How We Use Your Information</h3>
-    <p>We use your information to schedule and deliver your documentation service, communicate with you about your scan and account, provide access to your Client Portal, respond to inquiries, organize and tag Client Home Documentation (including with the assistance of software and artificial-intelligence tools described below), improve our website and services, and meet legal or security obligations.</p>
-
-    <h3>How We Share Your Information</h3>
-    <p>We do not sell your personal information or your Client Home Documentation. We share information only with service providers that help us operate — for example, Matterport or similar scanning and hosting platforms, website hosting, secure database and portal infrastructure, email delivery, payment processing, and website analytics and bot-protection tools — and only as needed to provide the service.</p>
-    <p>We will not share your Client Home Documentation with law firms, insurance agents, insurance carriers, adjusters, family members, contractors, appraisers, realtors, or estate planners unless you direct us to, except where disclosure is required by law or necessary for our authorized vendors to perform services on our behalf.</p>
-    <p><strong>Sharing through the Client Portal.</strong> The Client Portal lets you grant an insurance agent or other party of your choosing secure, read-only access to your Client Home Documentation through a one-click invitation. You decide who receives access, and you may revoke it at any time through the Portal. A party you&rsquo;ve granted access to may add supporting materials, such as claim-related estimates or paperwork, to your record with your permission. DHDO does not grant or expand this access on its own, and no agent or third party ever sees a record you have not chosen to share.</p>
-    <p>We may also disclose information if required by law, court order, or legal process, or to protect our rights, safety, or property.</p>
-
-    <h3>How We Store and Protect It</h3>
-    <!-- ACCURACY (dev, 2026-07-31) — TWO CHANGES TO LAUREN'S DRAFT, BOTH CHECKED AGAINST PRODUCTION:
-         (1) Her draft said logins are "protected by two-factor authentication by default". They are not.
-             SMS 2FA is OPT-IN and 2 of 7 live clients have switched it on. A privacy policy is the wrong
-             place to overstate a control, so this says "available on your account" instead. Make 2FA the
-             default in the portal and Lauren's stronger wording becomes true and can go back in.
-         (2) Her draft said "You may add an additional password to any individual scan." The column
-             exists but 0 of 7 scans use it and there is no confirmed client-facing control, so this says
-             an additional password "can be added on request" until that is verified. -->
-    <p>Your documentation is stored securely off-site in the cloud and accessed through a private, magic-link login, with two-factor authentication available on your account. An additional password can be added to an individual scan on request for your most sensitive records. Your Client Home Documentation is hosted redundantly across Matterport&rsquo;s secure cloud infrastructure and DHDO&rsquo;s own systems, which are independently reviewed for security. No method of storage or transmission is completely secure, but we work to keep your data protected.</p>
-
-    <h3>Data Retention</h3>
-    <!-- Lauren, 2026-07-31: your note says this section still needs a revision pass on how scan-only
-         service is handled. Using your v2 wording as-is for now — the last paragraph is the part you
-         flagged. Also note this replaces the old flat "three (3) years from final delivery" retention
-         period, which no longer matched how Annual Record Care actually works. -->
-    <p>How long DHDO keeps your Client Home Documentation depends on your Annual Record Care status. While Annual Record Care is active on your account, your 3D scan, asset inventory, and related documentation remain hosted and accessible through your Client Portal.</p>
-    <p>Annual Record Care runs in twelve-month terms. Some packages, such as the Guided Property Record, include your first year of Annual Record Care with your scan; other packages may add it separately, as described in your service agreement or rate card.</p>
-    <p>If your Annual Record Care term ends and is not renewed, you have thirty (30) days from the end of that term to renew before we take further action. If you do not renew within that thirty-day window, DHDO will delete your hosted scan and remove your Portal access. This does not affect the physical hard drive or USB copy of your original scan delivered to you at project completion &mdash; that copy remains yours to keep, and DHDO has no ability to access or delete it remotely.</p>
-    <p>For projects delivered without Annual Record Care, such as scan-only service, DHDO retains your documentation only as needed to complete delivery, plus a limited period afterward for quality assurance and administrative purposes, after which it is deleted from our active systems.</p>
-
-    <h3 id="cookies">Cookies &amp; Analytics</h3>
-    <p>We use cookies and analytics tools (including Google Analytics via Google Tag Manager) to measure site usage, and bot-protection tools (Cloudflare Turnstile) to help secure our forms. When you first visit our website, we display a short cookie notice letting you know about this use and linking to this Policy. You can control cookies through your browser settings at any time; disabling them may affect how parts of the site work.</p>
-
-    <h3>Artificial Intelligence and Automated Tools</h3>
-    <p>DHDO may use software tools, automation, or artificial-intelligence features — including third-party AI services such as Google&rsquo;s Gemini — to help organize, tag, and manage Client Home Documentation, such as identifying and labeling assets by make, model, or category.</p>
-    <p>The Client Portal includes an AI-assisted feature that lets you add new items to your inventory by submitting a photo, which the AI uses to suggest a name, brand, model, and similar details for your review before saving.</p>
-    <p>These tools support DHDO&rsquo;s service delivery only and are subject to the confidentiality and security terms of our vendor agreements. DHDO will not use identifiable Client Home Documentation to train public or third-party artificial-intelligence models without your separate written consent.</p>
-
-    <h3>Your Choices</h3>
-    <p>You may contact us to request access to, correction of, deletion of, or a copy of the information we hold about you, including your Client Home Documentation, and you may opt out of marketing messages at any time. You may also ask us to restrict certain sharing of your information. We aim to respond within thirty (30) days of a verifiable request. We may need to verify your identity before fulfilling a request involving Client Home Documentation, property records, or Portal access, and we may decline or limit a request where permitted or required by law.</p>
-
-    <h3>Children&rsquo;s Privacy</h3>
-    <p>Our services are directed to adults, and we do not knowingly collect personal information from children under 13 through our website. Home scans may incidentally capture rooms, belongings, or images associated with minors when an adult client authorizes the scan. The client authorizing the scan is responsible for removing, concealing, or excluding anything involving children that they do not want captured. Consent regarding minors is further addressed in DHDO&rsquo;s Client Scan Authorization and Data Consent Form, completed prior to each on-site visit.</p>
-
-    <h3>Professional Disclaimer</h3>
-    <p>DHDO provides independent digital home documentation and organization services only. DHDO is not a law firm, insurance company, insurance agency, public adjuster, appraiser, or licensed home inspector, and does not adjust claims, determine or assign insurance values, or provide legal, tax, or insurance advice. DHDO does not guarantee coverage, claim outcomes, evidentiary admissibility, or premium discounts. Clients should consult their own licensed professional for advice specific to their situation.</p>
-
-    <h3>Marketing, Demonstrations, and Case Studies</h3>
-    <p>DHDO will not use identifiable Client Home Documentation, interior home images, or private client records in public marketing, demonstrations, case studies, testimonials, or social media without your separate written permission.</p>
-
-    <h3>Changes to This Policy</h3>
-    <p>We may update this policy from time to time. When we do, we will revise the &ldquo;Last Updated&rdquo; date above, and material changes will be reflected on this page.</p>
-
-    <h3>Contact Us</h3>
-    <p>Questions about this policy or your information? Reach us at <a href="#" class="team-email" data-em="moc.nacsodhd@olleh" onclick="return openEmail(this)">hello@dhdoscan.com</a> or <a href="tel:3374151951">(337) 415-1951</a> — DHDO, Lake Charles, Louisiana.</p>
+<!-- ═══ WHAT GETS DOCUMENTED BEFORE A STORM ═══ -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="fade">
+        <div class="eyebrow">What We Do</div>
+        <h2>A Pre-Storm Record Built to Hold Up</h2>
+        <p>A strong hurricane claim needs one thing above all: dated, room-by-room proof that predates the storm — not an estimate of what your kitchen held, and not a guess at what your furniture or equipment was worth. A record made before the storm arrived, independent of anyone's account of it afterward, captured by a third party rather than self-reported. That record may help support your position if a claim is ever disputed. DHDO's documentation is built around three things:</p>
+      </div>
+      <div class="about-cards fade" style="transition-delay:0.15s">
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h4>A Complete 3D Walkthrough</h4>
+            <p>Every room and outbuilding captured in navigable detail before storm season — a record your adjuster can revisit anytime, from anywhere, instead of a stack of phone photos taken in a hurry.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4>More Than a Home Inventory Checklist</h4>
+            <p>Make, model, serial number, and purchase date attached to the items that matter — a home inventory list for insurance claims that's already finished before you ever need it, not a paper checklist you have to build and maintain yourself.</p>
+          </div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Timestamped &amp; Verified</h4>
+            <p>Every scan carries an independent date and is captured by our team — so there's no question about when the record was made or who made it, and no risk of guessing after the fact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ═══ ALSO FOR LOCAL BUSINESSES ═══ -->
+<section class="bg-purple fade">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">Not Just Homes</div>
+      <h2 class="light">Local Businesses Carry the Same Risk</h2>
+      <p style="font-size:1.02rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.82);max-width:780px;margin-top:1.5rem;">Churches, schools, apartments, and other local businesses across Southwest Louisiana face the same exposure a home does — often with more square footage, equipment, and inventory riding on it. The same room-by-room process applies; we simply scope the visit to the size of the property. If you're documenting a multi-unit building or community facility, mention it when you book so we can plan the visit accordingly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY PRE-STORM DOCUMENTATION MATTERS ═══ -->
+<section id="why">
+  <div class="inner">
+    <div class="fade" style="text-align:center">
+      <div class="eyebrow center">The Problem</div>
+      <h2>Why South Louisiana Hurricane Claims Fall Short</h2>
+      <p class="why-lead">The Gulf Coast has weathered Katrina, Rita, Laura, and Delta — and in Southwest Louisiana, the pattern after each storm looks the same, whether it's a family living room or a church fellowship hall: someone trying to describe what a space looked like, what was inside it, and what it was worth, working only from recollection. A claim built on nothing but recollection rarely holds up the same way one built on a dated, independent record does.</p>
+    </div>
+    <div class="why-grid fade">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>When an Adjuster Has to Take Your Word for It</h3>
+        <p>Without a pre-loss record, an adjuster is often working from a homeowner's or business owner's account of what a space held and what it was worth, filed weeks or months after the storm. A dated record gives them something to check against, instead of something to take on faith.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>When Wind and Flood Become a Coverage Argument</h3>
+        <p>A single hurricane routinely causes both wind and flood damage, and the two are typically covered by separate policies. Without proof of pre-storm condition, disputes over which damage falls under which policy can stretch on for months. A record made before landfall gives both sides a fixed point of reference.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>When Coverage Hasn't Kept Up With Replacement Cost</h3>
+        <p>Rebuilding costs shift every year, but policy limits don't always follow. Without a documented, itemized account of what's actually in a home or building, it's harder to show that a payout is falling short of what replacement actually costs today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT STRIP ═══ -->
+<section class="stat-strip fade">
+  <div class="inner fade">
+    <div class="stat-num" style="font-size:clamp(2.2rem,4.6vw,3.6rem);">Nearly 9 in 10</div>
+    <p class="stat-label">homeowners who suffered a total loss during a natural disaster were not paid their full contents benefits until they completed a detailed, itemized inventory — reconstructed item by item, from memory, after everything was gone.<span style="font-size:0.7rem; color:rgba(255,255,255,0.7); letter-spacing:0.04em; display:block; margin-top:0.75rem;">Source: <a href="https://uphelp.org/media/surveys/" target="_blank" rel="noopener" style="color:rgba(201,162,78,0.9); text-decoration:underline; text-underline-offset:2px;">United Policyholders survivor surveys</a> &mdash; only 10% of 2025 Los Angeles wildfire total-loss survivors were paid full contents benefits without completing an itemized inventory.</span></p>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process">
+  <div class="inner">
+    <div class="process-hd fade">
+      <div class="eyebrow">Our Process</div>
+      <h2 class="light">Document Before the Storm, <em style="font-style:italic;color:var(--gold)">Not After</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>1</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Before Hurricane Season</div>
+          <h3>Book Early, Before a System Forms</h3>
+          <p>Availability tightens fast once a storm is named and tracking toward the coast. The best time to book is before a system even forms — call as early in hurricane season as you can.</p>
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>2</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">On Scan Day</div>
+          <h3>Room by Room, Nothing Skipped</h3>
+          <p>Our team walks the property room by room — the kitchen, the closets, the garage, the attic — with close-up detail on higher-value items like electronics, appliances, and equipment along the way. It's a complete pre-loss baseline, captured by our team rather than assembled by you after the fact.</p>
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>3</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">Tag &amp; Log</div>
+          <h3>Assets Catalogued and Dated</h3>
+          <p>We attach make, model, serial number, and purchase date to the items that matter, backed by receipts where you provide them — every item catalogued against a record that carries its own date.</p>
+        </div>
+      </div>
+      <div class="step fade">
+        <div class="step-num"><div class="step-circle"><span>4</span></div></div>
+        <div class="step-body">
+          <div class="step-tag">When You Need It</div>
+          <h3>Backed Up Two Ways</h3>
+          <p>Your 3D record and tagged inventory live in your private client portal, reachable from any device — and you will also receive a physical USB drive as an offline backup, in case internet access is the one thing you don't have after a storm.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Don't Wait for the Storm to Have a Name</h2>
+  <p>The homes and businesses that go into hurricane season already documented are the ones that walk into a claims conversation with a record, not just an account of what happened.</p>
+  <a href="book-a-scan.html" class="btn-dark">Book a Scan</a>
+</section>
+
+<!-- ═══ EXPLORE EXAMPLES ═══ -->
+<section id="scans">
+  <div class="inner">
+    <div class="fade">
+      <div class="eyebrow">See the Work</div>
+      <h2 class="light">What a Pre-Storm Record <em style="font-style:italic;color:var(--gold)">Actually Looks Like</em></h2>
+      <p class="scans-intro">A few examples of the detail a DHDO scan captures &mdash; the kind of documentation an adjuster can walk through, not just read about.</p>
+    </div>
+    <div class="scan-grid fade">
+      <a href="https://my.matterport.com/models/bd8XcU4UYR3" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-construction.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Whole home scan example — every room documented before storm season" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Whole Home</div><div class="scan-name">Room-by-Room Baseline</div><div class="scan-desc">A finished home captured room by room &mdash; the pre-loss condition an adjuster can revisit at any time.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a href="https://my.matterport.com/models/SsQeM3UaRWL" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-poolhouse.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Asset documentation scan — tagged belongings with make, model and serial" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Tagged Assets</div><div class="scan-name">Contents Detail</div><div class="scan-desc">See how appliances and high-ticket items get tagged with make, model, and serial &mdash; directly inside the scan.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a href="https://my.matterport.com/models/Wu6Tk7btz99" target="_blank" rel="noopener" class="scan-card">
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-newbuild.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="New build scan example — documented before occupancy" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">New Construction</div><div class="scan-name">Documented From Day One</div><div class="scan-desc">A newly built property captured in complete 3D before its first storm season ever starts.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLIENT REVIEW — REMOVED FOR LAUNCH 2026-08-06 (JJ) ═══
+     Was publishing "An approved client quote will live here…" over the byline "Client Name".
+
+     TO RESTORE, once a real hurricane-prep client has approved a quote IN WRITING:
+
+     <section class="quote-block">
+       <div class="inner fade">
+         <span class="q-glyph">&ldquo;</span>
+         <blockquote>THEIR WORDS.</blockquote>
+         <span class="q-cite">THEIR NAME</span>
+         <span class="q-role">Hurricane Documentation Client</span>
+       </div>
+     </section>
+     ═══ -->
+
+<!-- ═══ FAQ (hurricane logistics) ═══ -->
+<section id="faq" class="fade">
+  <div class="inner">
+    <div class="eyebrow">Common Questions</div>
+    <h2>Hurricane Documentation, Answered</h2>
+    <p class="faq-lead">Practical answers on timing, coverage, and what happens to your record — so you can plan your documentation well ahead of storm season.</p>
+    <div class="faq-grid fade">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Where does this fit into my hurricane prep checklist?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Ahead of almost everything else on that list. Most hurricane prep — batteries, shutters, water — happens once a storm is being tracked, but documentation only counts if it’s finished before then. Treat it as a start-of-season task, not a storm-week one.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will my insurance company accept a 3D scan as proof for my claim if my home is damaged during a storm?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Most adjusters welcome more documentation, not less — a dated, room-by-room record gives them a reference point instead of relying only on your account of what was lost, and can help support your case if there’s ever a dispute over whether damage was pre-existing. Pre-existing damage disputes are a common way insurers reduce payouts, and a dated pre-loss record is a direct, real-world defense against that. We can’t guarantee how any specific insurer or adjuster will weigh it in the claims process; that decision sits with your policy. What we can guarantee is that the record exists, is dated, and is ready when you need it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if my home or business is already damaged before I book?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>The value of this service is documenting a property before a loss, so the record clearly predates the storm. If damage has already occurred, a scan can still capture the current condition for your own records, but it can’t establish a pre-loss baseline after the fact. Call (337) 415-1951 and we’ll talk through whether documentation still makes sense for your situation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you document businesses and community buildings, or only homes?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Both — the process is the same, just scoped to the property. A single office takes less time than a full apartment complex or church campus, so let us know the size and layout when you book and we’ll quote the visit accordingly, rather than charging a flat homeowner rate for a much larger space.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">After a storm hits my home, what should I do in addition to my DHDO scan to support my claim?<span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Your pre-loss scan establishes the baseline — what you owned and its condition before the storm. After landfall, take dated photos or video of the damage itself, keep receipts for any emergency repairs (tarping, board-up, water mitigation), and avoid discarding damaged items until your adjuster has seen them or told you it’s fine to do so. Together, the before-and-after record gives your adjuster the clearest possible picture.</p></div>
+      </div>
+    </div>
+    <div class="faq-cta-row">
+      <a href="book-a-scan.html" class="btn-outline-purple">Book a Scan</a>
+      <p style="font-size:0.8rem;font-weight:300;color:rgba(46,26,71,0.5);">Still have a question? Call <a href="tel:3374151951" style="color:var(--gold);text-decoration:none;">(337) 415-1951</a>.</p>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="inner">

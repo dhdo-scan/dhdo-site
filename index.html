@@ -10,13 +10,34 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DHDO — 3D Home Documentation & Asset Protection | Lake Charles, Lafayette, Louisiana</title>
-  <meta name="description" content="DHDO creates an irrefutable 3D record of your home and everything in it — tagged assets, serial numbers, and receipts — so insurance claims, disasters, and estate matters never catch you unprepared. Serving Lake Charles, Lafayette, and South Louisiana." />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <!-- SEO 2026-08-05 (JJ): lead with "home inventory" - the term people actually search. It appeared
+       ZERO times in any title, meta or H1 across all 13 pages before this pass. -->
+  <title>Home Inventory &amp; 3D Property Documentation | South Louisiana | DHDO</title>
+  <meta name="description" content="Done-for-you home inventory and 3D property documentation across South Louisiana. Protect your home or business with a tagged, insurance-ready digital record. Book your scan today." />
+  <!-- ── Technical SEO (dev, 2026-07-31, per Lauren's brief) ──
+       og:title / og:description deliberately mirror this page's own <title> and meta
+       description above; og:url mirrors the canonical. Keep them in sync if either changes.
+       CANONICAL KEEPS .html. When .html is stripped at some point after launch, these
+       canonicals AND the og:url must change in the same pass as the 301s, or every page
+       will point search engines at a URL that no longer serves. -->
+  <link rel="canonical" href="https://www.dhdoscan.com/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.dhdoscan.com/index.html" />
+  <meta property="og:title" content="Home Inventory &amp; 3D Property Documentation | South Louisiana | DHDO" />
+  <meta property="og:description" content="Done-for-you home inventory and 3D property documentation across South Louisiana. Protect your home or business with a tagged, insurance-ready digital record. Book your scan today." />
+  <meta property="og:image" content="https://www.dhdoscan.com/img-kitchen.webp" />
+  <meta property="og:site_name" content="DHDO — Digital Home Documentation &amp; Organization" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home Inventory &amp; 3D Property Documentation | South Louisiana | DHDO" />
+  <meta name="twitter:description" content="Done-for-you home inventory and 3D property documentation across South Louisiana. Protect your home or business with a tagged, insurance-ready digital record. Book your scan today." />
+  <meta name="twitter:image" content="https://www.dhdoscan.com/img-kitchen.webp" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /* iPad/tablet nav fix: use the mobile menu on tablets too */ .nav-right a{white-space:nowrap;} @media(max-width:1280px){nav .nav-right{display:none;}nav .hamburger{display:flex;}}
     :root {
       --purple:      #2E1A47;
       --purple-deep: #1A0E2E;
@@ -330,7 +351,7 @@
     .pkg-card.popular .pkg-cta { border-color: var(--gold); color: var(--gold); }
     .pkg-card.popular .pkg-cta:hover { background: var(--gold); color: var(--purple); }
     .pkg-note {
-      font-size: 0.77rem; font-weight: 300; color: rgba(46,26,71,0.5);
+      font-size: 0.79rem; font-weight: 300; color: rgba(46,26,71,0.78);
       margin: 1rem 0 3.5rem; line-height: 1.7;
     }
     .pricing-sub-label {
@@ -361,9 +382,9 @@
     tbody td { padding: 1.15rem 1.25rem; font-size: 0.84rem; font-weight: 400; color: var(--purple); vertical-align: top; }
     tbody td:first-child { font-weight: 500; }
     tbody td small { display: block; font-size: 0.76rem; font-weight: 300; color: rgba(46,26,71,0.52); margin-top: 0.25rem; line-height: 1.6; }
-    .fee-amt { font-weight: 600 !important; color: var(--gold) !important; white-space: nowrap; }
+    .fee-amt { font-weight: 700 !important; color: var(--purple) !important; white-space: nowrap; }
     .pricing-footer { margin-top: 2.75rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
-    .pricing-footer p { font-size: 0.8rem; font-weight: 300; color: rgba(46,26,71,0.5); }
+    .pricing-footer p { font-size: 0.8rem; font-weight: 300; color: rgba(46,26,71,0.78); }
     .btn-outline-purple {
       display: inline-block; font-size: 0.7rem; font-weight: 600;
       letter-spacing: 0.14em; text-transform: uppercase;
@@ -609,7 +630,7 @@
     .faq-item.open .faq-icon svg { transform: rotate(45deg); }
     .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s ease; }
     .faq-a p { font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: rgba(46,26,71,0.62); padding-bottom: 1.5rem; margin: 0; }
-    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-item.open .faq-a { max-height: 900px; }
     .faq-cta-row { margin-top: 3rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
 
 
@@ -648,161 +669,160 @@
     /* Email obfuscation */
     .obf-email { unicode-bidi: bidi-override; direction: rtl; }
 
-  </style>
+    /* ── multi-page nav dropdowns ── */
+    .nav-dd { position: relative; align-self: stretch; display: flex; align-items: center; }
+    .nav-dd > a { cursor: pointer; }
+    .nav-dd-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid rgba(201,162,78,0.28); box-shadow: 0 22px 55px -22px rgba(46,26,71,0.4); padding: 0.9rem 1rem; min-width: 274px; display: none; flex-direction: column; gap: 0.05rem; z-index: 1001; }
+    .nav-dd:hover .nav-dd-panel, .nav-dd:focus-within .nav-dd-panel { display: flex; }
+    .nav-dd-panel a { font-size: 0.72rem !important; letter-spacing: 0.04em !important; text-transform: none !important; color: rgba(46,26,71,0.72) !important; padding: 0.55rem 0.4rem; border-radius: 2px; }
+    .nav-dd-panel a:hover { color: var(--gold) !important; background: rgba(201,162,78,0.07); }
+    .nav-dd-head { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); padding: 0.5rem 0.4rem 0.2rem; }
+    .nav-dd-soon { font-size: 0.68rem; letter-spacing: 0.03em; color: rgba(46,26,71,0.3); font-style: italic; padding: 0.5rem 0.4rem; }
+    .mob-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem; }
+    .mobile-menu .mob-sub { font-size: 0.82rem; letter-spacing: 0.03em; text-transform: none; color: rgba(255,255,255,0.55); padding-left: 0.85rem; }
+    /* ── CTA band (sub-page enders) ── */
+    .cta-band { background: var(--gold); text-align: center; padding: 5.5rem 6%; }
+    .cta-band h2 { color: var(--purple); margin: 0 auto 1.25rem; max-width: 720px; }
+    .cta-band p { color: var(--purple); max-width: 560px; margin: 0 auto 2rem; font-weight: 300; line-height: 1.9; }
+    .btn-dark { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); background: var(--purple); padding: 1.05rem 2.75rem; border-radius: 1px; text-decoration: none; border: 1.5px solid var(--purple); transition: all 0.25s; }
+    .btn-dark:hover { background: var(--purple-deep); border-color: var(--purple-deep); transform: translateY(-2px); }
+    /* ── footer socials ── */
+    .footer-social { display: flex; gap: 12px; margin-top: 1.35rem; }
+    .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid rgba(201,162,78,0.25); border-radius: 8px; color: rgba(255,255,255,0.5); transition: color 0.15s, border-color 0.15s, background 0.15s; }
+    .footer-social a:hover { color: var(--gold); border-color: var(--gold); background: rgba(201,162,78,0.1); }
+    .footer-social svg { width: 16px; height: 16px; fill: currentColor; display: block; }
+    /* ── pending-verification flag ── */
+    .pending-flag { display: inline-block; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,162,78,0.45); border-radius: 2px; padding: 0.2rem 0.5rem; margin-left: 0.5rem; vertical-align: middle; }
+    /* ── breadcrumb (sub-pages) ── */
+    .breadcrumb { background: var(--cream); padding: 7rem 6% 0; }
+    .breadcrumb .inner { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(46,26,71,0.4); }
+    .breadcrumb a { color: rgba(46,26,71,0.4); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+  
+    /* ── nav actions: avatar (client portal) button + hamburger ── */
+    .nav-actions { display: flex; align-items: center; gap: 0.85rem; }
+    .nav-avatar { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(46,26,71,0.22); color: var(--purple) !important; transition: all 0.2s; text-decoration: none; }
+    .nav-avatar:hover { border-color: var(--gold); color: var(--gold) !important; background: rgba(201,162,78,0.08); transform: translateY(-1px); }
+    .nav-avatar svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    /* ── why-card link (homepage blocks link to their pages) ── */
+    .why-card .why-link { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 1rem; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: gap 0.2s; }
+    .why-card .why-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .why-card .why-link:hover { gap: 0.65rem; }
+    /* ── client quote block (dark, per spec: like the stat card) ── */
+    .quote-block { background: var(--purple); text-align: center; }
+    .quote-block .inner { max-width: 880px; }
+    .quote-block .q-glyph { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; line-height: 0.7; color: var(--gold); opacity: 0.5; display: block; margin-bottom: 0.75rem; }
+    .quote-block blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.4; color: #fff; margin: 0 0 1.75rem; }
+    .quote-block .q-cite { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+    .quote-block .q-role { display: block; margin-top: 0.35rem; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.03em; text-transform: none; color: rgba(255,255,255,0.45); }
+    /* ── stat strip (compact single-stat band) ── */
+    .stat-strip { background: var(--purple-deep); text-align: center; }
+    .stat-strip .stat-num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; color: var(--gold); }
+    .stat-strip .stat-label { font-size: 0.95rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.6); max-width: 580px; margin: 1rem auto 0; }
+    /* ── video placeholder (16:9, for media added later) ── */
+    .video-ph { position: relative; width: 100%; aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.85rem; text-align: center; border: 2px dashed rgba(201,162,78,0.5); border-radius: 2px; background: repeating-linear-gradient(45deg, rgba(201,162,78,0.05), rgba(201,162,78,0.05) 12px, rgba(201,162,78,0.09) 12px, rgba(201,162,78,0.09) 24px); }
+    .video-ph .vp-play { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; }
+    .video-ph .vp-play svg { width: 20px; height: 20px; fill: var(--gold); margin-left: 4px; }
+    .video-ph .vp-label { font-family: 'Outfit', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .video-ph .vp-desc { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 300; color: rgba(46,26,71,0.7); max-width: 440px; padding: 0 1rem; }
 
-  <!-- Schema Markup -->
+    .why-grid--4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 1024px) { .why-grid--4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .why-grid--4 { grid-template-columns: 1fr; } }
+
+    /* ── desktop "Client Login" link (distinct from the gold CTA) + mobile avatar icon ── */
+    .nav-login-text { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple) !important; border: 1px solid rgba(46,26,71,0.28); padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+    .nav-login-text svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .nav-login-text:hover { border-color: var(--gold); color: var(--gold) !important; background: rgba(201,162,78,0.06); }
+    @media (min-width: 721px) { .nav-avatar { display: none !important; } }
+    @media (max-width: 720px) { .nav-login-text { display: none !important; } }
+
+    /* ── readability pass: darker + larger body copy for low-contrast text (2026-07 accessibility) ── */
+    .about-grid .fade p, .acard p, .why-card p, .faq-a p, .pkg-features li, .addon-row span, tbody td, .content-block p, .media-ph .mph-desc { color: rgba(46,26,71,0.88) !important; }
+    .why-lead, .pricing-lead, .faq-lead, .section-lead, .lead { color: rgba(46,26,71,0.82) !important; }
+    .why-card p, .acard p, .faq-a p, .pkg-features li { font-size: 0.92rem !important; line-height: 1.75 !important; }
+    .why-lead, .pricing-lead, .faq-lead, .section-lead, .lead { font-size: 1.02rem !important; line-height: 1.8 !important; }
+    .pkg-price-note { color: rgba(46,26,71,0.62) !important; }
+    tbody td small { color: rgba(46,26,71,0.68) !important; }
+    /* on-dark sections: brighten muted text */
+    .hero-sub, .step-body p, .scans-intro, .scan-desc, .form-lead, .stat-label, .portal-feats span, .quote-block .q-role { color: rgba(255,255,255,0.82) !important; }
+    .hero-sub, .step-body p, .scans-intro, .scan-desc, .form-lead { font-size: 0.95rem !important; line-height: 1.85 !important; }
+    /* ── ON-DARK TEXT FIX v3 (dev, 2026-07-31) ──────────────────────────────────────────────────
+       The readability pass above force-darkens body copy with !important. Its on-dark companion rule
+       listed only SOME of those classes, so any of them sitting directly on a purple surface rendered
+       dark-purple on dark-purple and vanished. Reported live: the White-Glove Pro card (.popular, a
+       PURPLE card) showed its gold bullet dashes with no text beside them; and every purple section's
+       lead paragraph was invisible.
+
+       Scoped deliberately to text that sits DIRECTLY on a dark surface. Do NOT add .acard, .why-card,
+       .addon-row or a plain .pkg-card here: each sets `background: var(--white)` itself, so forcing
+       white text on them would recreate this exact bug inverted (white on white) the moment one of
+       those cards is moved onto a purple section. .pkg-card.popular IS listed because that card's own
+       background is var(--purple).
+       Dark surfaces: .bg-purple  .bg-purple-deep  .quote-block  .stat-strip  .pkg-card.popular
+       NOT .cta-band -- that band is GOLD, so dark text on it is correct. */
+    .light-lead, h2.light + .section-lead,
+    .bg-purple .section-lead, .bg-purple-deep .section-lead, .quote-block .section-lead,
+    .bg-purple .why-lead, .bg-purple-deep .why-lead,
+    .bg-purple .pricing-lead, .bg-purple-deep .pricing-lead,
+    .bg-purple .faq-lead, .bg-purple-deep .faq-lead,
+    .bg-purple .lead, .bg-purple-deep .lead, .quote-block .lead, .stat-strip .lead {
+      color: rgba(255,255,255,0.82) !important;
+    }
+    .pkg-card.popular .pkg-features li,
+    .bg-purple .faq-a p, .bg-purple-deep .faq-a p,
+    .bg-purple .content-block p, .bg-purple-deep .content-block p,
+    .bg-purple .about-grid .fade p, .bg-purple-deep .about-grid .fade p,
+    .bg-purple tbody td, .bg-purple-deep tbody td {
+      color: rgba(255,255,255,0.86) !important;
+    }
+    .pkg-card.popular .pkg-price-note { color: rgba(255,255,255,0.66) !important; }
+    .bg-purple tbody td small, .bg-purple-deep tbody td small { color: rgba(255,255,255,0.70) !important; }
+    /* placeholder captions are purple by default, so they need the same treatment on dark */
+    .bg-purple .video-ph .vp-desc, .bg-purple-deep .video-ph .vp-desc,
+    .bg-purple .media-ph .mph-desc, .bg-purple-deep .media-ph .mph-desc {
+      color: rgba(255,255,255,0.75) !important;
+    }
+</style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "DHDO — Digital Home Documentation & Organization",
-    "description": "White-glove 3D home documentation and asset management service. Protect what matters most before you ever need it.",
-    "url": "https://www.dhdoscan.com",
-    "telephone": "+13374151951",
-    "email": "hello@dhdoscan.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lake Charles",
-      "addressRegion": "LA",
-      "addressCountry": "US"
-    },
-    "areaServed": [
+    "@graph": [
       {
-        "@type": "City",
-        "name": "Lake Charles",
-        "addressRegion": "LA"
+        "@type": "Organization",
+        "@id": "https://www.dhdoscan.com/#org",
+        "name": "DHDO — Digital Home Documentation & Organization",
+        "alternateName": "DHDO",
+        "url": "https://www.dhdoscan.com/",
+        "logo": "https://www.dhdoscan.com/logo-primary.png",
+        "image": "https://www.dhdoscan.com/logo-primary.png",
+        "telephone": "+1-337-415-1951",
+        "email": "hello@dhdoscan.com",
+        "parentOrganization": { "@type": "Organization", "name": "Bradberry Construction & Design" },
+        "priceRange": "$350-$800+",
+        "sameAs": [
+          "https://share.google/L2d7JVNbi5N3GBGco",
+          "https://www.facebook.com/dhdoscan",
+          "https://www.instagram.com/dhdoscan/",
+          "https://www.linkedin.com/company/dhdoscan",
+          "https://www.tiktok.com/@dhdoscan",
+          "https://www.youtube.com/@DHDOScan"
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Lake Charles" },
+          { "@type": "AdministrativeArea", "name": "Calcasieu Parish" },
+          { "@type": "City", "name": "Lafayette" },
+          { "@type": "AdministrativeArea", "name": "Lafayette Parish" },
+          { "@type": "AdministrativeArea", "name": "South Louisiana" }
+        ]
       },
       {
-        "@type": "City",
-        "name": "Lafayette",
-        "addressRegion": "LA"
-      },
-      {
-        "@type": "City",
-        "name": "Baton Rouge",
-        "addressRegion": "LA"
-      },
-      {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 30.2266,
-          "longitude": -93.2174
-        },
-        "geoRadius": "160934"
-      }
-    ],
-    "priceRange": "$$",
-    "sameAs": [],
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "Bradberry Construction & Design",
-      "url": "https://bradberryconstruction.com"
-    },
-    "employee": [
-      {
-        "@type": "Person",
-        "name": "Jonathan Bradberry",
-        "jobTitle": "CEO",
-        "email": "jonathan@dhdoscan.com"
-      },
-      {
-        "@type": "Person",
-        "name": "Jay Joseph",
-        "jobTitle": "Sales Manager",
-        "email": "jay@dhdoscan.com"
-      },
-      {
-        "@type": "Person",
-        "name": "Noah Dressler",
-        "jobTitle": "Sales Representative",
-        "email": "noah@dhdoscan.com"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "DHDO Home Scan Packages",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "Basic Home Scan",
-          "description": "Full interior 3D scan, hosted digital model, shareable access link, permanent cloud storage. Up to 3,000 sq ft.",
-          "price": "350",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
-          "name": "Pro Home Scan",
-          "description": "Everything in Basic plus 2 hours of asset tagging with notes, photos, and receipts linked. Clickable item inventory. Up to 3,000 sq ft.",
-          "price": "450",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
-          "name": "Commercial Scan",
-          "description": "Full commercial property scan, 4 hours of asset tagging, offices, retail, and restaurants. Hosted digital model.",
-          "price": "800",
-          "priceCurrency": "USD"
-        }
-      ]
-    },
-    "knowsAbout": [
-      {
-        "@type": "Service",
-        "name": "3D Home Documentation",
-        "description": "Matterport 3D scanning of residential properties with tagged assets, serial numbers, and purchase values for insurance and estate documentation.",
-        "provider": { "@type": "LocalBusiness", "name": "DHDO" },
-        "areaServed": "South Louisiana",
-        "serviceType": "Property Documentation"
-      },
-      {
-        "@type": "Service",
-        "name": "Insurance Documentation Scan",
-        "description": "Pre-loss documentation designed to support insurance claims with a complete, timestamped 3D walkthrough and asset inventory.",
-        "provider": { "@type": "LocalBusiness", "name": "DHDO" },
-        "areaServed": "South Louisiana",
-        "serviceType": "Insurance Documentation"
-      },
-      {
-        "@type": "Service",
-        "name": "Commercial Property Scan",
-        "description": "3D documentation of commercial properties including offices, retail spaces, and restaurants.",
-        "provider": { "@type": "LocalBusiness", "name": "DHDO" },
-        "areaServed": "South Louisiana",
-        "serviceType": "Commercial Documentation"
-      }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does a home documentation scan cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Packages start at $350 for homes up to 3,000 sq ft. Homes over 3,000 sq ft add $50 per additional 1,000 sq ft. The Pro package at $450 includes asset tagging with receipts and serial numbers." }
-      },
-      {
-        "@type": "Question",
-        "name": "How does a 3D home scan help with insurance claims?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A DHDO scan provides an irrefutable, timestamped record of every item you own — including photos, serial numbers, and purchase values. This turns a disputed insurance claim into a settled one." }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does the scan take?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The on-site scan takes one to three hours depending on home size. Your completed documentation is delivered within 5–7 business days after scan day." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you serve Lafayette and other Louisiana cities?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We are based in Lake Charles, Louisiana and serve the surrounding region including Lafayette. Contact us to confirm availability in your area." }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if a hurricane or flood destroys my home?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Your DHDO documentation is stored securely off-site and accessible anywhere, anytime. If disaster strikes, your complete inventory is available immediately to support insurance claims and rebuilding." }
+        "@type": "WebSite",
+        "@id": "https://www.dhdoscan.com/#website",
+        "url": "https://www.dhdoscan.com/",
+        "name": "DHDO",
+        "publisher": { "@id": "https://www.dhdoscan.com/#org" }
       }
     ]
   }
@@ -818,33 +838,68 @@
 
 <!-- ═══ NAV ═══ -->
 <nav>
-  <a href="#hero" class="nav-logo">
+  <a href="index.html" class="nav-logo" aria-label="DHDO home">
     <picture>
-      <source srcset="logo-primary.webp" type="image/webp" />
-      <img src="logo-primary.png" alt="DHDO — Digital Home Documentation & Organization" width="84" height="56" style="height:56px;width:auto;display:block;" />
+      <source srcset="https://www.dhdoscan.com/logo-primary.webp" type="image/webp" />
+      <img src="https://www.dhdoscan.com/logo-primary.png" alt="DHDO — Digital Home Documentation & Organization" width="84" height="56" style="height:52px;width:auto;display:block;" />
     </picture>
   </a>
   <ul class="nav-right">
-    <li><a href="#about">What We Do</a></li>
-    <li><a href="#scans">Live Scans</a></li>
-    <li><a href="#process">Our Process</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://portal.dhdoscan.com" class="nav-portal">Client Login</a></li>
+    <li class="nav-dd">
+      <a href="#" aria-haspopup="true" onclick="return false;">About</a>
+      <div class="nav-dd-panel" style="min-width:200px;">
+        <a href="about.html">About DHDO</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#" aria-haspopup="true" onclick="return false;">How We Help</a>
+      <div class="nav-dd-panel">
+        <span class="nav-dd-head">Insurance</span>
+        <a href="home-documentation.html">Homeowners</a>
+        <a href="insurance-professionals.html">Insurance Professionals</a>
+        <a href="hurricane.html">Hurricane Prep</a>
+        <a href="estate-planning.html">Estate Planning</a>
+        <a href="real-estate.html">Real Estate</a>
+      </div>
+    </li>
+    <li class="nav-dd">
+      <a href="#" aria-haspopup="true" onclick="return false;">Service Areas</a>
+      <div class="nav-dd-panel" style="min-width:210px;">
+        <a href="lake-charles.html">Lake Charles</a>
+        <a href="lafayette.html">Lafayette</a>
+        <span class="nav-dd-soon">More Cities &middot; Phase 2</span>
+      </div>
+    </li>
     <li><a href="tel:3374151951" class="nav-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(337) 415-1951</a></li>
-    <li><a href="#schedule" class="nav-cta">Schedule a Scan</a></li>
+    <li><a href="book-a-scan.html" class="nav-cta">Book a Scan</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-actions">
+    <a href="https://portal.dhdoscan.com" class="nav-login-text"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 4-7 8-7s8 2.5 8 7"/></svg>Client Login</a>
+    <a href="https://portal.dhdoscan.com" class="nav-avatar" aria-label="Client portal login" title="Client Portal">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 4-7 8-7s8 2.5 8 7"/></svg>
+    </a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 <div class="mobile-menu" id="mob">
-  <a href="#about"    onclick="closeMob()">What We Do</a>
-  <a href="#scans"    onclick="closeMob()">Live Scans</a>
-  <a href="#process"  onclick="closeMob()">Our Process</a>
-  <a href="#pricing"  onclick="closeMob()">Pricing</a>
-  <a href="#faq"      onclick="closeMob()">FAQ</a>
-  <a href="#schedule" onclick="closeMob()" style="color:var(--gold);">Schedule a Scan</a>
+  <span class="mob-label">About</span>
+  <a href="about.html" class="mob-sub" onclick="closeMob()">About DHDO</a>
+  <a href="pricing.html" class="mob-sub" onclick="closeMob()">Pricing</a>
+  <a href="faq.html" class="mob-sub" onclick="closeMob()">FAQ</a>
+  <span class="mob-label">How We Help</span>
+  <a href="home-documentation.html" class="mob-sub" onclick="closeMob()">Homeowners</a>
+  <a href="insurance-professionals.html" class="mob-sub" onclick="closeMob()">Insurance Professionals</a>
+  <a href="hurricane.html" class="mob-sub" onclick="closeMob()">Hurricane Prep</a>
+  <a href="estate-planning.html" class="mob-sub" onclick="closeMob()">Estate Planning</a>
+  <a href="real-estate.html" class="mob-sub" onclick="closeMob()">Real Estate</a>
+  <span class="mob-label">Service Areas</span>
+  <a href="lake-charles.html" class="mob-sub" onclick="closeMob()">Lake Charles</a>
+  <a href="lafayette.html" class="mob-sub" onclick="closeMob()">Lafayette</a>
+  <a href="book-a-scan.html" onclick="closeMob()" style="color:var(--gold);margin-top:0.4rem;">Book a Scan</a>
   <a href="https://portal.dhdoscan.com">Client Login</a>
   <a href="tel:3374151951" style="color:var(--gold);">Call (337) 415-1951</a>
 </div>
@@ -853,26 +908,21 @@
 <section id="hero">
   <div class="hero-grid-lines"></div>
   <div class="hero-orb"></div>
-  <picture>
-    <source srcset="logo-primary.webp" type="image/webp" />
-    <img src="logo-primary.png" alt="DHDO" width="320" height="213" fetchpriority="high" style="width:320px;height:auto;display:block;margin:0 auto 1rem;position:relative;" />
-  </picture>
   <p style="font-size:0.75rem;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 auto 0.5rem;text-align:center;position:relative;">Digital Home Documentation &amp; Organization</p>
-  <p style="font-size:0.52rem;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin:0 auto 3.5rem;text-align:center;position:relative;">A Division of Bradberry Construction &amp; Design</p>
-  <h1>3D Home Documentation<br>&amp; Asset Protection.<br><em>Lake Charles, Lafayette &amp; South Louisiana.</em></h1>
-  <p class="hero-sub">A white-glove 3D documentation service that creates an irrefutable record of everything you own — before a storm, a fire, or a disputed claim forces you to wish you had it.</p>
+  <p style="font-size:0.52rem;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin:0 auto 3.5rem;text-align:center;position:relative;">Louisiana Insured &middot; A Division of Bradberry Construction &amp; Design, LA Licensed Contractor</p>
+  <h1>3D Home Documentation<br>&amp; Asset Protection<br><em>Across South Louisiana.</em></h1>
+  <p class="hero-sub">A white-glove 3D documentation service that creates a detailed, time-stamped record of everything you own — before a storm, a flood, a fire, or a disputed claim forces you to wish you had it.</p>
   <div class="hero-actions">
-    <a href="#schedule" class="btn-gold">Schedule a Scan</a>
-    <a href="#process"  class="btn-ghost">See How It Works</a>
+    <a href="book-a-scan.html" class="btn-gold">Book a Scan</a>
+    <a href="#process" class="btn-ghost">See How It Works</a>
   </div>
-  <p style="margin-top:1.35rem;font-size:0.85rem;color:rgba(255,255,255,0.55);position:relative;">Already a DHDO client? <a href="https://portal.dhdoscan.com" style="color:var(--gold);text-decoration:none;font-weight:600;">Sign in to your portal &rarr;</a></p>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     <span class="scroll-label">Scroll</span>
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
+<!-- ═══ WHAT WE DO ═══ -->
 <section id="about">
   <div class="inner">
     <div class="about-grid">
@@ -881,45 +931,104 @@
         <h2>What's Included in a DHDO Home Scan</h2>
         <p>DHDO uses Matterport 3D scanning technology to create an interactive, navigable record of your entire home — every room, every corner, every item.</p>
         <p style="margin-top:1rem;">Each scan is enriched with tagged assets, serial numbers, purchase dates, and receipts where provided. The result is a living document your insurance adjuster can navigate, your attorney can reference, and your family can rely on.</p>
-  <picture>
-    <source srcset="img-dollhouse.webp" type="image/webp" />
-    <img src="img-dollhouse.png" alt="Matterport 3D dollhouse view showing full home layout" width="1634" height="810" loading="lazy" style="width:110%;height:auto;margin-top:2rem;display:block;margin-left:-5%;" />
-  </picture>
+        <picture>
+          <source srcset="https://www.dhdoscan.com/img-dollhouse.webp" type="image/webp" />
+          <img src="https://www.dhdoscan.com/img-dollhouse.png" alt="Matterport 3D dollhouse view showing full home layout" width="1634" height="810" loading="lazy" style="width:110%;height:auto;margin-top:2rem;display:block;margin-left:-5%;" />
+        </picture>
       </div>
       <div class="about-cards fade" style="transition-delay:0.15s">
         <div class="acard">
-          <div class="acard-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div>
-            <h4>Full-Home 3D Scanning</h4>
-            <p>Immersive scans of every room, closet, garage, and outbuilding — capturing your home in stunning, navigable detail.</p>
-          </div>
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div><h4>Full-Home 3D Scanning</h4><p>Immersive scans of every room, closet, garage, and outbuilding — capturing your home in stunning, navigable detail.</p></div>
         </div>
         <div class="acard">
-          <div class="acard-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <div>
-            <h4>Tagged Asset Documentation</h4>
-            <p>Every item catalogued with make, model, serial number, and purchase date — embedded in the scan.</p>
-          </div>
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div><h4>Tagged Asset Documentation</h4><p>Every item catalogued with make, model, serial number, and purchase date — embedded directly in the scan.</p></div>
         </div>
         <div class="acard">
-          <div class="acard-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <h4>Secure Delivery &amp; Access</h4>
-            <p>Your completed documentation delivered via a secure, shareable link — available anywhere, anytime, on any device.</p>
-          </div>
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h4>Secure Delivery &amp; Access</h4><p>Your completed documentation delivered via a secure, encrypted link — available anywhere, anytime, on any device. Your data is never sold, and is shared only as needed to deliver your service.</p></div>
+        </div>
+        <div class="acard">
+          <div class="acard-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg></div>
+          <div><h4>Your Secure Client Portal</h4><p>Every scan, detailed asset images, your tagged inventory, signed documents, and invoices in one private login — ready the instant you need them. <a href="https://portal.dhdoscan.com" style="color:var(--gold);text-decoration:none;font-weight:500;">Open your portal &rarr;</a></p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ LIVE SCANS ═══ -->
+<!-- ═══ ASSET-TAGGING SHOWCASE ═══
+     Replaces the CLIENT QUOTE section, which Lauren removed: no approved client quote exists yet, and
+     a "Pending approved quote" placeholder on the homepage reads worse than no quote at all.
+     Image is the live asset-tag/kitchen asset Lauren named explicitly (dhdoscan.com/img-kitchen.webp),
+     so it needs no new file in media/. It is also this page's og:image. -->
+<section class="media-sec fade" style="padding:0 6% 5.5rem;">
+  <div class="inner">
+    <picture>
+      <source srcset="https://www.dhdoscan.com/img-kitchen.webp" type="image/webp" />
+      <img src="https://www.dhdoscan.com/img-kitchen.webp" alt="A documented kitchen inside a DHDO Matterport scan, with individual appliances and contents asset-tagged in place — make, model, serial number and purchase details recorded against each item" loading="lazy" style="width:100%;height:auto;border-radius:2px;display:block;border:1px solid rgba(201,162,78,0.25);box-shadow:0 20px 50px -20px rgba(26,14,46,0.35);" />
+    </picture>
+  </div>
+</section>
+
+<!-- ═══ WHY IT MATTERS ═══ -->
+<section id="why">
+  <div class="inner">
+    <div class="fade" style="text-align:center">
+      <div class="eyebrow center">Why It Matters</div>
+      <h2>Prepared Before You Ever Need It</h2>
+      <p class="why-lead">Most homeowners only realize they needed documentation after the worst has already happened. We exist to make sure that moment never catches you unprepared — whatever brings it on.</p>
+    </div>
+    <div class="why-grid why-grid--4 fade">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h3>Insurance Claims</h3>
+        <p>Insurers often expect proof of ownership and value. A complete DHDO file gives your adjuster receipts, photos, and a 3D walkthrough behind every item.</p>
+        <a href="home-documentation.html" class="why-link">For Homeowners <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="insurance-professionals.html" class="why-link" style="margin-left:1.25rem;">For Insurance Professionals <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h3>Hurricane &amp; Storm</h3>
+        <p>In South Louisiana the question isn't if — it's when. A dated, off-site record of every room gives your claim something concrete to stand on after a storm.</p>
+        <a href="hurricane.html" class="why-link">Hurricane Prep <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h3>Estate &amp; Legal</h3>
+        <p>A timestamped inventory of a home's contents is invaluable for estate planning, probate, or any situation that calls for an accurate record.</p>
+        <a href="estate-planning.html" class="why-link">Estate Planning <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <h3>Real Estate</h3>
+        <p>A third-party record of a property's condition and contents supports disclosures, listings, and peace of mind through a sale or purchase.</p>
+        <a href="real-estate.html" class="why-link">Real Estate <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUR PROCESS ═══ -->
+<section id="process">
+  <div class="inner">
+    <div class="process-hd fade">
+      <div class="eyebrow">Our Process</div>
+      <h2 class="light">Six Steps.<br>Two to Three Weeks.<br><em style="font-style:italic;color:var(--gold)">A Lifetime of Protection.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step fade"><div class="step-num"><div class="step-circle"><span>1</span></div></div><div class="step-body"><div class="step-tag">Today</div><h3>Welcome &amp; Sign-Up</h3><p>You complete your client information and onboarding packet. We confirm your scan date within one business day — the clock starts from there.</p></div></div>
+      <div class="step fade"><div class="step-num"><div class="step-circle"><span>2</span></div></div><div class="step-body"><div class="step-tag">3–4 Business Days</div><h3>Preparation Window</h3><p>Gather receipts for major purchases — furniture, electronics, appliances, jewelry, tools. List every item you want tagged and tidy each room for scan day.</p></div></div>
+      <div class="step fade"><div class="step-num"><div class="step-circle"><span>3</span></div></div><div class="step-body"><div class="step-tag">Scan Day</div><h3>We Come to You</h3><p>Our team arrives on your scheduled date. The scan takes one to three hours depending on home size — you don't need to follow us room to room.</p></div></div>
+      <div class="step fade"><div class="step-num"><div class="step-circle"><span>4</span></div></div><div class="step-body"><div class="step-tag">5–7 Business Days</div><h3>Processing &amp; Labeling</h3><p>We process the 3D scan and attach asset tags using your receipts and item information — make, model, serial number, and purchase date embedded in the scan.</p></div></div>
+      <div class="step fade"><div class="step-num"><div class="step-circle"><span>5</span></div></div><div class="step-body"><div class="step-tag">Day 7 Post-Scan</div><h3>Receipt Cutoff</h3><p>Receipts or item info received after the 7th business day following your scan cannot be added without an additional labeling fee. Get everything in before the deadline.</p></div></div>
+      <div class="step fade"><div class="step-num"><div class="step-circle"><span>6</span></div></div><div class="step-body"><div class="step-tag">Delivery</div><h3>Your Documentation, Delivered</h3><p>You receive your secure 3D scan link and complete asset documentation. Payment is due upon delivery — all major cards, ACH, and check accepted.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXAMPLE SCANS ═══ -->
 <section id="scans">
   <div class="inner">
     <div class="fade">
@@ -928,750 +1037,139 @@
       <p class="scans-intro">These are actual Matterport scans we've delivered to clients. Click any card to explore the full interactive 3D model — this is exactly what you receive.</p>
     </div>
     <div class="scan-grid fade">
-
       <a href="https://my.matterport.com/models/SsQeM3UaRWL" target="_blank" rel="noopener" class="scan-card">
-        <div class="scan-thumb-wrap">
-        <img src="img-scan-poolhouse.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Asset Documentation Scan — Pool House Example" />
-        <div class="scan-overlay">
-          <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        </div>
-        <div class="scan-info">
-          <div class="scan-label">Asset Documentation</div>
-          <div class="scan-name">Pool House Example</div>
-          <div class="scan-desc">See how valuables, collectibles, and high-ticket items get tagged with receipts and purchase details — directly inside the scan.</div>
-          <div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </div>
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-poolhouse.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Asset documentation scan — pool house example" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Asset Documentation</div><div class="scan-name">Pool House Example</div><div class="scan-desc">See how valuables and high-ticket items get tagged with receipts and purchase details — directly inside the scan.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
-
       <a href="https://my.matterport.com/models/Wu6Tk7btz99" target="_blank" rel="noopener" class="scan-card">
-        <div class="scan-thumb-wrap">
-        <img src="img-scan-newbuild.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="New Build Construction Scan Example" />
-        <div class="scan-overlay">
-          <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        </div>
-        <div class="scan-info">
-          <div class="scan-label">New Construction</div>
-          <div class="scan-name">New Build Example</div>
-          <div class="scan-desc">A newly built property captured in complete 3D before a single claim, dispute, or renovation ever comes up.</div>
-          <div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </div>
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-newbuild.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="New build construction scan example" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">New Construction</div><div class="scan-name">New Build Example</div><div class="scan-desc">A newly built property captured in complete 3D before a single claim, dispute, or renovation ever comes up.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
-
       <a href="https://my.matterport.com/models/bd8XcU4UYR3" target="_blank" rel="noopener" class="scan-card">
-        <div class="scan-thumb-wrap">
-        <img src="img-scan-construction.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Post Construction Scan Example" />
-        <div class="scan-overlay">
-          <div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        </div>
-        </div>
-        <div class="scan-info">
-          <div class="scan-label">Post Construction</div>
-          <div class="scan-name">Construction Example</div>
-          <div class="scan-desc">Walk a finished renovation room by room — every upgrade documented with the detail your insurance adjuster actually needs.</div>
-          <div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-        </div>
+        <div class="scan-thumb-wrap"><img src="https://www.dhdoscan.com/img-scan-construction.png" class="scan-thumb" width="800" height="500" loading="lazy" alt="Post construction scan example" /><div class="scan-overlay"><div class="scan-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div></div>
+        <div class="scan-info"><div class="scan-label">Post Construction</div><div class="scan-name">Construction Example</div><div class="scan-desc">Walk a finished renovation room by room — every upgrade documented with the detail your adjuster actually needs.</div><div class="scan-cta">Explore Live Scan <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
-
-    </div>
-    <div style="margin-top:2.5rem;text-align:center">
-      <a href="#schedule" class="btn-gold">Ready to Book Your Scan?</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ KITCHEN BANNER ═══ -->
-<picture>
-  <source srcset="img-kitchen.webp" type="image/webp" />
-  <img src="img-kitchen.png" class="kitchen-banner" width="1920" height="1200" loading="lazy" alt="Example home interior documented by DHDO" />
-</picture>
-
-<!-- ═══ CLIENT PORTAL ═══ -->
-<style>
-  #portal { background: var(--purple); }
-  .portal-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
-  .portal-feats { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; gap: 1.1rem; }
-  .portal-feats li { display: flex; gap: 0.85rem; align-items: flex-start; }
-  .portal-feats .pf-ic { width: 34px; height: 34px; border-radius: 8px; background: rgba(201,162,78,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); }
-  .portal-feats strong { display: block; color: #fff; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.15rem; }
-  .portal-feats span { color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.55; }
-  .portal-mock { border-radius: 14px; overflow: hidden; box-shadow: 0 30px 70px -30px rgba(0,0,0,0.65); border: 1px solid rgba(201,162,78,0.2); background: #fff; }
-  .portal-mock-bar { background: #1A0E2E; padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.45rem; }
-  .portal-mock-bar .dot { width: 10px; height: 10px; border-radius: 50%; }
-  .portal-mock-url { margin-left: 0.75rem; font-size: 0.7rem; color: rgba(255,255,255,0.5); font-family: monospace; }
-  .portal-mock-body { background: #F8F4EE; padding: 1.5rem; }
-  .portal-mock-h { font-family: Georgia, 'Times New Roman', serif; color: var(--purple); font-size: 1.15rem; font-weight: 700; margin: 0 0 0.15rem; }
-  .portal-mock-sub { color: #8a8378; font-size: 0.72rem; margin: 0 0 1.15rem; }
-  .portal-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-  .portal-card { background: #fff; border: 1px solid #EDE7DD; border-radius: 10px; padding: 0.95rem; box-shadow: 0 1px 2px rgba(46,26,71,0.05); }
-  .portal-card .pc-ic { width: 30px; height: 30px; border-radius: 7px; background: rgba(201,162,78,0.15); display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 0.55rem; }
-  .portal-card .pc-t { color: var(--purple); font-weight: 600; font-size: 0.82rem; }
-  .portal-card .pc-d { color: #9a9488; font-size: 0.68rem; margin-top: 0.12rem; }
-  @media (max-width: 860px) { .portal-wrap { grid-template-columns: 1fr; gap: 2.5rem; } .portal-mock { order: -1; } }
-</style>
-<section id="portal">
-  <div class="inner">
-    <div class="portal-wrap">
-      <div class="fade">
-        <div class="eyebrow">Your Client Portal</div>
-        <h2 class="light">Everything You Own,<br><em style="font-style:italic;color:var(--gold)">One Secure Login Away.</em></h2>
-        <p style="color:rgba(255,255,255,0.7);margin-top:1rem;line-height:1.7;">Every DHDO client gets a private, secure portal. Your 3D tours, tagged asset inventory, signed documents, and invoices all live in one place — ready the instant an adjuster, attorney, or family member needs them.</p>
-        <ul class="portal-feats">
-          <li>
-            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
-            <div><strong>Your 3D Walkthroughs</strong><span>Open your Matterport tours anytime, from any device.</span></div>
-          </li>
-          <li>
-            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></span>
-            <div><strong>Asset Inventory &amp; Receipts</strong><span>Every tagged item with make, model, serial, and purchase date.</span></div>
-          </li>
-          <li>
-            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
-            <div><strong>Documents &amp; E-Signatures</strong><span>Review and sign your waivers and agreements right in the portal.</span></div>
-          </li>
-          <li>
-            <span class="pf-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-            <div><strong>Private &amp; Secure</strong><span>Bank-level security and a magic-link login — only you can see your home's record.</span></div>
-          </li>
-        </ul>
-        <div style="margin-top:2rem;">
-          <a href="https://portal.dhdoscan.com" class="btn-gold">Open Your Client Portal &rarr;</a>
-        </div>
-      </div>
-      <div class="fade portal-mock" aria-hidden="true">
-        <div class="portal-mock-bar">
-          <span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span>
-          <span class="portal-mock-url">portal.dhdoscan.com</span>
-        </div>
-        <div class="portal-mock-body">
-          <p class="portal-mock-h">Your Scans</p>
-          <p class="portal-mock-sub">Your home, documented and ready whenever you need it.</p>
-          <div class="portal-cards">
-            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div><div class="pc-t">3D Tour</div><div class="pc-d">Living Room &middot; Kitchen</div></div>
-            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/></svg></div><div class="pc-t">My Assets</div><div class="pc-d">42 items &middot; $128,400</div></div>
-            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><div class="pc-t">Documents</div><div class="pc-d">2 of 2 signed</div></div>
-            <div class="portal-card"><div class="pc-ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="pc-t">Invoices</div><div class="pc-d">Paid in full</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- ═══ CTA ═══ -->
+<section class="cta-band">
+  <h2>Your home, documented before you ever need it.</h2>
+  <p>Booking takes one quick phone call — we'll confirm your scan date within one business day.</p>
+  <a href="book-a-scan.html" class="btn-dark">Book a Scan</a>
 </section>
 
-<!-- ═══ WHY ═══ -->
-<section id="why">
-  <div class="inner">
-    <div class="fade" style="text-align:center">
-      <div class="eyebrow center">Why It Matters</div>
-      <h2>Prepared Before You Ever Need It</h2>
-      <p class="why-lead">Most homeowners only realize they needed documentation after the worst has already happened. We exist to make sure that moment never catches you unprepared.</p>
-    </div>
-    <div class="why-grid fade">
-      <div class="why-card">
-        <div class="why-num">01</div>
-        <h3>Insurance Claims</h3>
-        <p>Insurers require proof of ownership and value. A complete DHDO file turns a disputed claim into a settled one — receipts, photos, and a 3D walkthrough backing every item.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">02</div>
-        <h3>Hurricane Season &amp; Storm Claims</h3>
-        <p>In Louisiana, the question isn't if — it's when. Wind, surge, and flood claims come down to proof of what you had before the storm. A DHDO record gives your adjuster a complete, timestamped walkthrough of every room and every item — backed up off-site and accessible the moment you need it.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">03</div>
-        <h3>Estate &amp; Legal</h3>
-        <p>A complete, timestamped inventory of your home's contents is invaluable for estate planning, divorce proceedings, or any situation where an accurate asset record is required.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ PROCESS ═══ -->
-<section id="process">
-  <div class="inner">
-    <div class="process-hd fade">
-      <div class="eyebrow">Our Process</div>
-      <h2 class="light">Six Steps.<br>Two to Three Weeks.<br><em style="font-style:italic;color:var(--gold)">A Lifetime of Protection.</em></h2>
-    </div>
-    <div class="steps">
-
-      <div class="step fade">
-        <div class="step-num"><div class="step-circle"><span>1</span></div></div>
-        <div class="step-body">
-          <div class="step-tag">Today</div>
-          <h3>Welcome &amp; Sign-Up</h3>
-          <p>You complete your client information form and submit your onboarding packet. We confirm your scan date within one business day — the clock starts from there.</p>
-        </div>
-      </div>
-
-      <div class="step fade">
-        <div class="step-num"><div class="step-circle"><span>2</span></div></div>
-        <div class="step-body">
-          <div class="step-tag">3–4 Business Days</div>
-          <h3>Preparation Window</h3>
-          <p>Gather receipts for major purchases — furniture, electronics, appliances, jewelry, tools. Make a list of every item you want tagged and tidy each room so we can move through cleanly on scan day.</p>
-        </div>
-      </div>
-
-      <div class="step fade">
-        <div class="step-num"><div class="step-circle"><span>3</span></div></div>
-        <div class="step-body">
-          <div class="step-tag">Scan Day</div>
-          <h3>We Come to You</h3>
-          <p>Our team arrives on your scheduled date. The scan takes one to three hours depending on home size. You don't need to follow us room to room — relax, work from home, do whatever is easiest. We handle the rest.</p>
-        </div>
-      </div>
-
-      <div class="step fade">
-        <div class="step-num"><div class="step-circle"><span>4</span></div></div>
-        <div class="step-body">
-          <div class="step-tag">5–7 Business Days</div>
-          <h3>Processing &amp; Labeling</h3>
-          <p>We process the 3D scan and attach asset tags using your receipts and item information. Every tagged item gets its make, model, serial number, and purchase date embedded directly into the scan.</p>
-        </div>
-      </div>
-
-      <div class="step fade">
-        <div class="step-num"><div class="step-circle"><span>5</span></div></div>
-        <div class="step-body">
-          <div class="step-tag">Day 7 Post-Scan</div>
-          <h3>Receipt Cutoff</h3>
-          <p>Any receipts or item information received after the 7th business day following your scan cannot be added without an additional labeling fee. Get everything to us before the deadline for the cleanest result.</p>
-        </div>
-      </div>
-
-      <div class="step fade">
-        <div class="step-num"><div class="step-circle"><span>6</span></div></div>
-        <div class="step-body">
-          <div class="step-tag">Delivery</div>
-          <h3>Your Documentation, Delivered</h3>
-          <p>You receive your secure 3D scan link and complete asset documentation. Payment is due upon delivery. We accept all major credit cards, ACH, and check.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ PRICING ═══ -->
-<section id="pricing">
-  <div class="inner fade">
-    <div class="eyebrow">Pricing</div>
-    <h2>Matterport Home Scan Packages &amp; Pricing</h2>
-    <p class="pricing-lead">Every scan includes permanent cloud hosting and digital delivery. Homes over 3,000 sq ft add $50 per additional 1,000 sq ft. Your exact price is confirmed at sign-up.</p>
-
-    <div class="pkg-grid">
-      <div class="pkg-card">
-        <div class="pkg-name">Basic</div>
-        <div class="pkg-price">$350</div>
-        <div class="pkg-price-note">Up to 3,000 sq ft</div>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-features">
-          <li>Full interior 3D scan</li>
-          <li>Hosted digital model</li>
-          <li>Shareable access link</li>
-          <li>Permanent cloud storage</li>
-        </ul>
-        <a href="#schedule" class="pkg-cta">Get Started</a>
-      </div>
-      <div class="pkg-card popular">
-        <div class="pkg-badge">Most Popular</div>
-        <div class="pkg-name">Pro</div>
-        <div class="pkg-price">$450</div>
-        <div class="pkg-price-note">Up to 3,000 sq ft</div>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-features">
-          <li>Everything in Basic</li>
-          <li>2 hrs of asset tagging</li>
-          <li>Notes, photos &amp; receipts linked</li>
-          <li>Clickable item inventory</li>
-        </ul>
-        <a href="#schedule" class="pkg-cta">Get Started</a>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-name">Commercial</div>
-        <div class="pkg-price">$800</div>
-        <div class="pkg-price-note">Full property scan</div>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-features">
-          <li>Full commercial scan</li>
-          <li>4 hrs of asset tagging</li>
-          <li>Offices, retail, restaurants</li>
-          <li>Hosted digital model</li>
-        </ul>
-        <a href="#schedule" class="pkg-cta">Get Started</a>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-name">Custom</div>
-        <div class="pkg-price" style="font-size:1.6rem;padding-top:0.25rem">Call Us</div>
-        <div class="pkg-price-note">Scope confirmed first</div>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-features">
-          <li>High-value asset portfolios</li>
-          <li>Large or multi-property estates</li>
-          <li>Specialized documentation needs</li>
-          <li>Custom turnaround &amp; delivery</li>
-        </ul>
-        <a href="tel:3374151951" class="pkg-cta">Call to Discuss</a>
-      </div>
-    </div>
-    <p class="pkg-note">Homes over 3,000 sq ft: +$50 per additional 1,000 sq ft &nbsp;·&nbsp; All scans include permanent cloud hosting and digital delivery. &nbsp;·&nbsp; <strong>Applicable sales tax will be added to all purchases.</strong></p>
-
-    <div class="pricing-sub-label">Available Add-Ons</div>
-    <div class="addon-grid">
-      <div class="addon-row"><span>Schematic Floor Plan</span><span class="addon-price">$50</span></div>
-      <div class="addon-row"><span>Xactimate Report <em style="font-style:normal;font-size:0.75rem;color:rgba(46,26,71,0.45)">(insurance)</em></span><span class="addon-price">$150</span></div>
-      <div class="addon-row"><span>Matterpak <em style="font-style:normal;font-size:0.75rem;color:rgba(46,26,71,0.45)">(AutoCAD / Revit)</em></span><span class="addon-price">$100</span></div>
-      <div class="addon-row"><span>Additional Thumb Drive</span><span class="addon-price">$25</span></div>
-      <div class="addon-row"><span>E57 Files <em style="font-style:normal;font-size:0.75rem;color:rgba(46,26,71,0.45)">(BIM / xyz)</em></span><span class="addon-price">Call for pricing</span></div>
-      <div class="addon-row"><span>Additional Asset Labeling</span><span class="addon-price">$75 / hr</span></div>
-      <div class="addon-row"><span>Exterior Drone Scan</span><span class="addon-price">$65</span></div>
-    </div>
-
-    <div class="pricing-sub-label">Additional Fees &amp; Policies</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Fee</th>
-          <th>When It Applies</th>
-          <th>Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Home Not Scan-Ready <small>When clutter prevents the team from walking through and capturing cleanly on scan day.</small></td>
-          <td>Per occurrence</td>
-          <td class="fee-amt">$100</td>
-        </tr>
-        <tr>
-          <td>Late Payment <small>Applied to balances unpaid 14 days after delivery, plus a flat administrative fee.</small></td>
-          <td>Balance unpaid after 14 days</td>
-          <td class="fee-amt">1.5% / mo + $25</td>
-        </tr>
-        <tr>
-          <td>No-Show / Day-Of Cancellation <small>When the team arrives and cannot perform the scan, or cancellation occurs within 24 hours of scan time.</small></td>
-          <td>Per occurrence</td>
-          <td class="fee-amt">Quoted</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="pricing-footer">
-      <a href="#schedule" class="btn-outline-purple">Schedule a Scan</a>
-      <p>Package price confirmed within one business day of your consultation request.</p>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ═══ TESTIMONIALS ═══ hidden until real quotes are ready -->
-<section id="testimonials" style="display:none">
-  <div class="inner">
-    <div class="fade">
-      <div class="eyebrow">Testimonials</div>
-      <h2 class="light">What Our Clients Say.</h2>
-      <p class="testimonials-intro">Real homeowners, agents, and professionals who've seen what a complete DHDO record means when it actually matters.</p>
-    </div>
-    <div class="testimonial-grid fade">
-
-      <!-- Placeholder 1 — replace with Andy's quote -->
-      <div class="testimonial-card t-placeholder">
-        <div class="t-quote">Testimonial coming soon — we're gathering quotes from our first clients and partners. Check back after our pilot scans.</div>
-        <div class="t-divider"></div>
-        <div class="t-meta">
-          <div class="t-initials">A</div>
-          <div>
-            <div class="t-name">Andy</div>
-            <div class="t-role">Homeowner — Lake Charles, LA</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Placeholder 2 — replace with Todd/Townsley -->
-      <div class="testimonial-card t-placeholder">
-        <div class="t-quote">Testimonial coming soon — attorney and insurance professional quotes in progress.</div>
-        <div class="t-divider"></div>
-        <div class="t-meta">
-          <div class="t-initials">T</div>
-          <div>
-            <div class="t-name">Todd</div>
-            <div class="t-role">Attorney / Insurance Professional</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Placeholder 3 — open slot -->
-      <div class="testimonial-card t-placeholder">
-        <div class="t-quote">More client stories coming soon as we complete our first round of pilot scans across South Louisiana.</div>
-        <div class="t-divider"></div>
-        <div class="t-meta">
-          <div class="t-initials">—</div>
-          <div>
-            <div class="t-name">South Louisiana Homeowner</div>
-            <div class="t-role">Pilot Client</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FAQ ═══ -->
-<section id="faq">
-  <div class="inner">
-    <div class="fade">
-      <div class="eyebrow">FAQ</div>
-      <h2>Common Questions,<br>Straight Answers.</h2>
-      <p class="faq-lead">Everything you need to know before booking your scan. Don't see your question? Call us directly.</p>
-    </div>
-    <div class="faq-grid fade">
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How much does a home documentation scan cost?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>Packages start at $350 for homes up to 3,000 sq ft. The Pro package at $450 includes 2 hours of asset tagging with receipts, serial numbers, and a clickable inventory. Homes over 3,000 sq ft add $50 per additional 1,000 sq ft. Your exact price is confirmed at sign-up.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How does this help me with an insurance claim?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>Insurers require proof of ownership and value. A DHDO scan gives your adjuster an interactive 3D walkthrough of your home with every item tagged — make, model, serial number, and purchase value. It turns a disputed claim into a settled one. No receipts to dig up, no he-said-she-said.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How long does the scan take?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>The on-site scan takes one to three hours depending on the size of your home. You don't need to follow the team around — relax or work from home while we handle it. Your completed documentation is delivered within 5–7 business days after scan day.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What if a hurricane, flood, or fire destroys my home?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>Your DHDO documentation is stored securely off-site in the cloud — not on your computer, not in your house. The moment disaster strikes, your complete inventory is accessible from any device, anywhere. Louisiana homeowners know the risk. Your scan won't be in the pile of things you lose.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Do you serve Lafayette and other Louisiana cities?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>We are based in Lake Charles, Louisiana and serve the surrounding region. Call us at (337) 415-1951 to confirm availability in your area — we're actively expanding coverage across South Louisiana.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Can I use this for estate planning or legal purposes?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>Yes. A timestamped, complete inventory of your home's contents is valuable for estate planning, divorce proceedings, and any situation requiring an accurate asset record. Attorneys and estate planners regularly reference DHDO documentation packages.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What do I need to do before the scan team arrives?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>Tidy each room so the team can walk through and capture cleanly. Gather receipts for major purchases — furniture, electronics, appliances, jewelry, tools. That's it. We'll walk you through the full prep checklist after you book.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How is my data kept private and secure?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-a"><p>Your property information, receipts, and asset data are collected solely to create your documentation package. Everything is kept confidential and is never shared with third parties outside the scope of your service. Your scan link is private and shareable only by you.</p></div>
-      </div>
-
-    </div>
-    <div class="faq-cta-row fade">
-      <a href="#schedule" class="btn-outline-purple">Book Your Scan</a>
-      <p style="font-size:0.8rem;font-weight:300;color:rgba(46,26,71,0.5)">Still have questions? Call <a href="tel:3374151951" style="color:var(--gold);text-decoration:none">(337) 415-1951</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FORM ═══ -->
-<section id="schedule">
-  <div class="inner">
-    <div class="fade">
-      <div class="eyebrow">Schedule a Scan</div>
-      <h2 class="light">Let's Get Started</h2>
-      <p class="form-lead">Fill out the short form below and we'll call you within 24–48 hours to confirm your date and walk you through the process. No commitment required.</p>
-    </div>
-
-    <form id="consultForm" class="fade" onsubmit="handleSubmit(event)" novalidate>
-      <!-- Honeypot — hidden from real users, bots fill it -->
-      <input type="text" name="website" style="display:none;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true" />
-      <input type="hidden" name="dhdo_ts" id="dhdo_ts" />
-
-      <div class="form-section">Your Information</div>
-      <div class="fg2">
-        <div class="fg">
-          <label for="f-name">Full Name <span style="color:var(--gold);font-size:0.7rem">*</span></label>
-          <input type="text" id="f-name" name="name" placeholder="First Last" required />
-        </div>
-        <div class="fg">
-          <label for="f-email">Email Address <span style="color:var(--gold);font-size:0.7rem">*</span></label>
-          <input type="email" id="f-email" name="email" placeholder="you@email.com" required />
-        </div>
-        <div class="fg">
-          <label for="f-phone">Phone Number <span style="color:var(--gold);font-size:0.7rem">*</span></label>
-          <input type="tel" id="f-phone" name="phone" placeholder="(337) 000-0000" required />
-        </div>
-        <div class="fg">
-          <label for="f-time">Best Time to Reach You</label>
-          <select id="f-time" name="best_time">
-            <option value="" disabled selected>Select one</option>
-            <option>Morning (8am – 12pm)</option>
-            <option>Afternoon (12pm – 5pm)</option>
-            <option>Evening (5pm – 8pm)</option>
-            <option>Anytime</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-section" style="margin-top:2.5rem">Scan Scheduling</div>
-      <div class="fg2">
-        <div class="fg">
-          <label for="f-date1">Preferred Scan Date <span style="font-size:0.7rem;font-weight:300;opacity:0.55">(optional)</span></label>
-          <input type="date" id="f-date1" name="preferred_date" />
-          <span style="display:block;margin-top:0.4rem;font-size:0.75rem;font-weight:300;opacity:0.55">No date in mind? Leave it blank — we'll lock it in together on our call.</span>
-        </div>
-      </div>
-
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAADxkgwVc19C2VhbF" style="margin:0 0 1rem"></div>
-      <div class="submit-row">
-        <button type="submit" id="submitBtn">Request My Scan</button>
-        <p class="submit-note">
-          We'll call you within 24–48 hours to confirm.<br />
-          Questions? Call <a href="tel:3374151951">(337) 415-1951</a>
-        </p>
-      </div>
-
-    </form>
-
-    <!-- Success state -->
-    <div class="form-success" id="formSuccess">
-      <div class="success-ring">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h3>You're On the List</h3>
-      <p style="margin-bottom:1.5rem">A member of the DHDO team will call you within <strong style="color:var(--gold);font-weight:500">24–48 hours</strong> to confirm your scan date and walk you through what to expect.</p>
-      <div class="next-steps">
-        <div class="next-step">
-          <div class="ns-num">1</div>
-          <div>
-            <strong>Confirmation Call</strong>
-            <p>We'll confirm your date, answer questions, and set expectations for scan day.</p>
-          </div>
-        </div>
-        <div class="next-step">
-          <div class="ns-num">2</div>
-          <div>
-            <strong>Full Intake Form</strong>
-            <p>We'll send you a link to complete your property details, receipts, and preferences — takes about 10 minutes.</p>
-          </div>
-        </div>
-        <div class="next-step">
-          <div class="ns-num">3</div>
-          <div>
-            <strong>Scan Day</strong>
-            <p>Our team arrives, captures everything, and delivers your complete digital record within 5–7 business days.</p>
-          </div>
-        </div>
-      </div>
-      <a href="intake.html" class="btn-gold" style="margin-top:2rem;display:inline-block">Complete Your Intake Form Now →</a>
-      <p style="margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.3)">We'll also send this link to your phone and email — complete it before your scan day so we arrive fully prepared.</p>
-    </div>
-
-    <div class="team-grid fade">
-      <div class="team-card">
-        <div class="team-initials">JB</div>
-        <div class="team-name">Jonathan Bradberry</div>
-        <div class="team-role">CEO</div>
-        <div class="team-contact">
-          <a href="#" class="team-email" data-em="moc.nacsodhd@nahtanoj" onclick="return openEmail(this)">&nbsp;</a>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-initials">JJ</div>
-        <div class="team-name">Jay Joseph</div>
-        <div class="team-role">Sales Manager</div>
-        <div class="team-contact">
-          <a href="#" class="team-email" data-em="moc.nacsodhd@yaj" onclick="return openEmail(this)">&nbsp;</a>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-initials">ND</div>
-        <div class="team-name">Noah Dressler</div>
-        <div class="team-role">Sales Representative</div>
-        <div class="team-contact">
-          <a href="#" class="team-email" data-em="moc.nacsodhd@haon" onclick="return openEmail(this)">&nbsp;</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="inner">
     <div class="footer-top">
       <div class="footer-brand">
         <picture>
-          <source srcset="logo-primary.webp" type="image/webp" />
-          <img src="logo-primary.png" alt="DHDO" width="66" height="44" loading="lazy" style="height:44px;width:auto;display:block;margin-bottom:0.75rem;" />
+          <source srcset="https://www.dhdoscan.com/logo-primary.webp" type="image/webp" />
+          <img src="https://www.dhdoscan.com/logo-primary.png" alt="DHDO" width="66" height="44" loading="lazy" style="height:44px;width:auto;display:block;margin-bottom:0.75rem;" />
         </picture>
         <p>Digital Home Documentation &amp; Organization.<br />A Division of Bradberry Construction &amp; Design.</p>
+        <!-- Disclaimer (NEW, 2026-07-31, per Lauren). Mirrors the Professional Disclaimer in
+             privacy.html — keep the two consistent if either is reworded. -->
+        <p style="margin-top:0.85rem;font-size:0.72rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,0.55);max-width:34rem;">DHDO provides property documentation only &mdash; not insurance, legal, or financial advice; coverage, valuation, and claim decisions rest solely with your insurer, attorney, or advisor.</p>
+        <div class="footer-social">
+          <a href="https://share.google/L2d7JVNbi5N3GBGco" target="_blank" rel="noopener" title="Google Business Profile" aria-label="Google Business Profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
+          <a href="https://www.facebook.com/dhdoscan" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/dhdoscan/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://www.linkedin.com/company/dhdoscan/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></a>
+          <a href="https://www.tiktok.com/@dhdoscan" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a href="https://www.youtube.com/@DHDOScan" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
       </div>
       <div class="f-col">
         <h5>Navigate</h5>
         <ul>
-          <li><a href="#about">What We Do</a></li>
-          <li><a href="#scans">Live Scans</a></li>
-          <li><a href="#process">Our Process</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#schedule">Schedule a Scan</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="book-a-scan.html">Book a Scan</a></li>
+          <li><a href="https://portal.dhdoscan.com" target="_blank" rel="noopener">Client Portal</a></li>
         </ul>
-        <a href="https://www.dhdoscan.com/intake.html" style="display:block;margin-top:1rem;font-size:0.72rem;font-weight:300;color:rgba(255,255,255,0.28);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.28)'">Already booked? → Complete Your Intake Form</a>
       </div>
       <div class="f-col">
-        <h5>Contact</h5>
+        <h5>How We Help</h5>
+        <ul>
+          <li><a href="home-documentation.html">Homeowners</a></li>
+          <li><a href="insurance-professionals.html">Insurance Professionals</a></li>
+          <li><a href="hurricane.html">Hurricane Prep</a></li>
+          <li><a href="estate-planning.html">Estate Planning</a></li>
+          <li><a href="real-estate.html">Real Estate</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Service Areas</h5>
+        <ul>
+          <li><a href="lake-charles.html">Lake Charles</a></li>
+          <li><a href="lafayette.html">Lafayette</a></li>
+        </ul>
+        <h5 style="margin-top:1.5rem;">Contact</h5>
         <p><a href="tel:3374151951">(337) 415-1951</a></p>
-        <p style="margin-top:0.4rem"><a href="#" class="team-email" data-em="moc.nacsodhd@olleh" onclick="return openEmail(this)" style="color:rgba(255,255,255,0.35);text-decoration:none;">hello@dhdoscan.com</a></p>
+        <p style="margin-top:0.4rem"><a href="#" class="team-email" data-em="moc.nacsodhd@olleh" onclick="return openEmail(this)" style="color:rgba(255,255,255,0.42);text-decoration:none;">hello@dhdoscan.com</a></p>
         <p style="margin-top:0.4rem">Lake Charles, Louisiana</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 DHDO — Digital Home Documentation &amp; Organization. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Privacy Policy</a></p>
+      <p>&copy; 2026 DHDO — Digital Home Documentation &amp; Organization. All rights reserved. &middot; <a href="privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">Privacy Policy</a></p>
       <p>A Division of Bradberry Construction &amp; Design</p>
     </div>
   </div>
 </footer>
 
 <script>
-
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-
-  // Email obfuscation — decode reversed email addresses
-  function openEmail(el) {
-    const rev = el.dataset.em.split('').reverse().join('');
-    el.href = 'mailto:' + rev;
-    el.textContent = rev;
-    el.onclick = null;
-    return false;
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.team-email').forEach(function(el) {
-      const rev = el.dataset.em.split('').reverse().join('');
-      el.textContent = rev;
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.location.href = 'mailto:' + rev;
-      });
-    });
-  });
-
-  function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
-  function closeMob()   { document.getElementById('mob').classList.remove('open'); }
-
-  (function() {
-    const minD = new Date(); minD.setDate(minD.getDate() + 7);
-    document.getElementById('f-date1').min = minD.toISOString().split('T')[0];
-  })();
-
-  document.getElementById('f-date1').addEventListener('change', function() {
-    // reserved for future date logic
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-
-    // ── Validation ──
-    const name  = document.getElementById('f-name').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    const phone = document.getElementById('f-phone').value.trim();
-    const date1 = document.getElementById('f-date1').value;
-
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    const phoneOk = /^[\d\s\(\)\-\+]{7,15}$/.test(phone);
-    const minDate = new Date(); minDate.setDate(minDate.getDate() + 7);
-    const minDateStr = minDate.toISOString().split('T')[0];
-    const dateOk  = date1 && date1 >= minDateStr;
-
-    if (!name)     { alert('Please enter your full name.'); document.getElementById('f-name').focus(); return; }
-    if (!emailOk)  { alert('Please enter a valid email address.'); document.getElementById('f-email').focus(); return; }
-    if (!phoneOk)  { alert('Please enter a valid phone number.'); document.getElementById('f-phone').focus(); return; }
-    if (!dateOk)   { alert('Please select a preferred scan date at least one week from today.'); document.getElementById('f-date1').focus(); return; }
-
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    try {
-      // Submit the lead through the Turnstile-verified submit-lead edge function.
-      try {
-        const _sb = 'https://rpzvtfvgeqqivuykzaft.supabase.co';
-        const _k1 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6';
-        const _k2 = 'InJwenZ0ZnZnZXFxaXZ1eWt6YWZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4NzU5';
-        const _k3 = 'MzEsImV4cCI6MjA5NjQ1MTkzMX0.0Gu4pwMyYj2DKciIamu1l36Gl63Ya9Vt-stLXgJH6hI';
-        const time = document.getElementById('f-time').value;
-        var _hpv = ''; try { _hpv = (document.querySelector('#consultForm [name="website"]') || {}).value || ''; } catch (e) {} if (_hpv) { window.location.href = 'thank-you.html'; return; } window.__refCode = (function(){ try { var rr = new URLSearchParams(location.search).get('ref') || sessionStorage.getItem('dhdo_ref') || ''; return rr.replace(/[^A-Za-z0-9_-]/g, '').slice(0, 64); } catch (e) { return ''; } })(); var _ts = (window.turnstile && turnstile.getResponse()) || ''; if (!_ts) { alert('Please complete the verification check, then tap Request My Scan again.'); btn.textContent = 'Request My Scan'; btn.disabled = false; return; } var _res = await fetch(_sb + '/functions/v1/submit-lead', {
-          method: 'POST',
-          headers: {
-            'apikey': _k1 + _k2 + _k3,
-            'Authorization': 'Bearer ' + _k1 + _k2 + _k3,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify({
-            token: _ts,
-            hp: _hpv,
-            name: name,
-            email: email,
-            phone: phone,
-            preferred_date: date1 || null,
-            notes: time ? 'Best time to reach: ' + time : null,
-            property_address: null,
-            source: 'website',
-            ref_code: (window.__refCode || null)
-          })
-        });
-        if (!_res.ok) { const _j = await _res.json().catch(function () { return {}; }); alert((_j && _j.error) || 'Something went wrong. Please call (337) 415-1951.'); btn.textContent = 'Request My Scan'; btn.disabled = false; try { turnstile.reset(); } catch (e) {} return; }
-      } catch (_e2) { btn.textContent = 'Request My Scan'; btn.disabled = false; alert('Something went wrong. Please call (337) 415-1951.'); try { turnstile.reset(); } catch (e) {} return; }
-
-      window.location.href = 'thank-you.html';
-    } catch {
-      btn.textContent = 'Submit Request';
-      btn.disabled = false;
-      alert('Something went wrong. Please call us directly at (337) 415-1951.');
-    }
-  }
+  function toggleFaq(btn){ const item=btn.closest('.faq-item'); const isOpen=item.classList.contains('open'); document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open')); if(!isOpen) item.classList.add('open'); }
+  function openEmail(el){ const rev=el.dataset.em.split('').reverse().join(''); el.href='mailto:'+rev; el.textContent=rev; el.onclick=null; return false; }
+  document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('.team-email').forEach(function(el){ const rev=el.dataset.em.split('').reverse().join(''); el.textContent=rev; el.addEventListener('click', function(e){ e.preventDefault(); window.location.href='mailto:'+rev; }); }); });
+  function toggleMenu(){ document.getElementById('mob').classList.toggle('open'); }
+  function closeMob(){ document.getElementById('mob').classList.remove('open'); }
+  const obs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); }); }, {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+  try{var _r=new URLSearchParams(location.search).get('ref');if(_r)sessionStorage.setItem('dhdo_ref',_r);}catch(e){}
 </script>
-<script>try{var _r=new URLSearchParams(location.search).get('ref');if(_r)sessionStorage.setItem('dhdo_ref',_r);}catch(e){}</script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<!-- ═══ COOKIE NOTICE (notice-only, once per visitor) ═══ -->
+<style>
+  #cookie-note { position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200; display: none;
+    background: var(--purple-deep); border-top: 1px solid var(--border-gold);
+    padding: 0.9rem 6%; box-shadow: 0 -8px 30px rgba(26,14,46,0.35); }
+  #cookie-note.show { display: block; }
+  #cookie-note .cn-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center;
+    gap: 1.25rem; flex-wrap: wrap; justify-content: space-between; }
+  #cookie-note p { font-size: 0.82rem; font-weight: 300; line-height: 1.7;
+    color: rgba(255,255,255,0.82); margin: 0; flex: 1 1 380px; }
+  #cookie-note a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+  #cookie-note .cn-ok { font-family: 'Outfit', sans-serif; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--purple); background: var(--gold);
+    border: none; border-radius: 1px; padding: 0.95rem 1.7rem; cursor: pointer; white-space: nowrap; min-height: 44px;
+    transition: background 0.2s; }
+  #cookie-note .cn-ok:hover { background: var(--gold-hover); }
+  @media (max-width: 620px) { #cookie-note .cn-inner { justify-content: stretch; } #cookie-note .cn-ok { width: 100%; } }
+</style>
+<div id="cookie-note" role="region" aria-label="Cookie notice">
+  <div class="cn-inner">
+    <p>This site uses cookies, including Google Analytics, to understand how it&rsquo;s used and to keep it secure. By continuing to browse, you agree to our use of cookies as described in our <a href="privacy.html#cookies">Privacy Policy</a>.</p>
+    <button type="button" class="cn-ok" id="cn-ok">Got it</button>
+  </div>
+</div>
+<script>
+  (function () {
+    var KEY = 'dhdo-cookie-notice';
+    var bar = document.getElementById('cookie-note');
+    if (!bar) return;
+    var seen = false;
+    try { seen = localStorage.getItem(KEY) === '1' } catch (e) { seen = false } // private mode / blocked storage
+    if (seen) return;
+    bar.classList.add('show');
+    document.getElementById('cn-ok').addEventListener('click', function () {
+      bar.classList.remove('show');
+      try { localStorage.setItem(KEY, '1') } catch (e) {}
+    });
+  })();
+</script>
 </body>
 </html>
