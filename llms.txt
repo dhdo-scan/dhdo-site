@@ -42,7 +42,7 @@ Contraband Bayou, and Gillis/Carlyss.
 ## Pricing
 
 Package pricing, hosting terms and add-ons are maintained on one page and change from time to time:
-https://www.dhdoscan.com/pricing.html
+https://www.dhdoscan.com/pricing
 
 Portal hosting is not permanent — Basic includes a set number of months and other packages run on
 Annual Record Care. See the pricing page for current terms.
@@ -51,7 +51,7 @@ Annual Record Care. See the pricing page for current terms.
 
 The on-site visit takes one to three hours depending on the size of the property and the package.
 Turnaround depends on what was booked; current figures are on the FAQ:
-https://www.dhdoscan.com/faq.html
+https://www.dhdoscan.com/faq
 
 ## Contact
 
@@ -68,18 +68,18 @@ https://www.dhdoscan.com/faq.html
 ## Key Pages
 
 - Homepage: https://www.dhdoscan.com/
-- Home inventory / home documentation: https://www.dhdoscan.com/home-documentation.html
-- Book a scan: https://www.dhdoscan.com/book-a-scan.html
-- Pricing: https://www.dhdoscan.com/pricing.html
-- For insurance professionals: https://www.dhdoscan.com/insurance-professionals.html
-- Hurricane preparation: https://www.dhdoscan.com/hurricane.html
-- Estate planning: https://www.dhdoscan.com/estate-planning.html
-- Real estate: https://www.dhdoscan.com/real-estate.html
-- Lake Charles: https://www.dhdoscan.com/lake-charles.html
-- Lafayette: https://www.dhdoscan.com/lafayette.html
-- FAQ: https://www.dhdoscan.com/faq.html
-- About: https://www.dhdoscan.com/about.html
-- Privacy policy: https://www.dhdoscan.com/privacy.html
+- Home inventory / home documentation: https://www.dhdoscan.com/home-documentation
+- Book a scan: https://www.dhdoscan.com/book-a-scan
+- Pricing: https://www.dhdoscan.com/pricing
+- For insurance professionals: https://www.dhdoscan.com/insurance-professionals
+- Hurricane preparation: https://www.dhdoscan.com/hurricane
+- Estate planning: https://www.dhdoscan.com/estate-planning
+- Real estate: https://www.dhdoscan.com/real-estate
+- Lake Charles: https://www.dhdoscan.com/lake-charles
+- Lafayette: https://www.dhdoscan.com/lafayette
+- FAQ: https://www.dhdoscan.com/faq
+- About: https://www.dhdoscan.com/about
+- Privacy policy: https://www.dhdoscan.com/privacy
 
 ## About
 

@@ -113,7 +113,7 @@
 </head>
 <body>
 <header>
-  <a href="index.html"><picture>
+  <a href="/"><picture>
     <source srcset="logo-primary.webp" type="image/webp" />
     <img src="logo-primary.png" alt="DHDO" />
   </picture></a>
@@ -190,7 +190,7 @@
   </div>
 </main>
 <footer>
-  <p>DHDO — Digital Home Documentation &amp; Organization &nbsp;&middot;&nbsp; A Division of <a href="https://bradberryconstruction.com">Bradberry Construction &amp; Design</a> &nbsp;&middot;&nbsp; <a href="index.html">Back to main site</a></p>
+  <p>DHDO — Digital Home Documentation &amp; Organization &nbsp;&middot;&nbsp; A Division of <a href="https://bradberryconstruction.com">Bradberry Construction &amp; Design</a> &nbsp;&middot;&nbsp; <a href="/">Back to main site</a></p>
 </footer>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
@@ -212,7 +212,7 @@
     if (!ts) { alert('Please complete the verification check, then tap Reserve again.'); return; }
     btn.textContent = 'Reserving...';
     btn.disabled = true;
-    if (hp) { window.location.href = 'thank-you.html'; return; }
+    if (hp) { window.location.href = '/thank-you'; return; }
     try {
       var _sb = 'https://rpzvtfvgeqqivuykzaft.supabase.co';
       var _k1 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6';
@@ -239,7 +239,7 @@
       });
       if (!_res.ok) { var _j = await _res.json().catch(function () { return {}; }); alert((_j && _j.error) || 'Something went wrong. Please call (337) 415-1951.'); btn.textContent = 'Reserve My Spot'; btn.disabled = false; try { turnstile.reset(); } catch (e) {} return; }
     } catch (_e2) { alert('Something went wrong. Please call (337) 415-1951.'); btn.textContent = 'Reserve My Spot'; btn.disabled = false; try { turnstile.reset(); } catch (e) {} return; }
-    window.location.href = 'thank-you.html';
+    window.location.href = '/thank-you';
   });
 </script>
 </body>
