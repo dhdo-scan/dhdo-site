@@ -59,7 +59,13 @@ const SESSION_WINDOW_SEC = 60
 const SESSION_MAX = 6
 const MAX_MSG_LEN = 2000
 const MAX_HISTORY = 12
-const MAX_TOKENS = 700
+// 700 was too tight in practice. The first real pricing question on the live site came back cut
+// off after ~55 visible words: a multi-package answer needs room, and on a thinking-capable Gemini
+// flash model the internal thinking is billed against this same ceiling, so the visible answer can
+// be truncated while most of the budget went somewhere the visitor never sees. Thinking is now
+// switched off explicitly (see askGemini) and the ceiling raised for the pricing breakdowns that
+// legitimately run long.
+const MAX_TOKENS = 1200
 
 // PUBLIC SITE ONLY. Both apex and www are served; Vercel preview builds are not included on
 // purpose — a preview pointing at production quota is how quota leaks.
@@ -127,9 +133,14 @@ within one business day of the consultation)
 - Custom — call for pricing. Large facilities, portfolios, multi-property scopes, high-value homes,
   estates and successions, executor inventories, warehouses, industrial sites, pre/post-loss
   comparisons, construction-progress records. Scope is confirmed before we quote.
-- SIZE: packages cover up to 3,000 sq ft, then +$50 per additional 1,000 sq ft, rounded up.
-  Worked example: a 4,200 sq ft home on Guided Property Record is 2 increments over the base —
-  $450 + (2 x $50) = $550, plus tax. Same formula for White-Glove Pro.
+- SIZE: the +$50 per additional 1,000 sq ft over a 3,000 sq ft base (rounded up) is published for
+  GUIDED PROPERTY RECORD and WHITE-GLOVE PRO. Worked example: a 4,200 sq ft home on Guided
+  Property Record is 2 increments over the base — $450 + (2 x $50) = $550, plus tax. Same formula
+  for White-Glove Pro.
+- BASIC AND SIZE: Basic is published at $350 + tax with NO size formula attached to it. If asked
+  what Basic costs on a home over 3,000 sq ft, do NOT apply the formula and do NOT produce a
+  number — say Basic starts at $350 + tax, that the price for a larger home is confirmed on the
+  call, and give them ${PHONE}.
 - COMMERCIAL & BUSINESS — starting at $800 + tax for up to 5,000 sq ft, then +$50 per additional
   1,000 sq ft. Includes 4 hours Scan Tech and 4 hours Tag Tech on site, building/room/equipment and
   business-asset documentation, receipts and invoices and serial numbers, exportable inventory,
@@ -219,6 +230,7 @@ const RULES = `You are the DHDO website assistant. You answer questions from vis
 - WE DOCUMENT; WE DO NOT VALUE. Never state, estimate or imply what any item is worth. DHDO is not an appraiser, not an adjuster, not an inspector and not an insurance producer. If asked what something is worth or what a claim would pay, say plainly that DHDO documents belongings and does not appraise or value them, that a formal valuation is a licensed appraiser's work, and that coverage and claim decisions rest with their insurer.
 - NEVER promise a claim outcome. Documentation MAY help support a policyholder's position; it does not guarantee a payout, a settlement figure, or that any insurer will accept it. Never say a claim will be approved, paid faster, or paid more.
 - NO LEGAL ADVICE. You may say a dated inventory gives families, executors and attorneys one organized reference during a succession or probate. You may NOT advise on Louisiana succession law, filings, deadlines or coverage. That is an attorney's work, and say so.
+- NEVER apply a pricing formula to a package it is not published for, and never add, combine or extrapolate figures to reach a price that is not written above. A visitor can be quoted only a number the corpus states or an arithmetic it explicitly sanctions; anything else is a phone call. Inventing a plausible total is worse than admitting you do not have one, because we have to honour whatever you said.
 - PRICES: the figures above are current published pricing and you may quote them, always noting that sales tax is added and that the exact price is confirmed at sign-up. If someone's situation is not clearly covered by a listed package — unusual scope, very large property, commercial, HOA, estate — do not improvise a number. Say it is custom quoted and give them ${PHONE}. Never invent a discount, a promotion or a price that is not listed above.
 - NEVER confirm, promise or guess a specific date, time or appointment slot. The team confirms scheduling on the phone.
 - NEVER claim to book, schedule, cancel or change anything, and never claim to have taken someone's details. You cannot. Booking is a phone call to ${PHONE}. Do not ask for a name, email, phone number, address or any other personal detail — if they want to be contacted, give them the number to call.
@@ -279,7 +291,14 @@ async function askGemini(system: string, messages: any[]): Promise<Ask> {
         role: m.role === 'assistant' ? 'model' : 'user',
         parts: [{ text: m.content }],
       })),
-      generationConfig: { temperature: 0, maxOutputTokens: MAX_TOKENS },
+      generationConfig: {
+        temperature: 0,
+        maxOutputTokens: MAX_TOKENS,
+        // Thinking tokens count against maxOutputTokens on the flash thinking models, so leaving
+        // this on truncates the visible answer to pay for reasoning the visitor never sees. This
+        // is a grounded lookup in a short corpus — thinking buys latency, not accuracy.
+        thinkingConfig: { thinkingBudget: 0 },
+      },
     }),
   })
   if (res.status === 429) return { ok: false, kind: 'rate_limited', status: 429 }
@@ -385,6 +404,10 @@ Deno.serve(async (req: Request) => {
     }
 
     const system = `${KB}\n\n${RULES}`
+    // Which provider actually served a turn is invisible from the logged conversation, and it
+    // changes the answer's shape and cost. One line makes it recoverable from the function logs.
+    console.log('dhdo-site-bot: provider=' + PROVIDER
+      + ' model=' + (PROVIDER === 'anthropic' ? ANTHROPIC_MODEL : GEMINI_MODEL))
     const answer = PROVIDER === 'anthropic'
       ? await askAnthropic(system, messages)
       : await askGemini(system, messages)
