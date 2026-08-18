@@ -769,6 +769,33 @@
     .nav-login-text:hover { border-color: var(--gold); color: var(--gold) !important; background: rgba(201,162,78,0.06); }
     @media (min-width: 721px) { .nav-avatar { display: none !important; } }
     @media (max-width: 720px) { .nav-login-text { display: none !important; } }
+    /* ── mobile header CTA: Book a Scan, centred between the logo and the hamburger ──
+       The desktop nav CTA lives inside .nav-right, which goes display:none at 720px, so on a
+       phone the only route to Book a Scan was buried in the collapsed hamburger menu. This is
+       that same button, relocated — matching .nav-cta's treatment so the header reads the same
+       at every width.
+       Absolutely positioned rather than added as a third flex child: nav is space-between, and
+       a middle child only lands dead centre when the logo and the actions cluster are the same
+       width, which they are not. */
+    .nav-cta-mob { display: none; }
+    @media (max-width: 720px) {
+      .nav-cta-mob {
+        display: inline-flex; align-items: center; justify-content: center;
+        position: absolute; left: 50%; transform: translateX(-50%);
+        font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--white); background: var(--purple);
+        padding: 0.6rem 1.1rem; min-height: 40px; border-radius: 1px; text-decoration: none; white-space: nowrap;
+        transition: background 0.2s, color 0.2s;
+      }
+      .nav-cta-mob:hover, .nav-cta-mob:active { background: var(--gold); color: var(--purple); }
+      .nav-cta-mob:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    }
+    /* Narrow phones: ease the button down so it keeps clear of the logo and the hamburger.
+       The logo itself is left alone — it renders 78px wide at its 52px height (the artwork is
+       3:2), which leaves room for a centred button down to 320px. */
+    @media (max-width: 380px) {
+      .nav-cta-mob { font-size: 0.56rem; padding: 0.55rem 0.7rem; letter-spacing: 0.08em; min-height: 38px; }
+    }
 
     /* ── readability pass: darker + larger body copy for low-contrast text (2026-07 accessibility) ── */
     .about-grid .fade p, .acard p, .why-card p, .faq-a p, .pkg-features li, .addon-row span, tbody td, .content-block p, .media-ph .mph-desc { color: rgba(46,26,71,0.88) !important; }
@@ -1011,6 +1038,7 @@
     <li><a href="tel:3374151951" class="nav-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(337) 415-1951</a></li>
     <li><a href="/book-a-scan" class="nav-cta">Book a Scan</a></li>
   </ul>
+  <a href="/book-a-scan" class="nav-cta-mob">Book a Scan</a>
   <div class="nav-actions">
     <a href="https://portal.dhdoscan.com" class="nav-login-text"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 4-7 8-7s8 2.5 8 7"/></svg>Client Login</a>
     <a href="https://portal.dhdoscan.com" class="nav-avatar" aria-label="Client portal login" title="Client Portal">
