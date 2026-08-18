@@ -9,11 +9,14 @@
       customers who have already bought. Pointing this widget there fails CORS on every
       message, and would answer a stranger's pricing question with portal navigation.
    2. THERE IS NO LEAD FORM. The earlier draft of this file POSTed name/email/phone straight
-      to the scan_requests table with the public anon key. That bypassed the Turnstile check
-      every other form on this site routes through — an unauthenticated write endpoint for
-      anyone who reads this file — and it re-introduced the intake form the site retired.
-      Book a Scan is the single front door and booking happens on a phone call. The handoff
-      below is a call button and a link to /book-a-scan. Do not add a form back. */
+      to the scan_requests table with the public anon key. Two things were wrong with that.
+      It bypassed the Turnstile check every other form on this site routes through. And it
+      could never have worked: scan_requests grants INSERT to `authenticated` only, so RLS
+      rejects an anon write — every visitor who filled it in would have been told "I couldn't
+      send that just now" while their details went nowhere. It also re-introduced the intake
+      form the site retired. Book a Scan is the single front door and booking happens on a
+      phone call, so the handoff below is a call button and a link to /book-a-scan. Do not
+      add a form back. */
 (function () {
   'use strict';
 
