@@ -133,14 +133,14 @@ within one business day of the consultation)
 - Custom — call for pricing. Large facilities, portfolios, multi-property scopes, high-value homes,
   estates and successions, executor inventories, warehouses, industrial sites, pre/post-loss
   comparisons, construction-progress records. Scope is confirmed before we quote.
-- SIZE: the +$50 per additional 1,000 sq ft over a 3,000 sq ft base (rounded up) is published for
-  GUIDED PROPERTY RECORD and WHITE-GLOVE PRO. Worked example: a 4,200 sq ft home on Guided
-  Property Record is 2 increments over the base — $450 + (2 x $50) = $550, plus tax. Same formula
-  for White-Glove Pro.
-- BASIC AND SIZE: Basic is published at $350 + tax with NO size formula attached to it. If asked
-  what Basic costs on a home over 3,000 sq ft, do NOT apply the formula and do NOT produce a
-  number — say Basic starts at $350 + tax, that the price for a larger home is confirmed on the
-  call, and give them ${PHONE}.
+- SIZE: EVERY residential package covers up to 3,000 sq ft, then +$50 per additional 1,000 sq ft,
+  rounded up. This applies to BASIC as well as to Guided Property Record and White-Glove Pro —
+  confirmed by DHDO on 2026-08-24. (The pricing page prints the size qualifier only on the two
+  $450 cards, which reads as though Basic were exempt. It is not.)
+  Worked examples, 4,200 sq ft = 2 increments over the base:
+    Basic                  $350 + (2 x $50) = $450, plus tax
+    Guided Property Record $450 + (2 x $50) = $550, plus tax
+    White-Glove Pro        $450 + (2 x $50) = $550, plus tax
 - COMMERCIAL & BUSINESS — starting at $800 + tax for up to 5,000 sq ft, then +$50 per additional
   1,000 sq ft. Includes 4 hours Scan Tech and 4 hours Tag Tech on site, building/room/equipment and
   business-asset documentation, receipts and invoices and serial numbers, exportable inventory,
