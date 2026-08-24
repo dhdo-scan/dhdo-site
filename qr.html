@@ -188,7 +188,11 @@
   const params = new URLSearchParams(window.location.search);
   const src = params.get('src') || params.get('utm_source') || 'qr-unknown';
   document.querySelector('.source-note').dataset.source = src;
-  // When GA4 is live, push: gtag('event', 'qr_scan', { source: src });
+  // No GA4 event fires here: this page deliberately carries no GTM container, so scans are not
+  // counted in analytics. That is a decision, not an oversight (Jay, 2026-08-24). GA4 IS live
+  // sitewide via GTM-K6CWMW3B — an older version of this comment said "when GA4 is live", which
+  // read as though GA4 had never been set up and sent a debugging session down the wrong path.
+  // To count scans, the container has to go on this page first.
 </script>
 
 </body>

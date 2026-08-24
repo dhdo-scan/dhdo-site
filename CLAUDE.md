@@ -63,7 +63,21 @@ block; keep them consistent.
 - **`.faq-item.open .faq-a` has a `max-height` cap.** Long answers get silently clipped at
   narrow widths. If you add a long FAQ answer, check it on a phone.
 - Images reference absolute `https://www.dhdoscan.com/` asset URLs; local `media/` files in a
-  draft bundle must be uploaded before those pages go live.
+  draft bundle must be uploaded before those pages go live. This also means a page opened from a
+  local checkout renders those images broken — measure layout against the live assets, or a
+  broken-image alt-text box will read as an element far wider than the real one.
+- **Tightening the CSP in `vercel.json` can kill analytics silently.** GA4 delivers its hits to
+  `google-analytics.com` by `fetch`/`sendBeacon`, which `connect-src` governs. GTM itself keeps
+  loading (script-src allows `https:`), so the container looks perfectly healthy in Tag Assistant
+  while every hit is dropped by the browser — nothing errors, data just stops. This already
+  happened once: the CSP added 2026-07-06 ("Security audit F10") took GA4 down until 2026-08-24,
+  seven weeks, and the reports were assumed to be a GTM problem the whole time. `connect-src` must
+  keep `googletagmanager.com`, `*.google-analytics.com`, `*.analytics.google.com` and
+  `stats.g.doubleclick.net`. After ANY CSP change, load a page and confirm a request to
+  `/g/collect` returns 200/204 in the Network tab.
+- Analytics lives in **GTM**, not in the page source. Container `GTM-K6CWMW3B` fires the GA4
+  PageView tag for property `G-MTX10EKD70`. Do not add `gtag.js` to the pages — Lauren maintains
+  tags in the container, and a second hardcoded tag would double-count every pageview.
 
 ## 4. Verifying
 
