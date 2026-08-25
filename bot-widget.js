@@ -171,7 +171,15 @@
      only elements created are anchors whose href comes from the LINKABLE allowlist or the
      hard-coded phone number. Model output can therefore never inject markup. */
   function render(target, text) {
-    var parts = String(text).split(/(\/[a-z0-9-]+|\(337\)\s?415-1951)/g);
+    /* The model answers in light markdown — "**(337) 415-1951**", "* Basic — $350". Bubbles are
+       built from text nodes, so those markers rendered as literal asterisks on the page. Strip the
+       emphasis and turn list markers into real bullets. Deliberately NOT a markdown parser: the
+       output still goes in as text nodes, so this cannot introduce markup. */
+    var clean = String(text)
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/(^|\n)\s*[*-]\s+/g, '$1• ')
+      .replace(/(^|[\s(])\*([^*\n]+)\*(?=[\s.,;:!?)]|$)/g, '$1$2');
+    var parts = clean.split(/(\/[a-z0-9-]+|\(337\)\s?415-1951)/g);
     for (var i = 0; i < parts.length; i++) {
       var p = parts[i];
       if (!p) continue;
@@ -285,14 +293,17 @@
     scroll();
 
     var done = false;
-    // The edge function can sit behind a slow upstream. Fail visibly rather than spin forever.
+    /* Sits just above the edge function's own 20s upstream cap, so in normal failure the SERVER
+       answers first with a proper message and this never fires. At 45s it was firing before the
+       server gave up — the visitor saw "taking longer than it should" while a perfectly good
+       answer arrived seconds later and was thrown away. */
     var killer = setTimeout(function () {
       if (done) return;
       done = true;
       typing.remove();
       busy = false; sendBtn.disabled = false;
       bubble('assistant', "That's taking longer than it should — please call " + PHONE_TEXT + ".");
-    }, 45000);
+    }, 27000);
 
     fetch(ENDPOINT, {
       method: 'POST',
