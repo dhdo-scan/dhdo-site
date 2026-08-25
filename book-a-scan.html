@@ -774,6 +774,23 @@
     .nav-login-text:hover { border-color: var(--gold); color: var(--gold) !important; background: rgba(201,162,78,0.06); }
     @media (min-width: 721px) { .nav-avatar { display: none !important; } }
     @media (max-width: 720px) { .nav-login-text { display: none !important; } }
+    /* Intermediate widths. Between the 720px hamburger breakpoint and a full desktop the nav row
+       has to seat the logo, five top-level links and the actions cluster on one line. It was
+       already touching at 900px with four links; adding "For Agents" pushed that to ~1100px, which
+       is ordinary laptop territory. Tighten the link gap, and below 1024 drop the redundant
+       "Client Login" text button — the avatar immediately beside it goes to the same place. */
+    @media (max-width: 1200px) { .nav-right { gap: 1.2rem; } }
+    @media (max-width: 1024px) {
+      .nav-right { gap: 1.05rem; }
+      .nav-right a { font-size: 0.66rem; letter-spacing: 0.08em; }
+      .nav-login-text { display: none !important; }
+    }
+    /* Last stop before the hamburger takes over at 720px. */
+    @media (max-width: 820px) {
+      .nav-right { gap: 0.7rem; }
+      .nav-right a { font-size: 0.62rem; letter-spacing: 0.06em; }
+      .nav-cta { padding: 0.5rem 0.9rem; }
+    }
     /* ── mobile header CTA: Book a Scan, centred between the logo and the hamburger ──
        The desktop nav CTA lives inside .nav-right, which goes display:none at 720px, so on a
        phone the only route to Book a Scan was buried in the collapsed hamburger menu. This is
@@ -949,14 +966,13 @@
     <li class="nav-dd">
       <a href="#" aria-haspopup="true" onclick="return false;">How We Help</a>
       <div class="nav-dd-panel">
-        <span class="nav-dd-head">Insurance</span>
-        <a href="/home-documentation">Homeowners</a>
-        <a href="/insurance-professionals">Insurance Professionals</a>
-        <a href="/hurricane">Hurricane Prep</a>
+        <a href="/home-documentation">Home Documentation</a>
+        <a href="/hurricane">Hurricane</a>
         <a href="/estate-planning">Estate Planning</a>
         <a href="/real-estate">Real Estate</a>
       </div>
     </li>
+    <li><a href="/insurance-professionals">For Agents</a></li>
     <li class="nav-dd">
       <a href="#" aria-haspopup="true" onclick="return false;">Service Areas</a>
       <div class="nav-dd-panel" style="min-width:210px;">
@@ -984,11 +1000,11 @@
   <a href="/pricing" class="mob-sub" onclick="closeMob()">Pricing</a>
   <a href="/faq" class="mob-sub" onclick="closeMob()">FAQ</a>
   <span class="mob-label">How We Help</span>
-  <a href="/home-documentation" class="mob-sub" onclick="closeMob()">Homeowners</a>
-  <a href="/insurance-professionals" class="mob-sub" onclick="closeMob()">Insurance Professionals</a>
-  <a href="/hurricane" class="mob-sub" onclick="closeMob()">Hurricane Prep</a>
+  <a href="/home-documentation" class="mob-sub" onclick="closeMob()">Home Documentation</a>
+  <a href="/hurricane" class="mob-sub" onclick="closeMob()">Hurricane</a>
   <a href="/estate-planning" class="mob-sub" onclick="closeMob()">Estate Planning</a>
   <a href="/real-estate" class="mob-sub" onclick="closeMob()">Real Estate</a>
+  <a href="/insurance-professionals" onclick="closeMob()">For Agents</a>
   <span class="mob-label">Service Areas</span>
   <a href="/lake-charles" class="mob-sub" onclick="closeMob()">Lake Charles</a>
   <a href="/lafayette" class="mob-sub" onclick="closeMob()">Lafayette</a>
@@ -1101,6 +1117,7 @@
           <li><a href="/about">About</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/faq">FAQ</a></li>
+          <li><a href="/insurance-professionals">For Agents</a></li>
           <li><a href="/book-a-scan">Book a Scan</a></li>
           <li><a href="https://portal.dhdoscan.com" target="_blank" rel="noopener">Client Portal</a></li>
         </ul>
@@ -1108,9 +1125,8 @@
       <div class="f-col">
         <h5>How We Help</h5>
         <ul>
-          <li><a href="/home-documentation">Homeowners</a></li>
-          <li><a href="/insurance-professionals">Insurance Professionals</a></li>
-          <li><a href="/hurricane">Hurricane Prep</a></li>
+          <li><a href="/home-documentation">Home Documentation</a></li>
+          <li><a href="/hurricane">Hurricane</a></li>
           <li><a href="/estate-planning">Estate Planning</a></li>
           <li><a href="/real-estate">Real Estate</a></li>
         </ul>
